@@ -1,12 +1,12 @@
-p,
-h1 {
-    font-family: "Arial", "Helvetica", "sans-serif";
+body {
+    margin-left: 20%;
 }
 
 section {
     width: 60%;
 }
 
-body {
-    margin-left: 20%;
+p,
+h1 {
+    font-family: "Arial", "Helvetica", "sans-serif";
 }
