@@ -1,0 +1,19 @@
+nav {
+	position: fixed;
+	top: 0;
+	left:0;
+	width: 100%;
+	color: white;
+	background-color: #B18CFF;
+	padding: 0.5rem 0.5rem 1rem;
+}
+
+nav ul {
+	padding: 0;
+	margin: 0;
+}
+
+nav li {
+	display: inline;
+	margin: 0 1rem;
+}
