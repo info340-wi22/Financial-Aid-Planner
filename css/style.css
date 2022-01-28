@@ -73,3 +73,15 @@ li a:hover, li a:focus, li a:active {
 	color: white;
 	text-decoration-line: underline;
 }
+
+.flex-container {
+	display: flex;
+	flex-direction: row;
+}
+
+.profile {
+		background-color: white;
+		border-radius: 50%;
+		width: 3rem;
+		margin-left: auto;
+}
