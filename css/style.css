@@ -24,11 +24,17 @@ nav li {
   display: flex;
   flex-wrap: wrap;
   justify-content: right;
+  margin-right: 5rem;
 }
+
 #template-button{
 	margin-top: 5rem;
-	flex: 0 0 250px;
 	background-color: gray;
 	border-radius: 10px;
 	box-shadow: 0 1px 3px rgba(0,0,0,0.16), 0 1px 3px rgba(0,0,0,0.23);
+	
+}
+
+#template-button p {
+  padding: 1rem 0.5rem 0.5rem;
 }
