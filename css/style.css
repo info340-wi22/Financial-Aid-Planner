@@ -20,6 +20,24 @@ nav li {
 	font-size: 2rem;
 	font-family: 'Libre Baskerville', serif;
 }
+
+section{
+	margin-top: 2rem;
+
+
+}
+
+
+#card-button {
+	font-size: larger;
+	border: 10px;
+	border-style:solid; 
+	border-color:#FF0000; 
+	padding: 3em;
+	margin-top: 5rem;
+	margin-right: 5rem;
+}
+
 .buttons {
   display: flex;
   flex-wrap: wrap;
