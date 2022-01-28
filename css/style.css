@@ -79,8 +79,8 @@ li a:hover, li a:focus, li a:active {
 }
 
 .profile {
-		background-color: white;
-		border-radius: 50%;
-		width: 3rem;
-		margin-left: auto;
+	background-color: white;
+	border-radius: 50%;
+	width: 3rem;
+	margin-left: auto;
 }
