@@ -27,40 +27,39 @@ section{
 
 
 #card-button {
-	position: fixed;
+	margin-right: 2rem;
 	left: 2160px;
 	padding: 20px;
-	width: 180px;
 	height: 65px;
-	margin-top: 5rem;
 	background-color: gray;
 	border-radius: 10px;
 	box-shadow: 0 1px 3px rgba(0,0,0,0.16), 0 1px 3px rgba(0,0,0,0.23);
 }
 
-.card {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: right;
-	margin-right: 2rem;
-  }
-
-
-.buttons {
+.info {
   display: flex;
   flex-wrap: wrap;
   justify-content: right;
+  margin-top: 5rem;
   margin-right: 2rem;
 }
 
+.info p{
+	margin-left: 2rem;
+	margin-right: 2rem;
+}
+
 #template-button{
-	margin-top: 5rem;
 	background-color: gray;
 	border-radius: 10px;
 	box-shadow: 0 1px 3px rgba(0,0,0,0.16), 0 1px 3px rgba(0,0,0,0.23);
 }
 
 #template-button p {
+  padding: 1rem 0.5rem 0.5rem;
+}
+
+#card-button p {
   padding: 1rem 0.5rem 0.5rem;
 }
 
