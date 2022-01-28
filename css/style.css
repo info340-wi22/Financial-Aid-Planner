@@ -40,7 +40,7 @@ section{
   display: flex;
   flex-wrap: wrap;
   justify-content: right;
-  margin-right: 5rem;
+  margin-right: 2rem;
 }
 
 #template-button{
@@ -52,4 +52,9 @@ section{
 
 #template-button p {
   padding: 1rem 0.5rem 0.5rem;
+}
+
+li a {
+	color: white;
+	text-decoration: none;
 }
