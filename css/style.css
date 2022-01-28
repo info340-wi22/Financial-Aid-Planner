@@ -27,14 +27,24 @@ section{
 
 
 #card-button {
-	position: absolute;
-	left: 2180px;
-	border-radius: 25px;
+	position: fixed;
+	left: 2160px;
 	padding: 20px;
 	width: 180px;
-	height: 70px;
-	border: 3px solid green;
+	height: 65px;
+	margin-top: 5rem;
+	background-color: gray;
+	border-radius: 10px;
+	box-shadow: 0 1px 3px rgba(0,0,0,0.16), 0 1px 3px rgba(0,0,0,0.23);
 }
+
+.card {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: right;
+	margin-right: 2rem;
+  }
+
 
 .buttons {
   display: flex;
