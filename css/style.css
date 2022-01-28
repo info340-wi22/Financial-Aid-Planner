@@ -34,7 +34,6 @@ section{
 	width: 180px;
 	height: 70px;
 	border: 3px solid green;
-	margin-top: 5rem;
 }
 
 .buttons {
@@ -58,4 +57,9 @@ section{
 li a {
 	color: white;
 	text-decoration: none;
+}
+
+li a:hover, li a:focus, li a:active {
+	color: white;
+	text-decoration-line: underline;
 }
