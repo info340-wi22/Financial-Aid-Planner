@@ -27,13 +27,13 @@ section{
 
 
 #card-button {
-	position: absolute;
-	left: 2180px;
-	border-radius: 25px;
+	margin-right: 2rem;
+	left: 2160px;
 	padding: 20px;
-	width: 180px;
-	height: 70px;
-	border: 3px solid green;
+	height: 65px;
+	background-color: gray;
+	border-radius: 10px;
+	box-shadow: 0 1px 3px rgba(0,0,0,0.16), 0 1px 3px rgba(0,0,0,0.23);
 }
 
 .info {
@@ -45,6 +45,7 @@ section{
 }
 
 .info p{
+	margin-left: 2rem;
 	margin-right: 2rem;
 }
 
@@ -55,6 +56,10 @@ section{
 }
 
 #template-button p {
+  padding: 1rem 0.5rem 0.5rem;
+}
+
+#card-button p {
   padding: 1rem 0.5rem 0.5rem;
 }
 
