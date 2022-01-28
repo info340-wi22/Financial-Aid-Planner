@@ -26,14 +26,14 @@ section{
 }
 
 
-.card-button {
-	font-size: larger;
-	border: 10px;
-	border-style:solid; 
-	border-color:#FF0000; 
-	padding: 3em;
-	margin-top: 5rem;
-	margin-right: 5rem;
+#card-button {
+	position: absolute;
+	left: 2180px;
+	border-radius: 25px;
+	padding: 20px;
+	width: 180px;
+	height: 70px;
+	border: 3px solid green;
 }
 
 .buttons {
