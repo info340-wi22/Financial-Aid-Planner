@@ -26,3 +26,14 @@ section{
 
 
 }
+
+
+#card-button {
+	font-size: larger;
+	border: 10px;
+	border-style:solid; 
+	border-color:#FF0000; 
+	padding: 3em;
+	margin-top: 5rem;
+	margin-right: 5rem;
+}
