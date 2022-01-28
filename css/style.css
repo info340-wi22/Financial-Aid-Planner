@@ -39,14 +39,24 @@ section{
 .info {
   display: flex;
   flex-wrap: wrap;
-  justify-content: right;
+  margin-top: 2rem;
+  margin-right: 2rem;
+}
+.buttons {
+  display: flex;
+  margin-top: 2rem;
+  margin-right: 2rem;
+}
+
+.text {
+  display: flex;
   margin-top: 5rem;
   margin-right: 2rem;
 }
 
-.info p{
+.text p{
 	margin-left: 2rem;
-	margin-right: 2rem;
+	margin-right: 8rem;
 }
 
 #template-button{
