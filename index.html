@@ -17,38 +17,35 @@
   <header></header>
 
   <nav>
-      <ul>
-      <div class="flex-container">
-        <div><li>Current Plan</li></div>
-        <div><li>Plans</li></div>
-        <div><li><a href="explore.html" target="_blank">Explore</a></li></div>
-        <div class="profile"></div>
-      </div>
-      </ul>
+    <ul class="menu" aria-describedby="navigation menu">
+      <li>Current Plan</li>
+      <li>Plans</li>
+      <li><a href="explore.html" target="_blank">Explore</a></li>
+      <div class="profile"></div>
+    </ul>
   </nav>
-  <div class="info">
-    <div class="text">
-		<form>
-			<label for="cost">Cost of College Per Year</label>
-			<input type="text" id="cost" name="cost">
-		</form>
-		<form>
-			<label for="cover">Amount You Can Cover</label>
-			<input type="text" id="cover" name="cover">
-		</form>
-		<p>Current Aid: <span class="curAid">9000</span></p>
-		<p>Potential Aid: <span class="potentialAid">23000</span></p>
-		<p>Amount Left: <span class="leftover">XXXXX</span></p>
-	</div>
-	<div class="buttons">
-	<section id="card-button">
-        <p>Add Card</p>
-    </section>
-	<section id="template-button">
-		<p>Upload As Template</p>
-	</section>
-	</div>
-  </div>
+
+  <main>
+    <div class="info">
+      <div class="text">
+        <form>
+          <label for="cost">Cost of College Per Year</label>
+          <input type="text" id="cost" name="cost">
+        </form>
+        <form>
+          <label for="cover">Amount You Can Cover</label>
+          <input type="text" id="cover" name="cover">
+        </form>
+        <p>Current Aid: 9000</p>
+        <p>Potential Aid: 23000</p>
+        <p>Amount Left: XXXXX</p>
+      </div>
+      <div class="buttons">
+        <button type="button" id="card-button">Add Card</button>
+        <button type="button" id="template-button"><p>Upload As Template</p></button>
+      </div>
+    </div>
+  </main>
 
   <footer></footer>
 </body>

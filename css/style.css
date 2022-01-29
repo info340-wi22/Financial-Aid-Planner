@@ -8,7 +8,7 @@ nav {
 	padding: 0.5rem 0.5rem 0.5rem;
 }
 
-nav ul {
+nav menu {
 	padding: 0;
 	margin: 0;
 }
@@ -21,7 +21,7 @@ nav li {
 	font-family: 'Libre Baskerville', serif;
 }
 
-section{
+button {
 	margin-top: 2rem;
 }
 
@@ -38,7 +38,7 @@ section{
   flex-wrap: wrap;
   margin-top: 2rem;
   margin-right: 2rem;
-  justify-content: space-between;
+  justify-content:ce-between;
 
 }
 .buttons {
@@ -87,7 +87,7 @@ li a:hover, li a:focus, li a:active {
 	text-decoration-line: underline;
 }
 
-.flex-container {
+.menu {
 	display: flex;
 	flex-direction: row;
 }
