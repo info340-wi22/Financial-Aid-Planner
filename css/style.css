@@ -45,25 +45,28 @@ nav .profile {
 
 .info {
   	display: flex;
-  	flex-wrap: wrap;
-  	margin-top: 2rem;
-  	margin-right: 2rem;
+  	flex-wrap: row;
+  	margin-top: 5rem;
 }
 
 .text {
   	display: flex;
-  	margin-top: 5rem;
   	font-size: 1.25rem;
 }
 
-.text p {
-	margin-left: 2rem;
-	margin-right: 2rem;
+form {
+  	margin-left: 1rem;
 }
 
-form {
-  	margin-left: 2rem;
-	margin-right: 2rem;
+input {
+	border-radius: 6px;
+	border-color: black;
+	width: 40%;
+}
+
+input:active, input:focus {
+	border-radius: 6px;
+	border-color: black;
 }
 
 .buttons {
@@ -72,16 +75,14 @@ form {
 }
 
 button {
-	background-color: gray;
+	background-color: #B18CFF;
 	border-style: none;
 	border-radius: 12px;
 	box-shadow: 0 1px 3px rgba(0,0,0,0.16), 0 1px 3px rgba(0,0,0,0.23);
-}
-
-#card-button {
 	margin-right: 2rem;
 }
 
 button p {
+	color: white;
 	padding: 1rem 1rem 0rem;
 }
