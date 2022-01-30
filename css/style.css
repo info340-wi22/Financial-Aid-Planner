@@ -1,3 +1,7 @@
+body {
+	font-family: 'Libre Baskerville', serif;
+}
+
 nav {
 	position: fixed;
 	top: 0;
@@ -11,6 +15,8 @@ nav {
 nav .menu {
 	padding: 0;
 	margin: 0;
+	display: flex;
+	flex-direction: row;
 }
 
 nav li {
@@ -18,63 +24,6 @@ nav li {
 	margin: 0 2rem;
 	margin: 0 1rem;
 	font-size: 2rem;
-	font-family: 'Libre Baskerville', serif;
-}
-
-button {
-	margin-top: 2rem;
-}
-
-
-#card-button {
-	margin-right: 2rem;
-	background-color: gray;
-	border-radius: 10px;
-	box-shadow: 0 1px 3px rgba(0,0,0,0.16), 0 1px 3px rgba(0,0,0,0.23);
-}
-
-.info {
-  display: flex;
-  flex-wrap: wrap;
-  margin-top: 2rem;
-  margin-right: 2rem;
-  justify-content:ce-between;
-
-}
-.buttons {
-  display: flex;
-  margin-top: 2rem;
-    margin-right: 2rem;
-}
-
-.text {
-  display: flex;
-  margin-top: 5rem;
-  font-size: 1.25rem;
-}
-
-.text p{
-	margin-left: 2rem;
-	margin-right: 2rem;
-}
-
-form {
-  	margin-left: 2rem;
-	margin-right: 2rem;
-}
-
-#template-button{
-	background-color: gray;
-	border-radius: 10px;
-	box-shadow: 0 1px 3px rgba(0,0,0,0.16), 0 1px 3px rgba(0,0,0,0.23);
-}
-
-#template-button p {
-  padding: 1rem 1rem 0.5rem;
-}
-
-#card-button p {
-  padding: 1rem 1rem 0.5rem;
 }
 
 li a {
@@ -87,14 +36,61 @@ li a:hover, li a:focus, li a:active {
 	text-decoration-line: underline;
 }
 
-.menu {
-	display: flex;
-	flex-direction: row;
-}
-
-.profile {
+nav .profile {
 	background-color: white;
 	border-radius: 50%;
 	width: 3rem;
 	margin-left: auto;
+}
+
+.info {
+  	display: flex;
+  	flex-wrap: wrap;
+  	margin-top: 2rem;
+  	margin-right: 2rem;
+  	justify-content:ce-between;
+
+}
+
+.text {
+  	display: flex;
+  	margin-top: 5rem;
+  	font-size: 1.25rem;
+}
+
+.text p {
+	margin-left: 2rem;
+	margin-right: 2rem;
+}
+
+form {
+  	margin-left: 2rem;
+	margin-right: 2rem;
+}
+
+.buttons {
+	display: flex;
+	margin-top: 2rem;
+	margin-right: 2rem;
+}
+
+#card-button {
+	margin-right: 2rem;
+	background-color: gray;
+	border-radius: 10px;
+	box-shadow: 0 1px 3px rgba(0,0,0,0.16), 0 1px 3px rgba(0,0,0,0.23);
+}
+
+#card-button p {
+	padding: 1rem 1rem 0.5rem;
+}
+
+#template-button{
+	background-color: gray;
+	border-radius: 10px;
+	box-shadow: 0 1px 3px rgba(0,0,0,0.16), 0 1px 3px rgba(0,0,0,0.23);
+}
+
+#template-button p {
+  	padding: 1rem 1rem 0.5rem;
 }
