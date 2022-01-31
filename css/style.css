@@ -45,7 +45,6 @@ nav .profile {
 
 .info {
   	display: flex;
-  	flex-wrap: row;
   	margin-top: 5rem;
 }
 
