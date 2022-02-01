@@ -1,7 +1,9 @@
+/* Body CSS */
 body {
 	font-family: 'Libre Baskerville', serif;
 }
 
+/* Navbar CSS */
 nav {
 	position: fixed;
 	top: 0;
@@ -43,6 +45,7 @@ nav .profile {
 	margin-left: auto;
 }
 
+/* Informational bar CSS */
 .info {
   	display: flex;
   	margin-top: 5rem;
@@ -68,6 +71,7 @@ input:active, input:focus {
 	border-color: black;
 }
 
+/* Button CSS */
 .buttons {
 	display: flex;
 }
