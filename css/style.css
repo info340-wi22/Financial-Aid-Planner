@@ -94,7 +94,7 @@ button:first-child {
 }
 
 footer {
-	position: absolute;
+	position: static;
 	bottom: 0;
 }
 
