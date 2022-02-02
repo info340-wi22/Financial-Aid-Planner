@@ -126,6 +126,9 @@ div.filter-by label {
   
 }
 @media (max-width: 962px) {
+	.info {
+	justify-content:center;
+	}
 	.text {
       position: absolute;
       margin-top: -100px;
