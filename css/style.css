@@ -43,7 +43,6 @@ nav .profile {
 }
 
 nav img {
-	display: fixed;
 	background-color: white;
 	border-radius: 50%;
 	width: 3rem;
