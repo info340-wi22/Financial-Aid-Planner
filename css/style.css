@@ -101,7 +101,21 @@ footer {
 /* Explore page CSS */
 
 .filter-by {
+	display: flex;
+	flex-direction: column;
 	position: absolute;
-	margin-top: 4rem;
+	background-color: #B18CFF;
+	color: white;
+	top: 6rem;
+	left: 1rem;
+	border-radius: 12px;
+	height: fit-content;
 }
 
+div.filter-by p {
+	margin: 1rem 1rem;
+}
+
+div.filter-by label {
+	margin: 1rem 1rem;
+}
