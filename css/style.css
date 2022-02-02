@@ -48,7 +48,7 @@ nav img {
 	width: 3rem;
 	margin-left: auto;
 }
-
+/* Current Plan Page CSS */
 /* Informational bar CSS */
 .info {
   	display: flex;
@@ -92,3 +92,6 @@ button {
 button:first-child {
 	width: 10rem;
 }
+
+/* Explore page CSS */
+
