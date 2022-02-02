@@ -39,6 +39,11 @@ li a:hover, li a:focus, li a:active {
 }
 
 nav .profile {
+	margin-left: auto;
+}
+
+nav img {
+	display: fixed;
 	background-color: white;
 	border-radius: 50%;
 	width: 3rem;
