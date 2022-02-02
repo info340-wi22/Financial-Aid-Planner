@@ -3,46 +3,42 @@ body {
 	font-family: 'Libre Baskerville', serif;
 }
 
-/* Navbar CSS */
-nav {
-	position: fixed;
-	top: 0;
-	left:0;
+/* Header CSS */
+
+header {
+	display: flex;
+	position: static;
 	width: 100%;
 	color: white;
 	background-color: #B18CFF;
 	padding: 0.5rem 0.5rem 0.5rem;
+	margin-bottom: 2rem;
 }
 
-nav .menu {
-	padding: 0;
-	margin: 0;
-	display: flex;
-	flex-direction: row;
+header p {
+	margin-top: 1rem;
+	height: fit-content;
+	margin-left: auto;
 }
 
-nav li {
-	display: inline;
-	margin: 0 2rem;
+/* Navbar CSS */
+nav a {
 	margin: 0 1rem;
 	font-size: 2rem;
-}
-
-li a {
 	color: white;
 	text-decoration: none;
 }
 
-li a:hover, li a:focus, li a:active {
+nav a:hover, nav a:focus, nav a:active {
 	color: white;
 	text-decoration-line: underline;
 }
 
-nav .profile {
+header .profile {
 	margin-left: auto;
 }
 
-nav img {
+header img {
 	background-color: white;
 	border-radius: 50%;
 	width: 3rem;
@@ -51,8 +47,7 @@ nav img {
 /* Current Plan Page CSS */
 /* Informational bar CSS */
 .info {
-  	display: flex;
-  	margin-top: 5rem;
+    display: flex;
 }
 
 .text {
@@ -99,14 +94,16 @@ footer {
 }
 
 /* Explore page CSS */
+div.explore-page {
+	display: flex;
+}
 
-.filter-by {
+div.filter-by {
 	display: flex;
 	flex-direction: column;
 	position: absolute;
 	background-color: #B18CFF;
 	color: white;
-	top: 6rem;
 	left: 1rem;
 	border-radius: 12px;
 	height: fit-content;
@@ -118,4 +115,8 @@ div.filter-by p {
 
 div.filter-by label {
 	margin: 1rem 1rem;
+}
+
+div.plan-card {
+	display: flex;
 }
