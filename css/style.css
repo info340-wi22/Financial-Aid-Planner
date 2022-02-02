@@ -93,5 +93,15 @@ button:first-child {
 	width: 10rem;
 }
 
+footer {
+	position: absolute;
+	bottom: 0;
+}
+
 /* Explore page CSS */
+
+.filter-by {
+	position: absolute;
+	margin-top: 4rem;
+}
 
