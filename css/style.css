@@ -89,6 +89,6 @@ button {
 	margin-right: 1rem;
 }
 
-#card-button {
+button:first-child {
 	width: 10rem;
 }
