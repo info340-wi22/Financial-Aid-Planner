@@ -111,6 +111,7 @@ div.plan-card {
 .title p {
 	color: white;
 	font-size: 2rem;
+	margin: 0;
 }
 
 .status {
@@ -148,15 +149,23 @@ div.plan-card {
 	border-radius: 12px;
 	margin-right: 1rem;
 	padding:1rem;
+	width: 40%;
 }
 
 .checkbox-wrapper {
 	display: flex;
 	flex-direction: row;
+	margin-bottom: 1rem;
 }
 
-.to-do {
-	width: 40%;
+.checkbox-wrapper input {
+	width: 6%;
+	margin-top: 0.3rem;
+	margin-right: 0.5rem;
+}
+
+.checkbox-wrapper label {
+	color: white;
 }
 
 .amount {
