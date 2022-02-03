@@ -68,6 +68,8 @@ input:active, input:focus {
 
 .plan {
 	display: flex;
+	margin: 1rem 5rem;
+	flex-wrap: wrap;
 }
 
 /* card css */
@@ -80,6 +82,7 @@ input:active, input:focus {
 	background-color: #7f7eff;
 	border-radius: 12px;
 	padding: 1rem;
+	margin: 1rem;
 }
 
 .title {
@@ -93,41 +96,32 @@ input:active, input:focus {
 	font-size: 2rem;
 }
 
-.status-accepted {
+.status {
+	border-radius: 12px;
+	height: fit-content;
+}
+
+.accepted {
 	background-color: #1b8563;
-	border-radius: 12px;
-	height: fit-content;
 }
 
-.status-pending {
+.pending {
 	background-color: #AB9402;
-	border-radius: 12px;
-	height: fit-content;
-	margin:.5rem;
-	margin-left: 7rem;
 }
 
-.status-rejected {
+.rejected {
 	background-color: #CC5B49;
-	border-radius: 12px;
-	height: fit-content;
-	margin:.5rem;
-	margin-left: 7rem;
 }
 
-.status-planning {
+.planning {
 	background-color: #424242;
-	border-radius: 12px;
-	height: fit-content;
-	margin:.5rem;
-	margin-left: 7rem;
 }
 
-.status-accepted p, .status-pending p, .status-rejected p, .status-planning p {
+.status p {
 	font-size: 1rem;
-	margin: 1.5rem .5rem;
-	text-align: center;
+	margin: 1rem 1rem;
 	color: white;
+	height: fit-content;
 }
 
 .to-do {
@@ -135,6 +129,7 @@ input:active, input:focus {
 	flex-direction: column;
 	background-color: #00a2c7;
 	border-radius: 12px;
+	margin-right: 1rem;
 	padding:1rem;
 }
 
@@ -143,8 +138,8 @@ input:active, input:focus {
 	flex-direction: row;
 }
 
-.to-do label {
-	margin-right: 10rem;
+.to-do {
+	width: 40%;
 }
 
 .amount {
@@ -152,8 +147,13 @@ input:active, input:focus {
 	flex-direction: column;
 	border-radius: 12px;
 	background-color: #5770C9;
-	margin-bottom: 0.5rem;
-    margin-left: 0.25rem;
+	margin-left: 1rem;
+}
+
+.amount p {
+	text-align: center;
+	color: white;
+	margin: 1rem 1rem;
 }
 
 /* Button CSS */
