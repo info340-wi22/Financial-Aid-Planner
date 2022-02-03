@@ -252,6 +252,9 @@ div.filter-by label {
 	  transform: rotate(135deg);
 	  -webkit-transform: rotate(135deg);
 	}
+	.plan{
+		justify-content: center;
+	}
 }
 
 div.plan-card {
