@@ -7,16 +7,16 @@ body {
 
 header {
 	display: flex;
-	position: static;
 	width: 100%;
 	color: white;
 	background-color: #B18CFF;
-	padding: 0.5rem 0.5rem 0.5rem;
+	padding: 0.5rem 0.5rem;
 	margin-bottom: 2rem;
 }
 
 header p {
-	margin-top: 1rem;
+	margin: 0rem;
+	padding: 0.75rem 0.75rem;
 	height: fit-content;
 	margin-left: auto;
 }
@@ -32,11 +32,7 @@ nav a {
 nav a:hover, nav a:focus, nav a:active {
 	color: white;
 	text-decoration-line: underline;
-}
-
-header .profile {
-	margin-left: auto;
-}
+}	
 
 header img {
 	background-color: white;
@@ -74,6 +70,7 @@ input:active, input:focus {
 	display: flex;
 }
 
+/* card css */
 .card {
 	display: flex;
 	flex-wrap: wrap;
@@ -81,28 +78,29 @@ input:active, input:focus {
 	width:40rem;
 	height: 20rem;
 	background-color: #7f7eff;
+	border-radius: 12px;
+	padding: 1rem;
 }
 
 .title {
-	padding-bottom: 0;
+	margin-right: auto;
+	margin-bottom: .5rem;
+	height: fit-content;
 }
 
 .title p {
 	color: white;
 	font-size: 2rem;
-	margin-right: 8rem;
 }
 
 .status {
 	background-color: #1b8563;
 	border-radius: 12px;
 	height: fit-content;
-	margin:.5rem;
 }
 
 .status p {
 	font-size: 1rem;
-	width: 250px;
 	margin: 1.5rem .5rem;
 	text-align: center;
 	color: white;
@@ -147,7 +145,8 @@ button {
 }
 
 button:first-child {
-	width: 10rem;
+	padding-left: 2.5rem;
+	padding-right: 2.5rem;
 }
 
 footer {
@@ -156,26 +155,24 @@ footer {
 }
 
 /* Explore page CSS */
-div.explore-page {
+.explore-page {
 	display: flex;
 }
 
-div.filter-by {
+.filter-by {
 	display: flex;
 	flex-direction: column;
-	position: absolute;
 	background-color: #B18CFF;
 	color: white;
-	left: 1rem;
+	margin-left: 1rem;
 	border-radius: 12px;
-	height: fit-content;
 }
 
-div.filter-by p {
+.filter-by p {
 	margin: 1rem 1rem;
 }
 
-div.filter-by label {
+.filter-by label {
 	margin: 1rem 1rem;
 }
 #arrow-button-r,
