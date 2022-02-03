@@ -254,6 +254,7 @@ div.filter-by label {
 	}
 	.plan{
 		justify-content: center;
+		flex-flow: column wrap-reverse;
 	}
 }
 
