@@ -4,7 +4,6 @@ body {
 }
 
 /* Header CSS */
-
 header {
 	display: flex;
 	width: 100%;
@@ -14,25 +13,12 @@ header {
 	margin-bottom: 2rem;
 }
 
-header p {
-	margin: 0rem;
-	padding: 0.75rem 0.75rem;
-	height: fit-content;
-	margin-left: auto;
+header p{
+  position: absolute;
+  margin-top: -100px;
+  margin-left: -100px;
+  visibility:hidden;
 }
-
-/* Navbar CSS */
-nav a {
-	margin: 0 1rem;
-	font-size: 2rem;
-	color: white;
-	text-decoration: none;
-}
-
-nav a:hover, nav a:focus, nav a:active {
-	color: white;
-	text-decoration-line: underline;
-}	
 
 header img {
 	background-color: white;
@@ -40,16 +26,35 @@ header img {
 	width: 3rem;
 	margin-left: auto;
 }
+
+/* Navbar CSS */
+nav a{
+	margin: 0 1rem;
+	font-size:1.75rem;
+	color: white;
+	text-decoration: none;
+}
+
+
+nav a:hover, nav a:focus, nav a:active {
+	color: white;
+	text-decoration-line: underline;
+}	
+
 /* Current Plan Page CSS */
 /* Informational bar CSS */
 .info {
     display: flex;
+	justify-content:center;
 }
 
 .text {
-  	display: flex;
-  	font-size: 1.25rem;
+  position: absolute;
+  margin-top: -100px;
+  margin-left: -100px;
+  visibility:hidden;
 }
+
 
 form {
   	margin-left: 1rem;
@@ -66,11 +71,17 @@ input:active, input:focus {
 	border-color: black;
 }
 
-.plan {
+.plan{
 	display: flex;
 	margin: 1rem 5rem;
 	flex-wrap: wrap;
+	flex-flow: column wrap-reverse;
+	align-content: center;
 }
+div.plan-card {
+	display: flex;
+}
+
 
 /* card css */
 .card {
@@ -84,7 +95,13 @@ input:active, input:focus {
 	padding: 1rem;
 	margin: 1rem;
 }
-
+#card3,
+#card4 {
+	position: absolute;
+	margin-top: -100px;
+	margin-left: -100px;
+	visibility:hidden;
+}
 .title {
 	margin-right: auto;
 	margin-bottom: .5rem;
@@ -162,17 +179,50 @@ input:active, input:focus {
 }
 
 button {
-	background-color: #B18CFF;
+	background-color: #C4C4C4;
 	border-style: none;
-	color: white;
-	border-radius: 12px;
+	color: black;
+	border-radius: 24px;
+	font-size: 24px;
 	box-shadow: 0 1px 3px rgba(0,0,0,0.16), 0 1px 3px rgba(0,0,0,0.23);
-	margin-right: 1rem;
+	margin: 12px 12px;
 }
 
 button:first-child {
 	padding-left: 2.5rem;
 	padding-right: 2.5rem;
+}
+
+#template-button{
+	position: absolute;
+	margin-top: -100px;
+	margin-left: -100px;
+	visibility:hidden;
+}
+
+#arrow-button-r,
+#arrow-button-l{
+  background-color: Transparent;
+  box-shadow:none;
+}
+
+.arrow {
+  border: solid black;
+  border-width: 0 15px 15px 0;
+  display: inline-block;
+  padding:10px;
+  visibility:visible;
+}
+
+.right {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+
+}
+
+.left {
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
 }
 
 footer {
@@ -201,86 +251,68 @@ footer {
 .filter-by label {
 	margin: 1rem 1rem;
 }
-#arrow-button-r,
-#arrow-button-l{
-  background-color: Transparent;
-  box-shadow:none;
-  position: absolute;
-  margin-top: -100px;
-  margin-left: -100px;
-  visibility:hidden;
-}
-@media (max-width: 962px) {
-	nav a{
-		font-size:1.75rem;
-	}
-	
-	header p{
-	  position: absolute;
-      margin-top: -100px;
-      margin-left: -100px;
-	  visibility:hidden;
-	}
-	.info {
-	justify-content:center;
-	}
-	.text {
-      position: absolute;
-      margin-top: -100px;
-      margin-left: -100px;
-	  visibility:hidden;
-    }
 
+/* Desktop Layout */
+@media (min-width: 962px){
+	header p {
+		position:relative;
+		margin-top:0;
+		margin: 0rem;
+		padding: 0.75rem 0.75rem;
+		height: fit-content;
+		margin-left: auto;
+		visibility:visible;
+	}
+	
+	nav a {
+		font-size: 2rem;
+	}
+
+	.text {
+		position:relative;
+		margin-top:0;
+		margin-left:0;
+		display: flex;
+		font-size: 1.25rem;
+		visibility:visible;
+	}
+	
 	button {
-		background-color: #C4C4C4;
-		color: black;
-		border-radius: 24px;
-		font-size: 24px;
-		box-shadow: 0 1px 3px rgba(0,0,0,0.16), 0 1px 3px rgba(0,0,0,0.23);
-		margin: 12px 12px;
+		background-color: #B18CFF;
+		color: white;
+		border-radius: 12px;
+		margin-right: 1rem;
 	}
-	
 	#template-button{
-	  position: absolute;
-      margin-top: -100px;
-      margin-left: -100px;
-	  visibility:hidden;
+		position: relative;
+		margin-top: 1rem;
+		margin-left: 1rem;
+		visibility:visible;
 	}
-	
 	#arrow-button-r,
 	#arrow-button-l{
-	  position:relative;
-	  margin-top:0;
-	  margin-left:0;
-	  background-color: Transparent;
-	  box-shadow:none;
-	  visibility:visible;
+	  position: absolute;
+	  margin-top: -100px;
+	  margin-left: -100px;
+	  visibility:hidden;
 	}
-	
-	.arrow {
-	  border: solid black;
-	  border-width: 0 15px 15px 0;
-	  display: inline-block;
-	  padding:10px;
-	  visibility:visible;
+	.arrow{
+		visibility:hidden;
 	}
-
-	.right {
-	  transform: rotate(-45deg);
-	  -webkit-transform: rotate(-45deg);
-
-	}
-
-	.left {
-	  transform: rotate(135deg);
-	  -webkit-transform: rotate(135deg);
-	}
-	.plan{
+	.plan {
+		flex-flow: row wrap;
 		justify-content: center;
-		flex-flow: column wrap-reverse;
+	}
+	#card3,
+	#card4 {
+		position: relative;
+		margin-top: 1rem;
+		margin-left: 1rem;
+		visibility:visible;
 	}
 }
+/*
+@media (max-width: 962px) {
+	
+}*/
 
-div.plan-card {
-	display: flex;
-}
