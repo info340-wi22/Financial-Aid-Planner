@@ -253,6 +253,7 @@ footer {
 	color: white;
 	margin-left: 1rem;
 	border-radius: 12px;
+	height: fit-content;
 }
 
 .filter-by p {
@@ -261,6 +262,28 @@ footer {
 
 .filter-by label {
 	margin: 1rem 1rem;
+}
+
+.plan-card {
+	display: flex;
+	flex-direction: column;
+}
+
+.explore-plan {
+	display: flex;
+	flex-direction: row;
+	padding: 0.5rem;
+	margin: 1rem;
+	border-radius: 12px;
+	box-shadow: 0 1px 3px rgba(0,0,0,0.16), 0 1px 3px rgba(0,0,0,0.23);
+}
+
+.explore-page p {
+	margin: 1rem;
+}
+
+.explore-page button {
+	padding: 0.5;
 }
 
 /* Desktop Layout */
