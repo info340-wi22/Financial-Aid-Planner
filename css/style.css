@@ -116,16 +116,26 @@ div.filter-by p {
 div.filter-by label {
 	margin: 1rem 1rem;
 }
-#arrow-button{
+#arrow-button-r,
+#arrow-button-l{
   background-color: Transparent;
   box-shadow:none;
   position: absolute;
   margin-top: -100px;
   margin-left: -100px;
   visibility:hidden;
-  
 }
 @media (max-width: 962px) {
+	nav a{
+		font-size:1.75rem;
+	}
+	
+	header p{
+	  position: absolute;
+      margin-top: -100px;
+      margin-left: -100px;
+	  visibility:hidden;
+	}
 	.info {
 	justify-content:center;
 	}
@@ -152,7 +162,8 @@ div.filter-by label {
 	  visibility:hidden;
 	}
 	
-	#arrow-button{
+	#arrow-button-r,
+	#arrow-button-l{
 	  position:relative;
 	  margin-top:0;
 	  margin-left:0;
