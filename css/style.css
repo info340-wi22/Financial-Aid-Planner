@@ -178,6 +178,81 @@ div.filter-by p {
 div.filter-by label {
 	margin: 1rem 1rem;
 }
+#arrow-button-r,
+#arrow-button-l{
+  background-color: Transparent;
+  box-shadow:none;
+  position: absolute;
+  margin-top: -100px;
+  margin-left: -100px;
+  visibility:hidden;
+}
+@media (max-width: 962px) {
+	nav a{
+		font-size:1.75rem;
+	}
+	
+	header p{
+	  position: absolute;
+      margin-top: -100px;
+      margin-left: -100px;
+	  visibility:hidden;
+	}
+	.info {
+	justify-content:center;
+	}
+	.text {
+      position: absolute;
+      margin-top: -100px;
+      margin-left: -100px;
+	  visibility:hidden;
+    }
+
+	button {
+		background-color: #C4C4C4;
+		color: black;
+		border-radius: 24px;
+		font-size: 24px;
+		box-shadow: 0 1px 3px rgba(0,0,0,0.16), 0 1px 3px rgba(0,0,0,0.23);
+		margin: 12px 12px;
+	}
+	
+	#template-button{
+	  position: absolute;
+      margin-top: -100px;
+      margin-left: -100px;
+	  visibility:hidden;
+	}
+	
+	#arrow-button-r,
+	#arrow-button-l{
+	  position:relative;
+	  margin-top:0;
+	  margin-left:0;
+	  background-color: Transparent;
+	  box-shadow:none;
+	  visibility:visible;
+	}
+	
+	.arrow {
+	  border: solid black;
+	  border-width: 0 15px 15px 0;
+	  display: inline-block;
+	  padding:10px;
+	  visibility:visible;
+	}
+
+	.right {
+	  transform: rotate(-45deg);
+	  -webkit-transform: rotate(-45deg);
+
+	}
+
+	.left {
+	  transform: rotate(135deg);
+	  -webkit-transform: rotate(135deg);
+	}
+}
 
 div.plan-card {
 	display: flex;
