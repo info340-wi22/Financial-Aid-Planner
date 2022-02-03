@@ -93,13 +93,37 @@ input:active, input:focus {
 	font-size: 2rem;
 }
 
-.status {
+.status-accepted {
 	background-color: #1b8563;
 	border-radius: 12px;
 	height: fit-content;
 }
 
-.status p {
+.status-pending {
+	background-color: #AB9402;
+	border-radius: 12px;
+	height: fit-content;
+	margin:.5rem;
+	margin-left: 7rem;
+}
+
+.status-rejected {
+	background-color: #CC5B49;
+	border-radius: 12px;
+	height: fit-content;
+	margin:.5rem;
+	margin-left: 7rem;
+}
+
+.status-planning {
+	background-color: #424242;
+	border-radius: 12px;
+	height: fit-content;
+	margin:.5rem;
+	margin-left: 7rem;
+}
+
+.status-accepted p, .status-pending p, .status-rejected p, .status-planning p {
 	font-size: 1rem;
 	margin: 1.5rem .5rem;
 	text-align: center;
@@ -128,6 +152,8 @@ input:active, input:focus {
 	flex-direction: column;
 	border-radius: 12px;
 	background-color: #5770C9;
+	margin-bottom: 0.5rem;
+    margin-left: 0.25rem;
 }
 
 /* Button CSS */

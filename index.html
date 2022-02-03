@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="author" content="Zachary, William, Ian, Brian">
   <meta name="description" content="View your finacial aid plan here and plan your next steps">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>Finances</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&family=Rubik+Beastly&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&family=Rubik+Beastly&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <link rel="icon" type="image/x-icon" href="/images/favicon-plan.png">
 </head>
@@ -48,25 +51,139 @@
       <button type="button" id="arrow-button-r">Page 3<span class="arrow right"></span> </button>
     </div>
 
-    <div class="plan">
-      <div class="card">
-        <div class="title">
-          <p>Schloarship 1</p>
-          <a href>Link to Schloarship</a>
-        </div>
-        <div class="status">
-          <p>Current Status: Accepted</p>
-        </div>
-        <div class="to-do">
-          <div class="checkbox-wrapper">
-            <input type="checkbox" id="checkbox1" name="checkbox1">
-            <label for="checkbox1">Have a 4.0</label>
+    <div class="container">
+      <div class="row">
+<!-- Card 1 -->
+        <div class="card">
+          <div class="col">
+            <div class="d-flex justify-content-center title">
+              <div>
+                <p>Scholarship 1</p>
+                <a href>Link to Scholarship</a>
+              </div>
+              <div class="status-accepted">
+                <p>Current Status: Accepted</p>
+              </div>
+            </div>
+          </div>
+          <div class=" col to-do">
+            <div class="checkbox-wrapper">
+              <input type="checkbox" id="checkbox1" name="checkbox1">
+              <label for="checkbox1">Have a 4.0</label>
+            </div>
+            <div class="checkbox-wrapper">
+              <input type="checkbox" id="checkbox1" name="checkbox1">
+              <label for="checkbox1">Be in a major</label>
+            </div>
+            <div class="checkbox-wrapper">
+              <input type="checkbox" id="checkbox3" name="checkbox3">
+              <label for="checkbox3">Write Essay</label>
+            </div>
+          </div>
+          <div class=" col amount">
+            <p>Frequency Per Year: 3</p>
+            <p>Amount Paid Per Frequency: 3000</p>
+            <p>Total Amount Per Year: 9000</p>
           </div>
         </div>
-        <div class="amount">
-          <p>Frequency Per Year: 3</p>
-          <p>Amount Paid Per Frequency: 3000</p>
-          <p>Total Amount Per Year</p>
+        <!-- Card 2 -->
+        <div class="card">
+          <div class="col">
+            <div class="d-flex justify-content-center title">
+              <div>
+                <p>Scholarship 2</p>
+                <a href>Link to Scholarship</a>
+              </div>
+              <div class="status-pending">
+                <p>Current Status: Pending</p>
+              </div>
+            </div>
+          </div>
+          <div class=" col to-do">
+            <div class="checkbox-wrapper">
+              <input type="checkbox" id="checkbox1" name="checkbox1">
+              <label for="checkbox1">Have a 4.0</label>
+            </div>
+            <div class="checkbox-wrapper">
+              <input type="checkbox" id="checkbox1" name="checkbox1">
+              <label for="checkbox1">Be in a major</label>
+            </div>
+            <div class="checkbox-wrapper">
+              <input type="checkbox" id="checkbox3" name="checkbox3">
+              <label for="checkbox3">Write Essay</label>
+            </div>
+          </div>
+          <div class=" col amount">
+            <p>Frequency Per Year: 2</p>
+            <p>Amount Paid Per Frequency: 4000</p>
+            <p>Total Amount Per Year: 8000</p>
+          </div>
+        </div>
+        <!-- Card 3 -->
+        <div class="card">
+          <div class="col">
+            <div class="d-flex justify-content-center title">
+              <div>
+                <p>Financial Aid Plan 1</p>
+                <a href>Link to Scholarship</a>
+              </div>
+              <div class="status-rejected">
+                <p>Current Status: Rejected</p>
+              </div>
+            </div>
+          </div>
+          <div class=" col to-do">
+            <div class="checkbox-wrapper">
+              <input type="checkbox" id="checkbox1" name="checkbox1">
+              <label for="checkbox1">Have a 4.0</label>
+            </div>
+            <div class="checkbox-wrapper">
+              <input type="checkbox" id="checkbox1" name="checkbox1">
+              <label for="checkbox1">Be in a major</label>
+            </div>
+            <div class="checkbox-wrapper">
+              <input type="checkbox" id="checkbox3" name="checkbox3">
+              <label for="checkbox3">Write Essay</label>
+            </div>
+          </div>
+          <div class=" col amount">
+            <p>Frequency Per Year: 3</p>
+            <p>Amount Paid Per Frequency: 4000</p>
+            <p>Total Amount Per Year: 4000</p>
+          </div>
+        </div>
+        <!-- Card 4 -->
+        <div class="card">
+          <div class="col">
+            <div class="d-flex justify-content-center title">
+              <div>
+                <p>Scholarship 3</p>
+                <a href>Link to Scholarship</a>
+              </div>
+              <div class="status-planning">
+                <p>Current Status: Planning</p>
+              </div>
+            </div>
+          </div>
+          <div class=" col to-do">
+            <div class="checkbox-wrapper">
+              <input type="checkbox" id="checkbox1" name="checkbox1">
+              <label for="checkbox1">Have a 4.0</label>
+            </div>
+            <div class="checkbox-wrapper">
+              <input type="checkbox" id="checkbox1" name="checkbox1">
+              <label for="checkbox1">Be in a major</label>
+            </div>
+            <div class="checkbox-wrapper">
+              <input type="checkbox" id="checkbox3" name="checkbox3">
+              <label for="checkbox3">Write Essay</label>
+            </div>
+          </div>
+          <div class=" col amount">
+            <p>Frequency Per Year: 3</p>
+            <p>Amount Paid Per Frequency: 2000</p>
+            <p>Total Amount Per Year: 6000</p>
+          </div>
         </div>
       </div>
     </div>
