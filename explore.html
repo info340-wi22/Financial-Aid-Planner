@@ -25,11 +25,13 @@
   <main>
     <div class="explore-page">
       <div class="filter-by">
-        <p>Filter By</p>
-        <form class="college-wrapper">
-          <label for="college">College:</label>
+        <p id="filter-text">Filter By</p>
+		<button type="button" id="filter-button"></span>Filter By</button>
+        <form class="college-wrapper" id="filter-form">
+          <label for="college" id="college-text">College:</label>
           <input type="text" id="college" name="college">
         </form>
+		<p id="search-icon">a<i class="bi bi-search"></i>a</p>
         <form class="aid-range-wrapper">
           <label for="aid-range">Aid Range:</label>
           <input type="range" min="1" max="100" value="50" class="aid-range" id="aid-range">
@@ -39,35 +41,35 @@
       <div class="plan-card">
         <div class="explore-plan">
           <p>TOTAL COST OF COLLEGE PER YEAR:50000</p>
-          <p>AMOUNT WANT OT COVER:10000</p>
+          <p>AMOUNT WANT TO COVER:10000</p>
           <p>POTENTIAL AID:23000</p>
           <p>College:Something</p>
-          <button type="button" id="view-button-card1">View</button>
-          <button type="button" id="copy-button-card1">Copy</button>
+          <button type="button" id="view-button-card1" class="card-button">View</button>
+          <button type="button" id="copy-button-card1" class="card-button">Copy</button>
         </div>
         <div class="explore-plan">
           <p>TOTAL COST OF COLLEGE PER YEAR:50000</p>
-          <p>AMOUNT WANT OT COVER:10000</p>
+          <p>AMOUNT WANT TO COVER:10000</p>
           <p>POTENTIAL AID:23000</p>
           <p>College:Something</p>
-          <button type="button" id="view-button-card2">View</button>
-          <button type="button" id="copy-button-card2">Copy</button>
+          <button type="button" id="view-button-card2" class="card-button">View</button>
+          <button type="button" id="copy-button-card2" class="card-button">Copy</button>
         </div>
         <div class="explore-plan">
           <p>TOTAL COST OF COLLEGE PER YEAR:50000</p>
-          <p>AMOUNT WANT OT COVER:10000</p>
+          <p>AMOUNT WANT TO COVER:10000</p>
           <p>POTENTIAL AID:23000</p>
           <p>College:Something</p>
-          <button type="button" id="view-button-card3">View</button>
-          <button type="button" id="copy-button-card3">Copy</button>
+          <button type="button" id="view-button-card3" class="card-button">View</button>
+          <button type="button" id="copy-button-card3" class="card-button">Copy</button>
         </div>
         <div class="explore-plan">
           <p>TOTAL COST OF COLLEGE PER YEAR:50000</p>
-          <p>AMOUNT WANT OT COVER:10000</p>
+          <p>AMOUNT WANT TO COVER:10000</p>
           <p>POTENTIAL AID:23000</p>
           <p>College:Something</p>
-          <button type="button" id="view-button-card4">View</button>
-          <button type="button" id="copy-button-card4">Copy</button>
+          <button type="button" id="view-button-card4" class="card-button">View</button>
+          <button type="button" id="copy-button-card4" class="card-button">Copy</button>
         </div>
       </div>
     </div>

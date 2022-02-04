@@ -199,6 +199,7 @@ button {
 	margin: 12px 12px;
 }
 
+
 button:first-child {
 	padding-left: 2.5rem;
 	padding-right: 2.5rem;
@@ -240,22 +241,29 @@ footer {
 	position: static;
 	bottom: 0;
 }
-
+#search-icon{
+	
+}
 /* Explore page CSS */
 .explore-page {
 	display: flex;
+	flex-flow: column wrap-reverse;
 }
-
+#filter-text {
+	position: absolute;
+	margin-top: -100px;
+	margin-left: -100px;
+	visibility:hidden;
+}
 .filter-by {
 	display: flex;
-	flex-direction: column;
-	background-color: #B18CFF;
-	color: white;
+	flex-direction: row;
+	background-color: none;
+	color: black;
 	margin-left: 1rem;
 	border-radius: 12px;
 	height: fit-content;
 }
-
 .filter-by p {
 	margin: 1rem 1rem;
 }
@@ -268,22 +276,51 @@ footer {
 	display: flex;
 	flex-direction: column;
 }
-
+#filter-button{
+	font-size: 24px;
+	
+}
+.aid-range-wrapper {
+	position: absolute;
+	margin-top: -100px;
+	margin-left: -100px;
+	visibility:hidden;
+}
 .explore-plan {
 	display: flex;
-	flex-direction: row;
 	padding: 0.5rem;
-	margin: 1rem;
+	flex-flow: row wrap;
 	border-radius: 12px;
+	font-size: 12px;
 	box-shadow: 0 1px 3px rgba(0,0,0,0.16), 0 1px 3px rgba(0,0,0,0.23);
+	align-items: center;
+	justify-content: center;
 }
-
+.card-button{
+	background-color: #B18CFF;
+	color: white;
+	font-size:24px;
+	margin-top:1rem;
+	margin-left:2rem;
+}
+#college-text {
+	position: absolute;
+	margin-top: -100px;
+	margin-left: -100px;
+	visibility:hidden;
+}
 .explore-page p {
 	margin: 1rem;
 }
 
 .explore-page button {
 	padding: 0.5rem;
+}
+#college {
+	margin-top:1rem;
+	height:50px;
+	width: 400px;
+    font-size:14pt;
 }
 
 /* Desktop Layout */
@@ -343,6 +380,57 @@ footer {
 		margin-top: 1rem;
 		margin-left: 1rem;
 		visibility:visible;
+	}
+	
+	.explore-plan {
+		flex-direction: row;
+	}
+	.explore-page {
+		flex-flow: row;
+	}
+	#college-text {
+		position: relative;
+		margin-top: 1rem;
+		margin-left: 1rem;
+		visibility:visible;
+	}
+	#filter-text {
+		position: relative;
+		margin-top: 1rem;
+		margin-left: 1rem;
+		visibility:visible;
+	}
+	#filter-button{
+		visibility:hidden;
+		position: absolute;
+		margin-top: -100px;
+		margin-left: -100px;
+		visibility:hidden;
+	}
+	.filter-by {
+		background-color: #B18CFF;
+		color: white;
+		flex-direction: column;
+		margin:0.5rem;
+	}
+	.aid-range-wrapper{
+		position: relative;
+		margin-top: 0rem;
+		margin-left: 1rem;
+		visibility:visible;
+	}
+	#college {
+		margin-top:0rem;
+		height:30px;
+		width: 100px;
+		font-size:14pt;
+	}
+	#search-icon{
+		visibility:hidden;
+		position: absolute;
+		margin-top: -100px;
+		margin-left: -100px;
+		visibility:hidden;
 	}
 }
 /*
