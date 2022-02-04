@@ -255,7 +255,6 @@ footer {
 .filter-by {
 	display: flex;
 	flex-direction: row;
-	background-color: none;
 	color: black;
 	margin-left: 1rem;
 	border-radius: 12px;
