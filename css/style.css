@@ -336,9 +336,11 @@ footer {
 }
 
 .navimage {
+	
     object-fit: cover;
     border-radius: 0%;
     width: 3rem;
+	scroll-margin-right: 2rem;
 }
 
 
