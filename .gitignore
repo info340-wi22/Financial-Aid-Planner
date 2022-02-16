@@ -9,7 +9,7 @@ Thumbs.db
 .vscode
 
 # ignore firebase cache
-firebase/
+.firebase
 
 # ignore react build
 build
