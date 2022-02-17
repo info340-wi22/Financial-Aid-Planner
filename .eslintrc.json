@@ -1,4 +1,9 @@
 {
+    "settings": {
+        "react": {
+            "version":"detect"
+        }
+    },
     "env": {
         "browser": true,
         "es2021": true
@@ -18,6 +23,7 @@
         "react"
     ],
     "rules": {
-        "no-unused-vars":"warn"
+        "no-unused-vars":"warn",
+        "eol-last":"off"
     }
 }

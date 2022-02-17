@@ -16,11 +16,9 @@ const firebaseConfig = {
   projectId: "financial-aid-planner",
   storageBucket: "financial-aid-planner.appspot.com",
   messagingSenderId: "707383309221",
-  appId: "1:707383309221:web:194d886b3c8922750eee4c",
-  measurementId: "G-1V3Y6CQ99Z"
+  appId: "1:707383309221:web:194d886b3c8922750eee4c"
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
 ReactDOM.render(<App />,document.getElementById('root'));
