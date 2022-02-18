@@ -24,6 +24,8 @@
     ],
     "rules": {
         "no-unused-vars":"warn",
-        "eol-last":"off"
+        "eol-last":"off",
+        "require-jsdoc": "warn",
+        "linebreak-style":"off"
     }
 }
