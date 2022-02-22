@@ -32,13 +32,13 @@ function Status(props) {
 }
 
 function ToDo(props) {
-  const {item} = props;
-  const toDo = item.map((card, index) => {
-    return <div key={'checkbox' + index}><CheckBox text={card}/></div>;
+  const {toDo} = props;
+  const item = toDo.map((card, index) => {
+    return <div key={'checkbox'+index}><CheckBox text={card}/></div>;
   });
   return (
     <div className='to-do'>
-      {toDo}
+      {item}
     </div>
   );
 }
