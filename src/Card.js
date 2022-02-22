@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function Card(props) {
   return (
-<div className='card'>
+    <div className='card'>
       <Title title={props.name}/>
       <Status status={props.status}/>
       <ToDo toDo={props.toDo}/>
@@ -29,13 +29,12 @@ function Status(props) {
 }
 
 function ToDo(props) {
-  const toDo = props.toDo.map((card,index) => {
-	  return <div key={"checkbox"+index}><CheckBox text={card}/></div>
-
-  })
+  const toDo = props.toDo.map((card, index) => {
+    return <div key={'checkbox'+index}><CheckBox text={card}/></div>;
+  });
   return (
     <div className='to-do'>
-	  {toDo}
+      {toDo}
     </div>
   );
 }
