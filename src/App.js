@@ -27,6 +27,8 @@ function App() {
         <div className='plan'>
           <CardList cardList={cardList}/>
         </div>
+	  </main>
+	</div>
   );
 }
 
