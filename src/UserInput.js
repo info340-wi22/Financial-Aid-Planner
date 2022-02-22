@@ -14,7 +14,6 @@ function UserInput(props) {
     props.onSubmit(amount, cover, 'currentAid', 'potentialAid', 'amountLeft');
   };
   const leftOver = amount - cover;
-
   return (	
 		<div className="info">
 			<button type="button" id="arrow-button-l" className="arrow-button"><span className="arrow left"></span>Page 1</button>

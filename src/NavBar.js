@@ -10,9 +10,10 @@ export default function NavBar() {
           <a href="explore.html" target="_blank">Explore</a>
 
         </nav>
-        <img className="navimage" src="\imgs\learn.png" alt="LearnNotSpend logo"/>
+        <img className="navimage" src="\imgs\learn.png"
+          alt="LearnNotSpend logo" />
         <p>Learn, Not Spend</p>
-		<img className="profile" src=".\imgs\profile-icon.webp" alt="Profile"/>
+        <img className="profile" src=".\imgs\profile-icon.webp" alt="Profile" />
       </header>
     </div>);
 }
