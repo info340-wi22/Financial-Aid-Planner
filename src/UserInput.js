@@ -1,19 +1,25 @@
-import React, {useState} from "react";
+/* eslint-disable react/prop-types */
+import React, {useState} from 'react';
 
- function UserInput(props) {
-	const [amount, setAmount] = useState("");
-	const handleInputAmount = (event) => {
-		setAmount(event.target.value);
-	}
-	const [cover, setCover] = useState("");
-	const handleInputCover = (event) => {
-		setCover(event.target.value);
-	}
-	 const handleSubmit = (event) => {
-		 props.onSubmit(amount, cover, "currentAid", "potentialAid", "amountLeft");
+function UserInput(props) {
+  const [amount, setAmount] = useState('');
+  const handleInputAmount = (event) => {
+    setAmount(event.target.value);
+  };
+  const [cover, setCover] = useState('');
+  const handleInputCover = (event) => {
+    setCover(event.target.value);
+  };
+  const handleSubmit = (event) => {
+    props.onSubmit(amount, cover, 'currentAid', 'potentialAid', 'amountLeft');
+  };
+  const leftOver = amount - cover;
 
-	 }
-
+  return (
+    <div className="info">
+      <button type="button" id="arrow-button-l"
+        className="arrow-button">
+        <span className="arrow left"></span>Page 1</button>
 	 const leftOver = amount - cover;
 	
 	 return(
