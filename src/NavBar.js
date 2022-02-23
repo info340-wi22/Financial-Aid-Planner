@@ -8,7 +8,7 @@ export default function NavBar() {
         <nav className="menu">
           <NavLink to="/main">Current Plan</NavLink>
           <a href="">Plans</a>
-          <a href="explore.html" target="_blank">Explore</a>
+          <NavLink to="/explore">Explore</NavLink>
 
         </nav>
         <img className="navimage" src="\imgs\learn.png"
