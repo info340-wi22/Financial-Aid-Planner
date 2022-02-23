@@ -4,7 +4,7 @@ import './index.css';
 import App from './App';
 // Import the functions you need from the SDKs you need
 import {initializeApp} from 'firebase/app';
-import {getAnalytics} from 'firebase/analytics';
+import {BrowserRouter} from 'react-router-dom';
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -17,11 +17,7 @@ const firebaseConfig = {
   storageBucket: 'financial-aid-planner.appspot.com',
   messagingSenderId: '707383309221',
   appId: '1:707383309221:web:194d886b3c8922750eee4c',
-  measurementId: 'G-1V3Y6CQ99Z',
 };
-
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
-ReactDOM.render(<App />, document.getElementById('root'));
-
+initializeApp(firebaseConfig);
+ReactDOM.render(<BrowserRouter><App /></BrowserRouter>, document.getElementById('root'));

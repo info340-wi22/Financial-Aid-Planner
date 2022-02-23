@@ -1,10 +1,24 @@
-import NavBar from './NavBar';
 import React from 'react';
+import {Route, Routes, Navigate} from 'react-router-dom';
 
-export default function App() {
+import NavBar from './NavBar';
+import {Main} from './Main';
+import Explore from './Explore';
+
+
+function App() {
   return (
-    <div>
+    <div className='container'>
       <NavBar />
+      <main>
+        <Routes>
+          <Route path='*' element={<Navigate to='/main'/>}/>
+          <Route path='main' element={<Main/>}/>
+          <Route path='explore' element={<Explore/>}/>
+        </Routes>
+      </main>
     </div>
   );
 }
+
+export default App;
