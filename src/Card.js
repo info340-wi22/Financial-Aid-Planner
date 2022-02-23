@@ -1,58 +1,66 @@
 import React from 'react';
 
-export default function Card() {
+export default function Card(props) {
+  const {name, status, toDo, amount} = props;
   return (
     <div className='card'>
-      <Title/>
-      <Status/>
-      <ToDo/>
-      <Amount/>
+      <Title title={name}/>
+      <Status status={status}/>
+      <ToDo toDo={toDo}/>
+      <Amount amount={amount}/>
     </div>
   );
 }
 
-function Title() {
+function Title(props) {
+  const {title} = props;
   return (
     <div className='title'>
-      <p>Scholarship</p>
+      <p>{title}</p>
       <a href=''>Link to Scholarship</a>
     </div>
   );
 }
 
-function Status() {
+function Status(props) {
+  const {status} = props;
   return (
     <div className='status accepted'>
-      <p>Current Status: Acctped</p>
+      <p>Current Status: {status}</p>
     </div>
   );
 }
 
-function ToDo() {
+function ToDo(props) {
+  const {toDo} = props;
+  const item = toDo.map((card, index) => {
+    return <div key={'checkbox'+index}><CheckBox text={card}/></div>;
+  });
   return (
     <div className='to-do'>
-      <CheckBox/>
-      <CheckBox/>
-      <CheckBox/>
+      {item}
     </div>
   );
 }
 
-function CheckBox() {
+function CheckBox(props) {
+  const {text} = props;
   return (
     <div className='checkbox-wrapper'>
       <input type="checkbox" name='cardbox'></input>
-      <label htmlFor='cardboox'>Get A letter of rec</label>
+      <label htmlFor='cardboox'>{text}</label>
     </div>
   );
 }
 
-function Amount() {
+function Amount(props) {
+  const {amount} = props;
+  const yearly = amount.freq * amount.per;
   return (
     <div className='amount'>
-      <p>Frequency Per Year: 3</p>
-      <p>Amount Paid Per Frequency: 3000</p>
-      <p>Total Amount Per Year</p>
+      <p>Frequency Per Year: {amount.freq}</p>
+      <p>Amount Paid Per Frequency: {amount.per}</p>
+      <p>Total Amount Per Year: {yearly}</p>
     </div>
   );
 }

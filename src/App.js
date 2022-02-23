@@ -1,28 +1,21 @@
-import NavBar from './NavBar';
 import React from 'react';
-import {CardList} from './CardList';
-import UserInput from './UserInput';
+import {Route, Routes, Navigate} from 'react-router-dom';
+
+import NavBar from './NavBar';
+import {Main} from './Main';
+import Explore from './Explore';
+
 
 function App() {
-  const addPost = (costPerYear, amountCover, currentAid,
-      potentialAid, amountLeft) => {
-    const newPost = {
-      yearlyCost: costPerYear,
-      userCover: amountCover,
-      userAid: currentAid,
-      userPotential: potentialAid,
-      userAmountNeed: amountLeft,
-    };
-    console.log(newPost);
-  };
   return (
     <div className='container'>
       <NavBar />
       <main>
-        <UserInput onSumbit={addPost} />
-        <div className='plan'>
-          <CardList />
-        </div>
+        <Routes>
+          <Route path='*' element={<Navigate to='/main'/>}/>
+          <Route path='main' element={<Main/>}/>
+          <Route path='explore' element={<Explore/>}/>
+        </Routes>
       </main>
     </div>
   );
