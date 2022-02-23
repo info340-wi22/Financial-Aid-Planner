@@ -1,13 +1,14 @@
 import React from 'react';
+import {NavLink} from 'react-router-dom';
 
 export default function NavBar() {
   return (
     <div className="nav">
       <header>
         <nav className="menu">
-          <a href="index.html">Current Plan</a>
+          <NavLink to="/main">Current Plan</NavLink>
           <a href="">Plans</a>
-          <a href="explore.html" target="_blank">Explore</a>
+          <NavLink to="/explore">Explore</NavLink>
 
         </nav>
         <img className="navimage" src="\imgs\learn.png"
