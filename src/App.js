@@ -17,7 +17,7 @@ function App() {
           <Route path='explore' element={<Explore/>}/>
         </Routes>
       </main>
-    </div>
+	</div>
   );
 }
 
