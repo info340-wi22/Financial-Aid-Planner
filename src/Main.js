@@ -2,9 +2,18 @@ import React, {useState} from 'react';
 
 import UserInput from './UserInput';
 import {CardList} from './CardList';
+import {PopUp} from './PopUp';
+
 
 export function Main() {
   const [cardList, setCardList] = useState([]);
+  const [seen, setSeen] = useState(false);
+
+  const togglePop = () => {
+    console.log('current seen: ' + seen);
+    setSeen(!seen);
+  };
+
   const addPost = (costPerYear, amountCover, currentAid, potentialAid, amountLeft) => {
     const newPost = {
       yearlyCost: costPerYear,
@@ -23,7 +32,13 @@ export function Main() {
     <div>
       <UserInput onSubmit={addPost} addCard={addCard} />
       <div className='plan'>
-        <CardList cardList={cardList}/>
+        <CardList cardList={cardList} />
+      </div>
+      <div>
+        <div className="btn" onClick={togglePop}>
+          <button>Fill in Information</button>
+        </div>
+        {seen ? <PopUp toggle={togglePop} /> : null}
       </div>
     </div>
   );
