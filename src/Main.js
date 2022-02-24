@@ -21,7 +21,7 @@ export function Main() {
   };
   return (
     <div>
-      <UserInput onSubmit={addPost} addCard={addCard} />
+      <UserInput onSubmit={addPost} addCard={addCard} cards={cardList} />
       <div className='plan'>
         <CardList cardList={cardList}/>
       </div>

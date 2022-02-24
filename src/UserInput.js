@@ -13,6 +13,10 @@ function UserInput(props) {
     props.onSubmit(amount, cover, 'currentAid', 'potentialAid', 'amountLeft');
   };
   const leftOver = amount - cover;
+  const sum = props.cards.reduce(
+  (prevSum, card) => prevSum + (card.amount.per * card.amount.freq)
+,0);
+
   return (
     <div className="info">
       <button type="button" id="arrow-button-l" className="arrow-button">
@@ -28,7 +32,7 @@ function UserInput(props) {
           <input type="text" id="cover" name="cover" value={cover} onChange={handleInputCover}/>
         </form>
         <p>Current Aid: 9000</p>
-        <p>Potential Aid: 23000</p>
+        <p>Potential Aid: {sum}</p>
         <p>Amount Left: {leftOver}</p>
       </div>
       <div className="buttons">
