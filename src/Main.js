@@ -4,7 +4,6 @@ import UserInput from './UserInput';
 import {CardList} from './CardList';
 import {PopUp} from './PopUp';
 
-
 export function Main() {
   const [cardList, setCardList] = useState([]);
   const [seen, setSeen] = useState(false);
