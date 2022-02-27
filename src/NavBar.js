@@ -7,7 +7,7 @@ export default function NavBar() {
       <header>
         <nav className="menu">
           <NavLink to="/main">Current Plan</NavLink>
-          <a href="">Plans</a>
+          <NavLink to="/plan">Plans</NavLink>
           <NavLink to="/explore">Explore</NavLink>
 
         </nav>

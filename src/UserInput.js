@@ -12,8 +12,7 @@ function UserInput(props) {
   const handleSubmit = (event) => {
     props.onSubmit(amount, cover, 'currentAid', 'potentialAid', 'amountLeft');
   };
-  const sum = props.cards.reduce(
-  (prevSum, card) => prevSum + (card.amount.per * card.amount.freq),0);
+  const sum = props.cards.reduce((prevSum, card) => prevSum + (card.amount.per * card.amount.freq), 0);
   const leftOver = (amount - cover - sum) < 0 ? 0 : (amount - cover - sum);
 
   return (
@@ -24,11 +23,11 @@ function UserInput(props) {
       <div className="text" role="status">
         <form>
           <label htmlFor="cost">Cost of College Per Year:</label>
-          <input type="text" id="cost" name="cost" value={amount} onChange={handleInputAmount}/>
+          <input type="text" id="cost" name="cost" value={amount} onChange={handleInputAmount} />
         </form>
         <form>
           <label htmlFor="cover">Amount You Can Cover:</label>
-          <input type="text" id="cover" name="cover" value={cover} onChange={handleInputCover}/>
+          <input type="text" id="cover" name="cover" value={cover} onChange={handleInputCover} />
         </form>
         <p>Current Aid: 9000</p>
         <p>Potential Aid: {sum}</p>

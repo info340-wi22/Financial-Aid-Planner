@@ -4,12 +4,10 @@ import CardList from './PlanCardList';
 
 export default function Explore() {
   return (
-    <main>
-      <div className='explore-page'>
-        <FilterBy/>
-        <CardList/>
-      </div>
-    </main>
+    <div className='explore-page'>
+      <FilterBy/>
+      <CardList/>
+    </div>
   );
 }
 
