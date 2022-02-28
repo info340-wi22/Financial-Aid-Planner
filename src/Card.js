@@ -16,7 +16,7 @@ function Title(props) {
   const {title} = props;
   return (
     <div className='title'>
-      <p>{title}</p>
+      <h1>{title}</h1>
       <a href=''>Link to Scholarship</a>
     </div>
   );

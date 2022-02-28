@@ -12,8 +12,7 @@ function UserInput(props) {
   const handleSubmit = (event) => {
     props.onSubmit(amount, cover, 'currentAid', 'potentialAid', 'amountLeft');
   };
-  const sum = props.cards.reduce(
-  (prevSum, card) => prevSum + (card.amount.per * card.amount.freq),0);
+  const sum = props.cards.reduce((prevSum, card) => prevSum + (card.amount.per * card.amount.freq), 0);
   const leftOver = (amount - cover - sum) < 0 ? 0 : (amount - cover - sum);
 
   return (
@@ -24,21 +23,22 @@ function UserInput(props) {
       <div className="text" role="status">
         <form>
           <label htmlFor="cost">Cost of College Per Year:</label>
-          <input type="text" id="cost" name="cost" value={amount} onChange={handleInputAmount}/>
+          <input type="text" id="cost" name="cost" value={amount} onChange={handleInputAmount} />
         </form>
         <form>
           <label htmlFor="cover">Amount You Can Cover:</label>
-          <input type="text" id="cover" name="cover" value={cover} onChange={handleInputCover}/>
+          <input type="text" id="cover" name="cover" value={cover} onChange={handleInputCover} />
         </form>
         <p>Current Aid: 9000</p>
         <p>Potential Aid: {sum}</p>
         <p>Amount Left: {leftOver}</p>
       </div>
       <div className="buttons">
-        <button type="submit" id="card-button" onClick={props.addCard}><span>Add Card</span></button>
+        <button type="submit" id="card-button" onClick={props.addCard}>Add Card</button>
         <button type="submit" id="template-button" onClick={handleSubmit}>Upload As Template</button>
       </div>
-      <button type="button" id="arrow-button-r" className="arrow-button">Page 3<span className="arrow right"></span></button>
+      <button type="button" id="arrow-button-r" className="arrow-button">
+        Page 3<span className="arrow right"></span></button>
     </div>
   );
 }

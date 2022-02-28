@@ -4,10 +4,11 @@ import Card from './Card';
 export function CardList(props) {
   const {cardList} = props;
   const cards = cardList.map((card) => {
-    const key = 'card' + card.key;
-    return <div key={key}><Card name={card.name} status={card.cardStatus} toDo={card.toDo} amount={card.amount}/></div>;
+    return <Card key={`card${card.key}`} name={card.name} status={card.cardStatus} toDo={card.toDo} amount={card.amount} />;
   });
-  return (<div className='card-list'>
-    {cards}
-  </div>);
+  return (
+    <div className='plan'>
+      {cards}
+    </div>
+  );
 }
