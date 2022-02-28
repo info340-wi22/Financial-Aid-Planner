@@ -20,7 +20,6 @@ function FilterBy() {
         <label htmlFor="college" id="college-text">College:</label>
         <input type="text" id="college" name="college"/>
       </form>
-      <p id="search-icon"><i className="bi bi-search"></i></p>
       <form className="aid-range-wrapper">
         <label htmlFor="aid-range">Aid Range:</label>
         <input type="range" min="1" max="100" defaultValue="50" className="aid-range" id="aid-range"/>
