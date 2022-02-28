@@ -209,16 +209,13 @@ form input {
     margin-left: 4%;
 }
 
-form button {
-    margin-top: 15%;
-    position: absolute;
-    right: 0;
-    bottom: 0;
+.form_submit {
+    float: right;
 }
  
 .pop_content {
     background-color: plum;
-    position: absolute;
+    position: relative;
     padding: 5%;
     height: 100%;
     border-radius: 5px;
@@ -353,9 +350,11 @@ footer {
 .card-button {
     background-color: #B18CFF;
     color: white;
-    font-size: 24px;
+    font-size: 20px;
     margin-top: 1rem;
     margin-left: 2rem;
+    height: 200px;
+    width: 200px;
 }
 
 .college-wrapper label {

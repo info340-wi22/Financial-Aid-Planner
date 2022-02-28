@@ -1,42 +1,35 @@
 import React from 'react';
-import {useState} from 'react';
 export function PopUp(props) {
-  const [curScholar, setScholar] = useState('');
-  const [curLink, setLink] = useState('');
-  const [curPerYear, setPerYear] = useState('');
-  const [curAmount, setAmount] = useState('');
-
-  console.log('current Scholar', curScholar);
-  console.log('current Link', curLink);
-  console.log('current PerYear', curPerYear);
-  console.log('current Amount', curAmount);
-
   const handleClick = () => {
     props.toggle();
-    setScholar('');
-    setLink('');
-    setPerYear('');
-    setAmount('');
+    props.setScholar('');
+    props.setLink('');
+    props.setPerYear('');
+    props.setAmount('');
+  };
+
+  const handleSubmit = () => {
+    props.addCard();
+    props.toggle();
   };
 
   const handleScholar = (event) => {
     const scholar = event.target.value;
-    setScholar(scholar);
+    props.setScholar(scholar);
   };
 
   const handleLink = (event) => {
     const link = event.target.value;
-    setLink(link);
+    props.setLink(link);
   };
   const handlePerYear = (event) => {
     const perYear = event.target.value;
-    setPerYear(perYear);
+    props.setPerYear(perYear);
   };
   const handleAmount = (event) => {
     const amount = event.target.value;
-    setAmount(amount);
+    props.setAmount(amount);
   };
-
 
   return (
     <div className='pop_bg'>
@@ -62,9 +55,8 @@ export function PopUp(props) {
             Amount Paid Per Frequency:
             <input type="text" name="name" onChange={handleAmount}/>
           </label>
-          <br />
-          <button type="submit" className=''> Submit </button>
         </form>
+        <button type="submit" className='form_submit' onClick={handleSubmit}> Submit </button>
       </div>
     </div>
   );

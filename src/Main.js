@@ -2,16 +2,14 @@ import React, {useState} from 'react';
 
 import UserInput from './UserInput';
 import {CardList} from './CardList';
-import {PopUp} from './PopUp';
 
 export function Main() {
   const [cardList, setCardList] = useState([]);
-  const [seen, setSeen] = useState(false);
+  const [curScholar, setScholar] = useState('');
+  const [curLink, setLink] = useState('');
+  const [curPerYear, setPerYear] = useState('');
+  const [curAmount, setAmount] = useState('');
 
-  const togglePop = () => {
-    console.log('current seen: ' + seen);
-    setSeen(!seen);
-  };
 
   const addPost = (costPerYear, amountCover, currentAid, potentialAid, amountLeft) => {
     const newPost = {
@@ -23,21 +21,32 @@ export function Main() {
     };
   };
 
+  const setScholarCallBack = (input) => {
+    setScholar(input);
+  };
+  const setLinkCallBack = (input) => {
+    setLink(input);
+  };
+  const setPerYearCallBack = (input) => {
+    setPerYear(input);
+  };
+  const setAmountCallBack = (input) => {
+    setAmount(input);
+  };
+
   const addCard = () => {
-    /* WILL OF COURSE BE FROM USER INPUTS LATER ON */
-    setCardList([...cardList, {key: cardList.length, name: 'Scholarship', cardStatus: 'Accepted', toDo: ['Get A Letter of Rec', 'Get A Letter of Rec', 'Get A Letter of Rec'], amount: {freq: 4, per: 3000}}]);
+    setCardList([...cardList, {key: cardList.length, name: curScholar, cardStatus: 'Accepted', toDo: ['Get A Letter of Rec', 'Get A Letter of Rec', 'Get A Letter of Rec'], amount: {freq: curPerYear, per: curAmount}, link: curLink}]);
   };
   return (
     <div>
-      <UserInput onSubmit={addPost} addCard={addCard} />
+      <UserInput onSubmit={addPost} addCard={addCard}
+        setScholar={setScholarCallBack}
+        setLink={setLinkCallBack}
+        setPerYear={setPerYearCallBack}
+        setAmount={setAmountCallBack}
+      />
       <div className='plan'>
         <CardList cardList={cardList} />
-      </div>
-      <div>
-        <div className="btn" onClick={togglePop}>
-          <button>Fill in Information</button>
-        </div>
-        {seen ? <PopUp toggle={togglePop} /> : null}
       </div>
     </div>
   );

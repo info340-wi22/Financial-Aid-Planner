@@ -1,10 +1,11 @@
 import React from 'react';
 
 export default function Card(props) {
-  const {name, status, toDo, amount} = props;
+  const {name, status, toDo, amount, link} = props;
+
   return (
     <div className='card'>
-      <Title title={name}/>
+      <Title title={name} link={link}/>
       <Status status={status}/>
       <ToDo toDo={toDo}/>
       <Amount amount={amount}/>
@@ -13,11 +14,11 @@ export default function Card(props) {
 }
 
 function Title(props) {
-  const {title} = props;
+  const title = props.title;
   return (
     <div className='title'>
       <p>{title}</p>
-      <a href=''>Link to Scholarship</a>
+      <a href={props.link} target="_blank" rel="noreferrer noopener" alt='Link to ScholarShip'>Link to Scholarship</a>
     </div>
   );
 }

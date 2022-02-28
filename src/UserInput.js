@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import {PopUp} from './PopUp';
 
 function UserInput(props) {
   const [amount, setAmount] = useState('');
@@ -12,6 +13,13 @@ function UserInput(props) {
   const handleSubmit = (event) => {
     props.onSubmit(amount, cover, 'currentAid', 'potentialAid', 'amountLeft');
   };
+
+  const [seen, setSeen] = useState(false);
+
+  const togglePop = () => {
+    setSeen(!seen);
+  };
+
   const leftOver = amount - cover;
   return (
     <div className="info">
@@ -21,19 +29,25 @@ function UserInput(props) {
       <div className="text" role="status">
         <form>
           <label htmlFor="cost">Cost of College Per Year:</label>
-          <input type="text" id="cost" name="cost" value={amount} onChange={handleInputAmount}/>
+          <input type="text" id="cost" name="cost" value={amount} onChange={handleInputAmount} />
         </form>
         <form>
           <label htmlFor="cover">Amount You Can Cover:</label>
-          <input type="text" id="cover" name="cover" value={cover} onChange={handleInputCover}/>
+          <input type="text" id="cover" name="cover" value={cover} onChange={handleInputCover} />
         </form>
         <p>Current Aid: 9000</p>
         <p>Potential Aid: 23000</p>
         <p>Amount Left: {leftOver}</p>
       </div>
       <div className="buttons">
-        <button type="submit" id="card-button" onClick={props.addCard}><span>Add Card</span></button>
-        <button type="submit" id="template-button" onClick={handleSubmit}>Upload As Template</button>
+        <div>
+          <button type="submit" className="card-button" onClick={togglePop}>Fill in Information</button>
+          {seen ? <PopUp setScholar={props.setScholar}
+            setLink={props.setLink}
+            setPerYear={props.setPerYear}
+            setAmount={props.setAmount} toggle={togglePop} addCard={props.addCard}/> : null}
+        </div>
+        <button type="submit" className="card-button" onClick={handleSubmit}>Upload As Template</button>
       </div>
       <button type="button" id="arrow-button-r" className="arrow-button">Page 3<span className="arrow right"></span></button>
     </div>
