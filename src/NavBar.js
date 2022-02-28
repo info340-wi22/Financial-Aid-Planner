@@ -13,7 +13,7 @@ export default function NavBar() {
         </nav>
         <img className="navimage" src="\imgs\learn.png"
           alt="LearnNotSpend logo" />
-        <p>Learn, Not Spend</p>
+        <h1>Learn, Not Spend</h1>
         <img className="profile" src=".\imgs\profile-icon.webp" alt="Profile" />
       </header>
     </div>);
