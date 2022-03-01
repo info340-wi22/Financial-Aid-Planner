@@ -13,7 +13,6 @@ function UserInput(props) {
   const handleSubmit = (event) => {
     props.onSubmit(amount, cover, 'currentAid', 'potentialAid', 'amountLeft');
   };
-
   const [seen, setSeen] = useState(false);
 
   const togglePop = () => {
@@ -36,7 +35,7 @@ function UserInput(props) {
           <input type="text" id="cover" name="cover" value={cover} onChange={handleInputCover} />
         </form>
         <p>Current Aid: 9000</p>
-        <p>Potential Aid: 23000</p>
+        <p>Potential Aid: {sum}</p>
         <p>Amount Left: {leftOver}</p>
       </div>
       <div className="buttons">
@@ -49,7 +48,8 @@ function UserInput(props) {
         </div>
         <button type="submit" className="card-button" onClick={handleSubmit}>Upload As Template</button>
       </div>
-      <button type="button" id="arrow-button-r" className="arrow-button">Page 3<span className="arrow right"></span></button>
+      <button type="button" id="arrow-button-r" className="arrow-button">
+        Page 3<span className="arrow right"></span></button>
     </div>
   );
 }

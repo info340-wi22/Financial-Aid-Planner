@@ -7,13 +7,13 @@ import Explore from './Explore';
 
 function App() {
   return (
-    <div className='container'>
+    <div>
       <NavBar />
       <main>
         <Routes>
-          <Route path='*' element={<Navigate to='/main'/>}/>
-          <Route path='main' element={<Main/>}/>
-          <Route path='explore' element={<Explore/>}/>
+          <Route path='*' element={<Navigate to='/main' />} />
+          <Route path='main' element={<Main />} />
+          <Route path='explore' element={<Explore />} />
         </Routes>
       </main>
     </div>
