@@ -38,22 +38,22 @@ export function PopUp(props) {
           &times;
         </button>
         <form>
-          <h3>Fill in the Information :)</h3>
-          <label>
+          <h1>Fill in the Information :)</h1>
+          <label htmlFor='scholarship'>
             Scholarship:
-            <input type="text" name="name" onChange={handleScholar}/>
+            <input type="text" name="scholarship" onChange={handleScholar}/>
           </label>
-          <label>
+          <label htmlFor='link'>
             link:
-            <input type="url" name="name" onChange={handleLink}/>
+            <input type="url" name="link" onChange={handleLink}/>
           </label>
-          <label>
+          <label htmlFor='frequency'>
             Frequency Per Year:
-            <input type="text" name="name" onChange={handlePerYear}/>
+            <input type="text" name="frequency" onChange={handlePerYear}/>
           </label>
-          <label>
+          <label htmlFor='amount'>
             Amount Paid Per Frequency:
-            <input type="text" name="name" onChange={handleAmount}/>
+            <input type="text" name="amount" onChange={handleAmount}/>
           </label>
         </form>
         <button type="submit" className='form_submit' onClick={handleSubmit}> Submit </button>
