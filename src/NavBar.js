@@ -7,13 +7,13 @@ export default function NavBar() {
       <header>
         <nav className="menu">
           <NavLink to="/main">Current Plan</NavLink>
-          <a href="">Plans</a>
+          <NavLink to="/plan">Plans</NavLink>
           <NavLink to="/explore">Explore</NavLink>
 
         </nav>
         <img className="navimage" src="\imgs\learn.png"
           alt="LearnNotSpend logo" />
-        <p>Learn, Not Spend</p>
+        <h1>Learn, Not Spend</h1>
         <img className="profile" src=".\imgs\profile-icon.webp" alt="Profile" />
       </header>
     </div>);
