@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import {PopUp} from './PopUp';
 
 function UserInput(props) {
   const [amount, setAmount] = useState('');
@@ -15,6 +16,11 @@ function UserInput(props) {
   const sum = props.cards.reduce((prevSum, card) => prevSum + (card.amount.per * card.amount.freq), 0);
   const leftOver = (amount - cover - sum) < 0 ? 0 : (amount - cover - sum);
 
+  const [seen, setSeen] = useState(false);
+
+  const togglePop = () => {
+    setSeen(!seen);
+  };
   return (
     <div className="info">
       <button type="button" id="arrow-button-l" className="arrow-button">
@@ -34,8 +40,14 @@ function UserInput(props) {
         <p>Amount Left: {leftOver}</p>
       </div>
       <div className="buttons">
-        <button type="submit" id="card-button" onClick={props.addCard}>Add Card</button>
-        <button type="submit" id="template-button" onClick={handleSubmit}>Upload As Template</button>
+        <div>
+          <button type="submit" className="card-button" onClick={togglePop}>Fill in Information</button>
+          {seen ? <PopUp setScholar={props.setScholar}
+            setLink={props.setLink}
+            setPerYear={props.setPerYear}
+            setAmount={props.setAmount} toggle={togglePop} addCard={props.addCard}/> : null}
+        </div>
+        <button type="submit" className="card-button" onClick={handleSubmit}>Upload As Template</button>
       </div>
       <button type="button" id="arrow-button-r" className="arrow-button">
         Page 3<span className="arrow right"></span></button>

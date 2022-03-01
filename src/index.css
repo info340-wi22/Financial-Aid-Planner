@@ -186,6 +186,48 @@ input:focus {
     margin: 5% 1%;
 }
 
+/* PopUp CSS*/
+.pop_bg {
+    z-index: 1;
+    width: 40%;
+    height: 500px;
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+form label {
+    margin-top: 30px;
+}
+
+form input {
+    margin-left: 4%;
+}
+
+.form_submit {
+    float: right;
+}
+ 
+.pop_content {
+    background-color: plum;
+    position: relative;
+    padding: 5%;
+    height: 100%;
+    border-radius: 5px;
+    border: 2px solid black;
+}
+  
+.close {
+    color: Black;
+    float: right;
+}
+  
+.close:hover {
+    color: purple;
+    cursor: pointer;
+}
 
 /* Button CSS in Current Plan*/
 .buttons {
@@ -284,8 +326,11 @@ footer {
 .card-button {
     background-color: #B18CFF;
     color: white;
-    font-size: 24px;
-    margin: 1rem 1rem;
+    font-size: 20px;
+    margin-top: 1rem;
+    margin-left: 2rem;
+    height: 200px;
+    width: 200px;
 }
 
 .college-wrapper label {
