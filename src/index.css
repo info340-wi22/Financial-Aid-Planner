@@ -58,6 +58,7 @@ nav a:active {
     display: flex;
     flex-flow: row;
     justify-content: center;
+    align-items: center;
 }
 
 .text { /* Hides the information bar when the screensize is small */
@@ -327,10 +328,7 @@ footer {
     background-color: #B18CFF;
     color: white;
     font-size: 20px;
-    margin-top: 1rem;
     margin-left: 2rem;
-    height: 200px;
-    width: 200px;
 }
 
 .college-wrapper label {
@@ -359,6 +357,10 @@ footer {
 @media (max-width: 598px) {
     nav a {
         font-size: 100%;
+    }
+    .card-button {
+        font-size: 80%;
+        margin-left: 1rem;
     }
 }
 

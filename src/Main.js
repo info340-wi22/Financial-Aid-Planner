@@ -46,9 +46,7 @@ export function Main() {
         setPerYear={setPerYearCallBack}
         setAmount={setAmountCallBack}
       />
-      <div className='plan'>
-        <CardList cardList={cardList} />
-      </div>
+      <CardList cardList={cardList} />
     </div>
   );
 }

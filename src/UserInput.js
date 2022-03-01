@@ -40,8 +40,8 @@ function UserInput(props) {
         <p>Amount Left: {leftOver}</p>
       </div>
       <div className="buttons">
+        <button type="submit" className="card-button" onClick={togglePop}>Fill in Information</button>
         <div>
-          <button type="submit" className="card-button" onClick={togglePop}>Fill in Information</button>
           {seen ? <PopUp setScholar={props.setScholar}
             setLink={props.setLink}
             setPerYear={props.setPerYear}
