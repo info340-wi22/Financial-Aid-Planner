@@ -40,6 +40,7 @@ export function Main() {
   return (
     <div>
       <UserInput onSubmit={addPost} addCard={addCard}
+        cards={cardList}
         setScholar={setScholarCallBack}
         setLink={setLinkCallBack}
         setPerYear={setPerYearCallBack}

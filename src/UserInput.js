@@ -13,13 +13,14 @@ function UserInput(props) {
   const handleSubmit = (event) => {
     props.onSubmit(amount, cover, 'currentAid', 'potentialAid', 'amountLeft');
   };
+  const sum = props.cards.reduce((prevSum, card) => prevSum + (card.amount.per * card.amount.freq), 0);
+  const leftOver = (amount - cover - sum) < 0 ? 0 : (amount - cover - sum);
+
   const [seen, setSeen] = useState(false);
 
   const togglePop = () => {
     setSeen(!seen);
   };
-
-  const leftOver = amount - cover;
   return (
     <div className="info">
       <button type="button" id="arrow-button-l" className="arrow-button">
