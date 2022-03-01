@@ -5,7 +5,6 @@ import NavBar from './NavBar';
 import {Main} from './Main';
 import Explore from './Explore';
 
-
 function App() {
   return (
     <div>

@@ -5,6 +5,12 @@ import {CardList} from './CardList';
 
 export function Main() {
   const [cardList, setCardList] = useState([]);
+  const [curScholar, setScholar] = useState('');
+  const [curLink, setLink] = useState('');
+  const [curPerYear, setPerYear] = useState('');
+  const [curAmount, setAmount] = useState('');
+
+
   const addPost = (costPerYear, amountCover, currentAid, potentialAid, amountLeft) => {
     const newPost = {
       yearlyCost: costPerYear,
@@ -15,14 +21,34 @@ export function Main() {
     };
   };
 
+  const setScholarCallBack = (input) => {
+    setScholar(input);
+  };
+  const setLinkCallBack = (input) => {
+    setLink(input);
+  };
+  const setPerYearCallBack = (input) => {
+    setPerYear(input);
+  };
+  const setAmountCallBack = (input) => {
+    setAmount(input);
+  };
+
   const addCard = () => {
-    /* WILL OF COURSE BE FROM USER INPUTS LATER ON */
-    setCardList([...cardList, {key: cardList.length, name: 'Scholarship', cardStatus: 'Accepted', toDo: ['Get A Letter of Rec', 'Get A Letter of Rec', 'Get A Letter of Rec'], amount: {freq: 4, per: 3000}}]);
+    setCardList([...cardList, {key: cardList.length, name: curScholar, cardStatus: 'Accepted', toDo: ['Get A Letter of Rec', 'Get A Letter of Rec', 'Get A Letter of Rec'], amount: {freq: curPerYear, per: curAmount}, link: curLink}]);
   };
   return (
     <div>
-      <UserInput onSubmit={addPost} addCard={addCard} cards={cardList} />
-      <CardList cardList={cardList} />
+      <UserInput onSubmit={addPost} addCard={addCard}
+        cards={cardList}
+        setScholar={setScholarCallBack}
+        setLink={setLinkCallBack}
+        setPerYear={setPerYearCallBack}
+        setAmount={setAmountCallBack}
+      />
+      <div className='plan'>
+        <CardList cardList={cardList} />
+      </div>
     </div>
   );
 }
