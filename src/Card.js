@@ -17,7 +17,7 @@ function Title(props) {
   const title = props.title;
   return (
     <div className='title'>
-      <p>{title}</p>
+      <h1>{title}</h1>
       <a href={props.link} target="_blank" rel="noreferrer noopener" alt='Link to ScholarShip'>Link to Scholarship</a>
     </div>
   );
