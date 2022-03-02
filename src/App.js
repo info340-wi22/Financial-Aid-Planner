@@ -7,7 +7,7 @@ import Explore from './Explore';
 
 function App() {
   return (
-    <div>
+    <>
       <NavBar />
       <main>
         <Routes>
@@ -16,7 +16,7 @@ function App() {
           <Route path='explore' element={<Explore />} />
         </Routes>
       </main>
-    </div>
+    </>
   );
 }
 

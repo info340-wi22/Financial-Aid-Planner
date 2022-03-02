@@ -38,7 +38,7 @@ export function Main() {
     setCardList([...cardList, {key: cardList.length, name: curScholar, cardStatus: 'Accepted', toDo: ['Get A Letter of Rec', 'Get A Letter of Rec', 'Get A Letter of Rec'], amount: {freq: curPerYear, per: curAmount}, link: curLink}]);
   };
   return (
-    <div>
+    <>
       <UserInput onSubmit={addPost} addCard={addCard}
         cards={cardList}
         setScholar={setScholarCallBack}
@@ -47,6 +47,6 @@ export function Main() {
         setAmount={setAmountCallBack}
       />
       <CardList cardList={cardList} />
-    </div>
+    </>
   );
 }
