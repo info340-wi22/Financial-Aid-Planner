@@ -1,34 +1,34 @@
 import React from 'react';
-export function PopUp(props) {
+export function PopUp({toggle, setScholar, setLink, setPerYear, setAmount, addCard}) {
   const handleClick = () => {
-    props.toggle();
-    props.setScholar('');
-    props.setLink('');
-    props.setPerYear('');
-    props.setAmount('');
+    toggle();
+    setScholar('');
+    setLink('');
+    setPerYear('');
+    setAmount('');
   };
 
   const handleSubmit = () => {
-    props.addCard();
-    props.toggle();
+    addCard();
+    toggle();
   };
 
   const handleScholar = (event) => {
     const scholar = event.target.value;
-    props.setScholar(scholar);
+    setScholar(scholar);
   };
 
   const handleLink = (event) => {
     const link = event.target.value;
-    props.setLink(link);
+    setLink(link);
   };
   const handlePerYear = (event) => {
     const perYear = event.target.value;
-    props.setPerYear(perYear);
+    setPerYear(perYear);
   };
   const handleAmount = (event) => {
     const amount = event.target.value;
-    props.setAmount(amount);
+    setAmount(amount);
   };
 
   return (
