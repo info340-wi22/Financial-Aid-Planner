@@ -1,0 +1,497 @@
+/* Mobile first layout. Some of these CSS rules
+   carry over to the desktop version of the site.
+*/
+
+ /* Body CSS */
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-flow: column;
+    font-family: 'Libre Baskerville', serif;
+}
+
+main {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+p {
+    margin: 0; /* This is to prevent reboot from bootstrap adding a 1rem margin to the bottom of any p */
+}
+
+/* Header CSS */
+header {
+    display: flex;
+    flex-flow: row;
+    color: white;
+    background-color: #B18CFF;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+}
+header h1 { /* controls visibility of tag line */
+    display: none;
+}
+
+header img {
+    border-radius: 50%;
+    width: 3rem;
+    margin-left: auto;
+}
+
+
+/* Navbar CSS */
+.menu {
+    display: flex;
+    align-items: center;
+}
+
+nav a {
+    margin: 0 1rem;
+    font-size: 1.75rem;
+    color: white;
+    text-decoration: none;
+}
+
+nav a:hover,
+nav a:focus,
+nav a:active {
+    color: white;
+    text-decoration-line: underline;
+}
+
+
+/* Current Plan Page CSS */
+
+
+/* Informational bar CSS */
+
+.info {
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+}
+
+.text { /* Hides the information bar when the screensize is small */
+    display: none;
+}
+
+.info-status {
+    display: flex;
+    flex-flow: row;
+}
+
+label, input {
+    margin-left: 1rem;
+}
+
+input {
+    border-radius: 6px;
+    border-color: black;
+    width: 20%;
+}
+
+input:active,
+input:focus {
+    border-radius: 6px;
+    border-color: black;
+}
+
+.plan {
+    display: flex;
+    flex-flow: column;
+}
+
+
+/* card css */
+.card {
+    display: flex;
+    flex-flow: row wrap;
+    width: 40rem;
+    background-color: #7f7eff;
+    border-radius: 12px;
+    padding: 1rem;
+    margin: 1rem;
+}
+
+.title {
+    margin-right: auto;
+}
+
+.title h1 {
+    color: white;
+    font-size: 200%;
+    margin: 0;
+}
+
+.title a,
+.title a:active,
+.title a:focus {
+    color: #011B4B;
+    text-decoration: none;
+}
+
+.status {
+    border-radius: 12px;
+    margin-bottom: 0.5rem;
+    padding: 1rem;
+    height: fit-content;
+}
+
+.status p {
+    color: white;
+}
+
+.accepted {
+    background-color: #1b8563;
+}
+
+.pending {
+    background-color: #AB9402;
+}
+
+.rejected {
+    background-color: #CC5B49;
+}
+
+.planning {
+    background-color: #424242;
+}
+
+
+.to-do {
+    display: flex;
+    flex-flow: column;
+    background-color: #00a2c7;
+    border-radius: 12px;
+    padding: 1rem;
+    width: 58%;
+}
+
+.checkbox-wrapper {
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.checkbox-wrapper label, input {
+    margin-left: 0;
+}
+
+.checkbox-wrapper input {
+    width: unset;
+}
+
+.checkbox-wrapper label {
+    margin-left: 1rem;
+    color: white;
+}
+
+.amount {
+    display: flex;
+    flex-flow: column;
+    margin-left: auto;
+    border-radius: 12px;
+    background-color: #5770C9;
+    width: 39.6%;
+}
+
+.amount p {
+    text-align: center;
+    color: white;
+    margin: 1rem;
+}
+
+/* PopUp CSS*/
+.pop_bg {
+    display: flex;
+    z-index: 1;
+    width: fit-content;
+    height: fit-content;
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.pop-up-header {
+    display: flex;
+    flex-flow: row;
+}
+
+.pop-up-form {
+    display: flex;
+    flex-flow: column;
+}
+
+.pop_content {
+    display: flex;
+    flex-flow: column;
+    background-color: plum;
+    position: relative;
+    padding: 5%;
+    height: 100%;
+    border-radius: 12px;
+    border: 2px solid black;
+}
+  
+.close {
+    color: Black;
+    width: 3rem;
+    height: 3rem;
+}
+  
+.close:hover {
+    color: purple;
+}
+
+/* Button CSS in Current Plan*/
+.buttons {
+    display: flex;
+    flex-flow: row;
+}
+
+button {
+    background-color: #C4C4C4;
+    border-style: none;
+    color: black;
+    border-radius: 24px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.16),
+                0 1px 3px rgba(0, 0, 0, 0.23);
+    margin: 1rem;
+    padding: 0.5rem;
+}
+
+.arrow-button {
+    display: flex;
+    align-items: center;
+    background-color: Transparent;
+    box-shadow: none;
+}
+
+.arrow {
+    border: solid black;
+    border-width: 0 15px 15px 0;
+    padding: 10px;
+}
+
+.right {
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+.left {
+    -webkit-transform: rotate(135deg);
+    transform: rotate(135deg);
+}
+
+footer {
+    margin-top: auto;
+}
+
+
+/* Explore page CSS */
+.explore-page {
+    display: flex;
+    flex-flow: column wrap;
+}
+
+.filter-by p:first-child {
+    display: none;
+}
+
+.filter-by {
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    margin-left: 1rem;
+    border-radius: 12px;
+    height: fit-content;
+}
+
+.filter-by p,
+.filter-by label {
+    margin: 1rem 1rem;
+}
+
+.plan-card {
+    display: flex;
+    flex-flow: column;
+}
+
+.filter-text button {
+    font-size: 24px;
+}
+
+.aid-range-wrapper {
+    display: none;
+}
+
+.explore-plan {
+    display: flex;
+    padding: 0.5rem;
+    margin: 0.5rem 1rem;
+    flex-flow: row wrap;
+    border-radius: 12px;
+    font-size: 12px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.16), 0 1px 3px rgba(0, 0, 0, 0.23);
+    align-items: center;
+}
+
+.card-button {
+    background-color: #B18CFF;
+    color: white;
+    font-size: 20px;
+    margin-left: 2rem;
+}
+
+.college-wrapper label {
+    display: none;
+}
+
+.explore-page p {
+    margin: 1rem;
+}
+
+.explore-page button {
+    padding: 0.5rem;
+}
+
+.college-wrapper input {
+    height: 50px;
+    width: 100%;
+}
+
+.navimage {
+    border-radius: 0%;
+    height: 3rem;
+}
+
+@media (max-width: 598px) {
+    nav a {
+        font-size: 100%;
+    }
+    .card-button {
+        font-size: 80%;
+        margin-left: 1rem;
+    }
+}
+
+@media (max-width: 800px) {
+    .card {
+        flex-flow: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .card div {
+        margin: 1%;
+    }
+
+    .title {
+        margin: 1%;
+    }
+
+    .to-do {
+        width: 80%;
+    }
+
+    .amount {
+        width: 80%;
+    }
+}
+
+/* Desktop Layout */
+@media (min-width: 962px) {
+    header h1 {
+        position: relative;
+        padding: 0.75rem;
+        margin-left: auto;
+        margin-bottom: 0px;
+        font-size: 1.5rem;
+        display: inline;
+    }
+
+    nav a {
+        font-size: 2rem;
+    }
+
+    /* main page */
+    .text {
+        display: flex;
+        font-size: 1.25rem;
+        align-items: center;
+    }
+
+    button {
+        background-color: #B18CFF;
+        color: white;
+        border-radius: 12px;
+    }
+
+    .buttons button:last-child {
+        position: relative;
+        margin-top: 1rem;
+        margin-left: 1rem;
+        display: block;
+    }
+
+    .arrow-button {
+        display: none;
+    }
+
+    .plan {
+        flex-flow: row wrap;
+        justify-content: center;
+    }
+
+    /* Explore page */
+    .explore-plan {
+        flex-flow: row;
+    }
+
+    .explore-page {
+        flex-flow: row;
+        justify-content: center;
+    }
+
+    .college-wrapper label,
+    .filter-by p:first-of-type {
+        position: relative;
+        margin-top: 1rem;
+        margin-left: 1rem;
+        display: inline-block;
+    }
+
+    .filter-by button:first-of-type {
+        display: none;
+    }
+
+    .filter-by {
+        background-color: #B18CFF;
+        color: white;
+        flex-flow: column;
+        align-items: unset;
+        margin: 0.5rem;
+    }
+
+    .aid-range-wrapper {
+        position: relative;
+        margin-top: 0rem;
+        margin-left: 1rem;
+        display: block;
+    }
+
+    .college-wrapper input {
+        height: 30px;
+        width: 50%;
+    }
+}
