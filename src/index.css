@@ -13,15 +13,20 @@ body {
     font-family: 'Libre Baskerville', serif;
 }
 
+main {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
 p {
-    margin: 0;
+    margin: 0; /* This is to prevent reboot from bootstrap adding a 1rem margin to the bottom of any p */
 }
 
 /* Header CSS */
 header {
     display: flex;
     flex-flow: row;
-    width: 100%;
     color: white;
     background-color: #B18CFF;
     padding: 0.5rem;
@@ -97,9 +102,7 @@ input:focus {
 
 .plan {
     display: flex;
-    margin: 1rem 5rem;
-    flex-flow: row wrap;
-    align-content: center;
+    flex-flow: column;
 }
 
 
@@ -110,13 +113,12 @@ input:focus {
     width: 40rem;
     background-color: #7f7eff;
     border-radius: 12px;
-    padding: 0.5rem;
-    margin: 1%;
+    padding: 1rem;
+    margin: 1rem;
 }
 
 .title {
-    margin-right: 28%;
-    margin-bottom: 1%;
+    margin-right: auto;
 }
 
 .title h1 {
@@ -134,12 +136,12 @@ input:focus {
 
 .status {
     border-radius: 12px;
+    margin-bottom: 0.5rem;
+    padding: 1rem;
     height: fit-content;
 }
 
 .status p {
-    font-size: 100%;
-    margin: 7% 1rem;
     color: white;
 }
 
@@ -165,40 +167,43 @@ input:focus {
     flex-flow: column;
     background-color: #00a2c7;
     border-radius: 12px;
-    margin-right: 1rem;
     padding: 1rem;
-    width: 55%;
+    width: 58%;
 }
 
 .checkbox-wrapper {
     display: flex;
     flex-flow: row;
+    align-items: center;
     margin-bottom: 1rem;
 }
 
+.checkbox-wrapper label, input {
+    margin-left: 0;
+}
+
 .checkbox-wrapper input {
-    width: 6%;
-    margin-top: 0.3rem;
-    margin-right: 0.5rem;
+    width: unset;
 }
 
 .checkbox-wrapper label {
+    margin-left: 1rem;
     color: white;
 }
 
 .amount {
     display: flex;
     flex-flow: column;
+    margin-left: auto;
     border-radius: 12px;
     background-color: #5770C9;
-    margin-left: 2.5%;
-    width: 38.5%;
+    width: 39.6%;
 }
 
 .amount p {
     text-align: center;
     color: white;
-    margin: 5% 1%;
+    margin: 1rem;
 }
 
 /* PopUp CSS*/
@@ -232,14 +237,14 @@ input:focus {
     position: relative;
     padding: 5%;
     height: 100%;
-    border-radius: 5px;
+    border-radius: 12px;
     border: 2px solid black;
 }
   
 .close {
     color: Black;
-    width: 8%;
-    height: 8%;
+    width: 3rem;
+    height: 3rem;
 }
   
 .close:hover {
@@ -249,6 +254,7 @@ input:focus {
 /* Button CSS in Current Plan*/
 .buttons {
     display: flex;
+    flex-flow: row;
 }
 
 button {
@@ -256,8 +262,8 @@ button {
     border-style: none;
     color: black;
     border-radius: 24px;
-    font-size: 100%;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.16), 0 1px 3px rgba(0, 0, 0, 0.23);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.16),
+                0 1px 3px rgba(0, 0, 0, 0.23);
     margin: 1rem;
     padding: 0.5rem;
 }
@@ -380,10 +386,6 @@ footer {
 }
 
 @media (max-width: 800px) {
-    .plan {
-        justify-content: center;    
-    }
-    
     .card {
         flex-flow: column;
         align-items: center;
