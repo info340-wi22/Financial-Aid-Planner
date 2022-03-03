@@ -31,9 +31,8 @@ function Status({status}) {
 function ToDo({toDo}) {
   const item = toDo.map((card, index) => {
     return (
-      <div key={'checkbox' + index}>
-        <CheckBox text={card} />
-      </div>);
+      <CheckBox text={card} key={index}/>
+    );
   });
   return (
     <div className='to-do'>
