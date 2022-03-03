@@ -7,3 +7,9 @@ Thumbs.db
 
 # ignore vscode settings
 .vscode
+
+# ignore firebase cache
+.firebase
+
+# ignore react build
+build
