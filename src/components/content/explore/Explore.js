@@ -1,6 +1,6 @@
 import React from 'react';
 
-import CardList from './PlanCardList';
+import CardList from './ExploreCardList';
 
 export default function Explore() {
   return (
