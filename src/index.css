@@ -3,8 +3,18 @@
 */
 
  /* Body CSS */
+html, body {
+    height: 100%;
+}
+
 body {
+    display: flex;
+    flex-flow: column;
     font-family: 'Libre Baskerville', serif;
+}
+
+p {
+    margin: 0;
 }
 
 /* Header CSS */
@@ -57,7 +67,6 @@ nav a:active {
 .info {
     display: flex;
     flex-flow: row;
-    justify-content: center;
     align-items: center;
 }
 
@@ -65,14 +74,19 @@ nav a:active {
     display: none;
 }
 
-form {
+.info-status {
+    display: flex;
+    flex-flow: row;
+}
+
+label, input {
     margin-left: 1rem;
 }
 
 input {
     border-radius: 6px;
     border-color: black;
-    width: 40%;
+    width: 20%;
 }
 
 input:active,
@@ -189,9 +203,10 @@ input:focus {
 
 /* PopUp CSS*/
 .pop_bg {
+    display: flex;
     z-index: 1;
-    width: 40%;
-    height: 500px;
+    width: fit-content;
+    height: fit-content;
     position: absolute;
     top:0;
     bottom: 0;
@@ -199,19 +214,20 @@ input:focus {
     right: 0;
     margin: auto;
 }
-form label {
-    margin-top: 30px;
+
+.pop-up-header {
+    display: flex;
+    flex-flow: row;
 }
 
-form input {
-    margin-left: 4%;
+.pop-up-form {
+    display: flex;
+    flex-flow: column;
 }
 
-.form_submit {
-    float: right;
-}
- 
 .pop_content {
+    display: flex;
+    flex-flow: column;
     background-color: plum;
     position: relative;
     padding: 5%;
@@ -222,12 +238,12 @@ form input {
   
 .close {
     color: Black;
-    float: right;
+    width: 8%;
+    height: 8%;
 }
   
 .close:hover {
     color: purple;
-    cursor: pointer;
 }
 
 /* Button CSS in Current Plan*/
@@ -270,7 +286,7 @@ button {
 }
 
 footer {
-    position: static;
+    margin-top: auto;
 }
 
 
@@ -350,7 +366,6 @@ footer {
 
 .navimage {
     border-radius: 0%;
-    width: 3rem;
     height: 3rem;
 }
 
@@ -397,7 +412,6 @@ footer {
     header h1 {
         position: relative;
         padding: 0.75rem;
-        height: fit-content;
         margin-left: auto;
         margin-bottom: 0px;
         font-size: 1.5rem;
