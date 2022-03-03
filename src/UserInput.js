@@ -27,11 +27,9 @@ function UserInput(props) {
         <span className="arrow left"></span>Page 1</button>
 
       <div className="text" role="status">
-        <form>
+        <form className='info-status'>
           <label htmlFor="cost">Cost of College Per Year:</label>
           <input type="text" id="cost" name="cost" value={amount} onChange={handleInputAmount} />
-        </form>
-        <form>
           <label htmlFor="cover">Amount You Can Cover:</label>
           <input type="text" id="cover" name="cover" value={cover} onChange={handleInputCover} />
         </form>
@@ -41,12 +39,16 @@ function UserInput(props) {
       </div>
       <div className="buttons">
         <button type="submit" className="card-button" onClick={togglePop}>Fill in Information</button>
-        <div>
-          {seen ? <PopUp setScholar={props.setScholar}
-            setLink={props.setLink}
-            setPerYear={props.setPerYear}
-            setAmount={props.setAmount} toggle={togglePop} addCard={props.addCard}/> : null}
-        </div>
+        <>
+          {seen ?
+            <PopUp
+              setScholar={props.setScholar}
+              setLink={props.setLink}
+              setPerYear={props.setPerYear}
+              setAmount={props.setAmount} toggle={togglePop} addCard={props.addCard}
+            /> :
+            null}
+        </>
         <button type="submit" className="card-button" onClick={handleSubmit}>Upload As Template</button>
       </div>
       <button type="button" id="arrow-button-r" className="arrow-button">

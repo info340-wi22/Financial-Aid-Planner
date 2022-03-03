@@ -8,7 +8,9 @@ import Explore from './Explore';
 function App() {
   return (
     <>
-      <NavBar />
+      <header>
+        <NavBar />
+      </header>
       <main>
         <Routes>
           <Route path='*' element={<Navigate to='/main' />} />
