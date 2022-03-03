@@ -34,27 +34,21 @@ export function PopUp({toggle, setScholar, setLink, setPerYear, setAmount, addCa
   return (
     <div className='pop_bg'>
       <div className='pop_content'>
-        <button className='close' onClick={handleClick}>
-          &times;
-        </button>
-        <form>
+        <div className='pop-up-header'>
           <h1>Fill in the Information :)</h1>
-          <label htmlFor='scholarship'>
-            Scholarship:
-            <input type="text" name="scholarship" onChange={handleScholar}/>
-          </label>
-          <label htmlFor='link'>
-            link:
-            <input type="url" name="link" onChange={handleLink}/>
-          </label>
-          <label htmlFor='frequency'>
-            Frequency Per Year:
-            <input type="text" name="frequency" onChange={handlePerYear}/>
-          </label>
-          <label htmlFor='amount'>
-            Amount Paid Per Frequency:
-            <input type="text" name="amount" onChange={handleAmount}/>
-          </label>
+          <button className='close' onClick={handleClick}>
+            &times;
+          </button>
+        </div>
+        <form className='pop-up-form'>
+          <label htmlFor='scholarship'>Scholarship:</label>
+          <input type="text" name="scholarship" onChange={handleScholar}/>
+          <label htmlFor='link'>link:</label>
+          <input type="url" name="link" onChange={handleLink}/>
+          <label htmlFor='frequency'>Frequency Per Year:</label>
+          <input type="text" name="frequency" onChange={handlePerYear}/>
+          <label htmlFor='amount'>Amount Paid Per Frequency:</label>
+          <input type="text" name="amount" onChange={handleAmount}/>
         </form>
         <button type="submit" className='form_submit' onClick={handleSubmit}> Submit </button>
       </div>
