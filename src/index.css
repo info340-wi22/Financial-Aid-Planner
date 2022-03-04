@@ -1,10 +1,13 @@
 /* Mobile first layout. Some of these CSS rules
-   carry over to the desktop version of the site.
+carry over to the desktop version of the site.
 */
 
- /* Body CSS */
+/* Body CSS */
 html, body {
     height: 100%;
+    min-width: 100%;
+    margin: 0%;
+    padding: 0%;
 }
 
 body {
@@ -36,10 +39,19 @@ header h1 { /* controls visibility of tag line */
     display: none;
 }
 
-header img {
+
+.navimage {
+    border-radius: 0%;
+}
+
+.profile {
     border-radius: 50%;
-    width: 3rem;
+}
+
+header img {
     margin-left: auto;
+    width: 2rem;
+    height: 2rem;
 }
 
 
@@ -51,7 +63,7 @@ header img {
 
 nav a {
     margin: 0 1rem;
-    font-size: 1.75rem;
+    font-size: 0.6rem;
     color: white;
     text-decoration: none;
 }
@@ -82,6 +94,7 @@ nav a:active {
 .info-status {
     display: flex;
     flex-flow: row;
+    align-items: center;
 }
 
 label, input {
@@ -103,22 +116,19 @@ input:focus {
 .plan {
     display: flex;
     flex-flow: column;
+    align-items: center;
 }
 
 
 /* card css */
 .card {
     display: flex;
-    flex-flow: row wrap;
-    width: 40rem;
+    flex-flow: column;
+    align-items: center;
     background-color: #7f7eff;
     border-radius: 12px;
     padding: 1rem;
-    margin: 1rem;
-}
-
-.title {
-    margin-right: auto;
+    margin: 0.5rem 0.8rem;
 }
 
 .title h1 {
@@ -168,7 +178,8 @@ input:focus {
     background-color: #00a2c7;
     border-radius: 12px;
     padding: 1rem;
-    width: 58%;
+    width: 80%;
+    margin-bottom: 0.5rem;
 }
 
 .checkbox-wrapper {
@@ -194,10 +205,9 @@ input:focus {
 .amount {
     display: flex;
     flex-flow: column;
-    margin-left: auto;
     border-radius: 12px;
     background-color: #5770C9;
-    width: 39.6%;
+    width: 80%;
 }
 
 .amount p {
@@ -255,17 +265,15 @@ input:focus {
 .buttons {
     display: flex;
     flex-flow: row;
+    align-items: center;
 }
 
 button {
     background-color: #C4C4C4;
     border-style: none;
-    color: black;
-    border-radius: 24px;
+    border-radius: 12px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.16),
                 0 1px 3px rgba(0, 0, 0, 0.23);
-    margin: 1rem;
-    padding: 0.5rem;
 }
 
 .arrow-button {
@@ -273,12 +281,13 @@ button {
     align-items: center;
     background-color: Transparent;
     box-shadow: none;
+    font-size: 0.5rem;
 }
 
 .arrow {
     border: solid black;
-    border-width: 0 15px 15px 0;
-    padding: 10px;
+    border-width: 0 0.5rem 0.5rem 0;
+    padding: 0.4rem;
 }
 
 .right {
@@ -349,8 +358,9 @@ footer {
 .card-button {
     background-color: #B18CFF;
     color: white;
-    font-size: 20px;
-    margin-left: 2rem;
+    font-size: 75%;
+    margin: 0.35rem ;
+    padding: 0.4rem;
 }
 
 .college-wrapper label {
@@ -370,42 +380,42 @@ footer {
     width: 100%;
 }
 
-.navimage {
-    border-radius: 0%;
-    height: 3rem;
-}
 
-@media (max-width: 598px) {
+@media (min-width: 500px) {
+    header img {
+        height: 3rem;
+        width: 3rem;
+    }
+
     nav a {
-        font-size: 100%;
-    }
-    .card-button {
-        font-size: 80%;
-        margin-left: 1rem;
+        font-size: 1rem;
     }
 }
 
-@media (max-width: 800px) {
+@media (min-width: 598px) {
+    nav a {
+        font-size: 1.75rem;
+    }
+}
+
+@media (min-width: 800px) {
     .card {
-        flex-flow: column;
-        align-items: center;
-        width: 100%;
+        flex-flow: row wrap;
+        width: 40rem;
     }
-
-    .card div {
-        margin: 1%;
-    }
-
+    
     .title {
-        margin: 1%;
+        margin-right: auto;
     }
-
+    
+    
     .to-do {
-        width: 80%;
+        width: 58%;
     }
 
     .amount {
-        width: 80%;
+        width: 39.6%;
+        margin-left: auto;
     }
 }
 
@@ -428,20 +438,19 @@ footer {
     .text {
         display: flex;
         font-size: 1.25rem;
-        align-items: center;
+    }
+
+    .text p {
+        margin: 0rem 1rem;
     }
 
     button {
         background-color: #B18CFF;
         color: white;
-        border-radius: 12px;
     }
 
-    .buttons button:last-child {
-        position: relative;
-        margin-top: 1rem;
-        margin-left: 1rem;
-        display: block;
+    .card-button p {
+        padding: 1rem;
     }
 
     .arrow-button {
@@ -452,6 +461,7 @@ footer {
         flex-flow: row wrap;
         justify-content: center;
     }
+
 
     /* Explore page */
     .explore-plan {

@@ -49,7 +49,7 @@ function UserInput(props) {
             /> :
             null}
         </>
-        <button type="submit" className="card-button" onClick={handleSubmit}>Upload As Template</button>
+        <button type="submit" className="card-button" onClick={handleSubmit}>Upload Template</button>
       </div>
       <button type="button" id="arrow-button-r" className="arrow-button">
         Page 3<span className="arrow right"></span></button>
