@@ -205,7 +205,6 @@ input:focus {
 .amount {
     display: flex;
     flex-flow: column;
-    margin-left: auto;
     border-radius: 12px;
     background-color: #5770C9;
     width: 80%;
@@ -462,6 +461,7 @@ footer {
         flex-flow: row wrap;
         justify-content: center;
     }
+
 
     /* Explore page */
     .explore-plan {
