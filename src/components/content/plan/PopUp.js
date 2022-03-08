@@ -46,9 +46,9 @@ export function PopUp({toggle, setScholar, setLink, setPerYear, setAmount, addCa
           <label htmlFor='link'>link:</label>
           <input type="url" name="link" onChange={handleLink}/>
           <label htmlFor='frequency'>Frequency Per Year:</label>
-          <input type="text" name="frequency" onChange={handlePerYear}/>
+          <input type="number" name="frequency" onChange={handlePerYear}/>
           <label htmlFor='amount'>Amount Paid Per Frequency:</label>
-          <input type="text" name="amount" onChange={handleAmount}/>
+          <input type="number" name="amount" onChange={handleAmount}/>
         </form>
         <button type="submit" className='form_submit' onClick={handleSubmit}> Submit </button>
       </div>
