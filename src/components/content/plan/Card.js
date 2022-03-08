@@ -1,6 +1,7 @@
 import React from 'react';
 
-export default function Card({name, status, toDo, amount, link}) {
+export default function Card(props) {
+  const {name, status, toDo, amount, link} = props;
   return (
     <div className='card'>
       <Title title={name} link={link} />
@@ -11,7 +12,8 @@ export default function Card({name, status, toDo, amount, link}) {
   );
 }
 
-function Title({title, link}) {
+function Title(props) {
+  const {title, link} = props;
   return (
     <div className='title'>
       <h1>{title}</h1>
@@ -20,7 +22,8 @@ function Title({title, link}) {
   );
 }
 
-function Status({status}) {
+function Status(props) {
+  const status = props.status
   return (
     <div className='status accepted'>
       <p>Current Status: {status}</p>
@@ -28,7 +31,8 @@ function Status({status}) {
   );
 }
 
-function ToDo({toDo}) {
+function ToDo(props) {
+  const toDo = props.toDo;
   const item = toDo.map((card, index) => {
     return (
       <CheckBox text={card} key={index}/>
@@ -41,7 +45,8 @@ function ToDo({toDo}) {
   );
 }
 
-function CheckBox({text}) {
+function CheckBox(props) {
+  const text = props.text;
   return (
     <div className='checkbox-wrapper'>
       <input type="checkbox" name='cardbox'></input>

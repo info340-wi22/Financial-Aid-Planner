@@ -13,9 +13,9 @@ function App() {
       </header>
       <main>
         <Routes>
-          <Route path='*' element={<Navigate to='/main' />} />
           <Route path='main' element={<Main />} />
           <Route path='explore' element={<Explore />} />
+          <Route path='*' element={<Navigate to='/main' />} />
         </Routes>
       </main>
     </>
