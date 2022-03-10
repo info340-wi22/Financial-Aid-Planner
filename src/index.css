@@ -457,6 +457,10 @@ footer {
         font-size: 2rem;
     }
 
+    .Sign-In .profile-button {
+        box-shadow: none;
+    }
+
     /* main page */
     .text {
         display: flex;
