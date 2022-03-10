@@ -22,7 +22,6 @@ export function MySignInScreen(props) {
   const auth = getAuth();
   return (
     <>
-      <h1>My App</h1>
       <p>Please sign-in:</p>
       <StyledFirebaseAuth uiConfig={firebaseUIConfig} firebaseAuth={auth}/>
       <button title='login' className='close-login' onClick={close}>Close</button>
