@@ -83,6 +83,8 @@ nav a:active {
 }
 
 .Sign-In {
+    display: flex;
+    flex-flow: column;
     position: absolute; 
     width: fit-content;
     height: fit-content;
@@ -93,6 +95,14 @@ nav a:active {
 
 .Sign-In p, .Sign-In h1 {
     color: black;
+}
+
+.Sign-In h1 {
+    margin: 0;
+}
+
+.Sign-In .close-login {
+
 }
 
 /* Current Plan Page CSS */
