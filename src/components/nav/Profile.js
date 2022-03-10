@@ -6,7 +6,7 @@ export function Profile() {
   const [state, setState] = useState(false);
 
   const handleClick = () => {
-    setState(true);
+    setState(!state);
   };
 
   return (
@@ -14,7 +14,7 @@ export function Profile() {
       <button className="profile-button" onClick={handleClick}>
         <img className="profile" src=".\imgs\profile-icon.webp" alt="Profile"/>
       </button>
-      {state ? <div className='Sign-In'><MySignInScreen/></div> : null}
+      {state ? <div className='Sign-In'><MySignInScreen close={handleClick}/></div> : null}
     </>
   );
 }
