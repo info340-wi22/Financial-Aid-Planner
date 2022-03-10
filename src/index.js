@@ -13,6 +13,7 @@ import {BrowserRouter} from 'react-router-dom';
 const firebaseConfig = {
   apiKey: 'AIzaSyCXQtNji304g0n1KW5S61BFJrClMnJvYsg',
   authDomain: 'financial-aid-planner.firebaseapp.com',
+  databaseURL: 'https://financial-aid-planner-default-rtdb.firebaseio.com',
   projectId: 'financial-aid-planner',
   storageBucket: 'financial-aid-planner.appspot.com',
   messagingSenderId: '707383309221',
