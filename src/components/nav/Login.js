@@ -2,8 +2,7 @@ import React from 'react';
 import {getAuth, EmailAuthProvider, GoogleAuthProvider} from 'firebase/auth';
 import {StyledFirebaseAuth} from 'react-firebaseui';
 
-export function MySignInScreen(props) {
-  const {close} = props;
+export function MySignInScreen() {
   const firebaseUIConfig = {
     signInOptions: [
       GoogleAuthProvider.PROVIDER_ID,
