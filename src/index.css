@@ -77,6 +77,9 @@ nav a:active {
 
 .profile-button {
     box-shadow: none;
+    background-color: unset;
+    padding: unset;
+    margin-left: auto;
 }
 
 .Sign-In {
@@ -424,7 +427,6 @@ footer {
         margin-right: auto;
     }
     
-    
     .to-do {
         width: 58%;
     }
@@ -448,10 +450,6 @@ footer {
 
     nav a {
         font-size: 2rem;
-    }
-
-    .Sign-In .profile-button {
-        box-shadow: none;
     }
 
     /* main page */
