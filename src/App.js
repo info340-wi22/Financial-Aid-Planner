@@ -6,6 +6,7 @@ import {Main} from './components/content/plan/Main';
 import Explore from './components/content/explore/Explore';
 import schloarData from './data/SchloarshipData.json';
 function App() {
+  console.log(schloarData);
   return (
     <>
       <header>
