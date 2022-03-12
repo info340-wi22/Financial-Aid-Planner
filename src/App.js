@@ -6,7 +6,6 @@ import {Main} from './components/content/plan/Main';
 import Explore from './components/content/explore/Explore';
 import schloarData from './data/SchloarshipData.json';
 function App() {
-  console.log(schloarData);
   return (
     <>
       <header>
@@ -14,7 +13,7 @@ function App() {
       </header>
       <main>
         <Routes>
-          <Route path='main' element={<Main />} />
+          <Route path='main' element={<Main data={schloarData} />} />
           <Route path='explore' element={<Explore />} />
           <Route path='*' element={<Navigate to='/main' />} />
         </Routes>
