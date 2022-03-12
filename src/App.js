@@ -4,7 +4,7 @@ import {Route, Routes, Navigate} from 'react-router-dom';
 import NavBar from './components/nav/NavBar';
 import {Main} from './components/content/plan/Main';
 import Explore from './components/content/explore/Explore';
-
+import schloarData from './data/SchloarshipData.json';
 function App() {
   return (
     <>
