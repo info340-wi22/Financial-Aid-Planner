@@ -1,40 +1,69 @@
+/* Mobile first layout. Some of these CSS rules
+carry over to the desktop version of the site.
+*/
+
 /* Body CSS */
+html, body {
+    height: 100%;
+    min-width: 100%;
+    margin: 0%;
+    padding: 0%;
+}
 
 body {
+    display: flex;
+    flex-flow: column;
     font-family: 'Libre Baskerville', serif;
 }
 
-
-/* Header CSS */
-
-header {
+main {
     display: flex;
-    width: 100%;
-    color: white;
-    background-color: #B18CFF;
-    padding: 0.5rem 0.5rem;
-    margin-bottom: 2rem;
+    flex-flow: column;
+    align-items: center;
 }
 
-header p {
-    position: absolute;
-    margin-top: -100px;
-    margin-left: -10px;
-    visibility: hidden;
+p {
+    margin: 0; /* This is to prevent reboot from bootstrap adding a 1rem margin to the bottom of any p */
+}
+
+/* Header CSS */
+header {
+    display: flex;
+    flex-flow: row;
+    color: white;
+    background-color: #B18CFF;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+}
+header h1 { /* controls visibility of tag line */
+    display: none;
+}
+
+
+.navimage {
+    border-radius: 0%;
+}
+
+.profile {
+    border-radius: 50%;
 }
 
 header img {
-    border-radius: 50%;
-    width: 3rem;
     margin-left: auto;
+    width: 2rem;
+    height: 2rem;
 }
 
 
 /* Navbar CSS */
+.menu {
+    display: flex;
+    align-items: center;
+}
 
 nav a {
     margin: 0 1rem;
-    font-size: 1.75rem;
+    font-size: 0.6rem;
     color: white;
     text-decoration: none;
 }
@@ -46,6 +75,30 @@ nav a:active {
     text-decoration-line: underline;
 }
 
+.profile-button {
+    box-shadow: none;
+    background-color: unset;
+    padding: unset;
+    margin-left: auto;
+}
+
+.Sign-In {
+    display: flex;
+    flex-flow: column;
+    position: absolute; 
+    width: 15rem;
+    height: fit-content;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+
+.Sign-In p {
+    color: black;
+}
 
 /* Current Plan Page CSS */
 
@@ -54,24 +107,28 @@ nav a:active {
 
 .info {
     display: flex;
-    justify-content: center;
+    flex-flow: row;
+    align-items: center;
 }
 
-.text {
-    position: absolute;
-    margin-top: -100px;
-    margin-left: -100px;
-    visibility: hidden;
+.text { /* Hides the information bar when the screensize is small */
+    display: none;
 }
 
-form {
+.info-status {
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+}
+
+label, input {
     margin-left: 1rem;
 }
 
 input {
     border-radius: 6px;
     border-color: black;
-    width: 40%;
+    width: 20%;
 }
 
 input:active,
@@ -82,46 +139,44 @@ input:focus {
 
 .plan {
     display: flex;
-    margin: 1rem 5rem;
-    flex-wrap: wrap;
-    flex-flow: column wrap-reverse;
-    align-content: center;
-}
-
-div.plan-card {
-    display: flex;
+    flex-flow: column;
+    align-items: center;
 }
 
 
 /* card css */
-
 .card {
     display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    width: 40rem;
-    height: 20rem;
+    flex-flow: column;
+    align-items: center;
     background-color: #7f7eff;
     border-radius: 12px;
     padding: 1rem;
-    margin: 1rem;
+    margin: 0.5rem 0.8rem;
 }
 
-.title {
-    margin-right: auto;
-    margin-bottom: .5rem;
-    height: fit-content;
-}
-
-.title p {
+.title h1 {
     color: white;
-    font-size: 2rem;
+    font-size: 200%;
     margin: 0;
+}
+
+.title a,
+.title a:active,
+.title a:focus {
+    color: #011B4B;
+    text-decoration: none;
 }
 
 .status {
     border-radius: 12px;
+    margin-bottom: 0.5rem;
+    padding: 1rem;
     height: fit-content;
+}
+
+.status p {
+    color: white;
 }
 
 .accepted {
@@ -140,147 +195,169 @@ div.plan-card {
     background-color: #424242;
 }
 
-.status p {
-    font-size: 1rem;
-    margin: 1rem 1rem;
-    color: white;
-    height: fit-content;
-}
 
 .to-do {
     display: flex;
-    flex-direction: column;
+    flex-flow: column;
     background-color: #00a2c7;
     border-radius: 12px;
-    margin-right: 1rem;
     padding: 1rem;
-    width: 21rem;
+    width: 80%;
+    margin-bottom: 0.5rem;
 }
 
 .checkbox-wrapper {
     display: flex;
-    flex-direction: row;
+    flex-flow: row;
+    align-items: center;
     margin-bottom: 1rem;
 }
 
+.checkbox-wrapper label, input {
+    margin-left: 0;
+}
+
 .checkbox-wrapper input {
-    width: 6%;
-    margin-top: 0.3rem;
-    margin-right: 0.5rem;
+    width: unset;
 }
 
 .checkbox-wrapper label {
+    margin-left: 1rem;
     color: white;
 }
 
 .amount {
     display: flex;
-    flex-direction: column;
+    flex-flow: column;
     border-radius: 12px;
     background-color: #5770C9;
-    margin-left: 1rem;
-    height: fit-content;
-    width: 14.5rem;
+    width: 80%;
 }
 
 .amount p {
     text-align: center;
     color: white;
-    margin: 1rem 1rem;
+    margin: 1rem;
 }
 
+/* PopUp CSS*/
+.pop_bg {
+    display: flex;
+    z-index: 1;
+    width: fit-content;
+    height: fit-content;
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
 
-/* Button CSS */
+.pop-up-header {
+    display: flex;
+    flex-flow: row;
+}
 
+.pop-up-form {
+    display: flex;
+    flex-flow: column;
+}
+
+.pop_content {
+    display: flex;
+    flex-flow: column;
+    background-color: plum;
+    position: relative;
+    padding: 5%;
+    height: 100%;
+    border-radius: 12px;
+    border: 2px solid black;
+}
+  
+.close {
+    color: Black;
+    width: 3rem;
+    height: 3rem;
+}
+  
+.close:hover {
+    color: purple;
+}
+
+/* Button CSS in Current Plan*/
 .buttons {
     display: flex;
+    flex-flow: row;
+    align-items: center;
 }
 
 button {
     background-color: #C4C4C4;
     border-style: none;
-    color: black;
-    border-radius: 24px;
-    font-size: 24px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.16), 0 1px 3px rgba(0, 0, 0, 0.23);
-    margin: 12px 12px;
-}
-
-button:first-child {
-    padding-left: 2.5rem;
-    padding-right: 2.5rem;
-}
-
-.buttons button:last-child {
-    position: absolute;
-    margin-top: -100px;
-    margin-left: -100px;
-    visibility: hidden;
+    border-radius: 12px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.16),
+                0 1px 3px rgba(0, 0, 0, 0.23);
 }
 
 .arrow-button {
+    display: flex;
+    align-items: center;
     background-color: Transparent;
     box-shadow: none;
+    font-size: 0.5rem;
 }
 
 .arrow {
     border: solid black;
-    border-width: 0 15px 15px 0;
-    display: inline-block;
-    padding: 10px;
-    visibility: visible;
+    border-width: 0 0.5rem 0.5rem 0;
+    padding: 0.4rem;
 }
 
 .right {
-    transform: rotate(-45deg);
     -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
 }
 
 .left {
-    transform: rotate(135deg);
     -webkit-transform: rotate(135deg);
+    transform: rotate(135deg);
 }
 
 footer {
-    position: static;
-    bottom: 0;
+    margin-top: auto;
 }
 
 
 /* Explore page CSS */
-
 .explore-page {
     display: flex;
-    flex-flow: column wrap-reverse;
+    flex-flow: column wrap;
 }
 
 .filter-by p:first-child {
-    position: absolute;
-    margin-top: -100px;
-    margin-left: -100px;
-    visibility: hidden;
+    display: none;
 }
 
 .filter-by {
     display: flex;
-    flex-direction: row;
+    flex-flow: row;
+    align-items: center;
+    justify-content: center;
     color: black;
     margin-left: 1rem;
     border-radius: 12px;
     height: fit-content;
 }
 
-.filter-by p {
-    margin: 1rem 1rem;
-}
-
+.filter-by p,
 .filter-by label {
     margin: 1rem 1rem;
 }
 
 .plan-card {
     display: flex;
-    flex-direction: column;
+    flex-flow: column;
 }
 
 .filter-text button {
@@ -288,36 +365,30 @@ footer {
 }
 
 .aid-range-wrapper {
-    position: absolute;
-    margin-top: -100px;
-    margin-left: -100px;
-    visibility: hidden;
+    display: none;
 }
 
 .explore-plan {
     display: flex;
     padding: 0.5rem;
+    margin: 0.5rem 1rem;
     flex-flow: row wrap;
     border-radius: 12px;
     font-size: 12px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.16), 0 1px 3px rgba(0, 0, 0, 0.23);
     align-items: center;
-    justify-content: center;
 }
 
 .card-button {
     background-color: #B18CFF;
     color: white;
-    font-size: 24px;
-    margin-top: 1rem;
-    margin-left: 2rem;
+    font-size: 75%;
+    margin: 0.35rem ;
+    padding: 0.4rem;
 }
 
 .college-wrapper label {
-    position: absolute;
-    margin-top: -100px;
-    margin-left: -100px;
-    visibility: hidden;
+    display: none;
 }
 
 .explore-page p {
@@ -329,123 +400,131 @@ footer {
 }
 
 .college-wrapper input {
-    margin-top: 1rem;
     height: 50px;
-    width: 400px;
-    font-size: 14pt;
+    width: 100%;
 }
 
-.navimage {
-	
-    object-fit: cover;
-    border-radius: 0%;
-    width: 3rem;
-	scroll-margin-right: 2rem;
+
+@media (min-width: 500px) {
+    header img {
+        height: 3rem;
+        width: 3rem;
+    }
+
+    nav a {
+        font-size: 1rem;
+    }
 }
 
+@media (min-width: 598px) {
+    nav a {
+        font-size: 1.75rem;
+    }
+}
+
+@media (min-width: 800px) {
+    .card {
+        flex-flow: row wrap;
+        width: 40rem;
+    }
+    
+    .title {
+        margin-right: auto;
+    }
+    
+    .to-do {
+        width: 58%;
+    }
+
+    .amount {
+        width: 39.6%;
+        margin-left: auto;
+    }
+}
 
 /* Desktop Layout */
-
 @media (min-width: 962px) {
-    header p {
+    header h1 {
         position: relative;
-        margin-top: 0rem;
-        margin: 0rem;
-        padding: 0.75rem 0.75rem;
-        height: fit-content;
+        padding: 0.75rem;
         margin-left: auto;
-        visibility: visible;
+        margin-bottom: 0px;
+        font-size: 1.5rem;
+        display: inline;
     }
+
     nav a {
         font-size: 2rem;
     }
+
+    /* main page */
     .text {
-        position: relative;
-        margin-top: 0;
-        margin-left: 0;
         display: flex;
         font-size: 1.25rem;
-        visibility: visible;
     }
+
+    .text p {
+        margin: 0rem 1rem;
+    }
+
     button {
         background-color: #B18CFF;
         color: white;
-        border-radius: 12px;
-        margin-right: 1rem;
     }
-    .buttons button:last-child {
-        position: relative;
-        margin-top: 1rem;
-        margin-left: 1rem;
-        visibility: visible;
+
+    .card-button p {
+        padding: 1rem;
     }
+
     .arrow-button {
-        position: absolute;
-        margin-top: -100px;
-        margin-left: -100px;
-        visibility: hidden;
+        display: none;
     }
-    .arrow {
-        visibility: hidden;
-    }
+
     .plan {
         flex-flow: row wrap;
         justify-content: center;
     }
+
+
+    /* Explore page */
     .explore-plan {
-        flex-direction: row;
-    }
-    .explore-page {
         flex-flow: row;
     }
-    .college-wrapper label {
-        position: relative;
-        margin-top: 1rem;
-        margin-left: 1rem;
-        visibility: visible;
+
+    .explore-page {
+        flex-flow: row;
+        justify-content: center;
     }
+
+    .college-wrapper label,
     .filter-by p:first-of-type {
         position: relative;
         margin-top: 1rem;
         margin-left: 1rem;
-        visibility: visible;
+        display: inline-block;
     }
+
     .filter-by button:first-of-type {
-        visibility: hidden;
-        position: absolute;
-        margin-top: -100px;
-        margin-left: -100px;
-        visibility: hidden;
+        display: none;
     }
+
     .filter-by {
         background-color: #B18CFF;
         color: white;
-        flex-direction: column;
+        flex-flow: column;
+        align-items: unset;
         margin: 0.5rem;
     }
+
     .aid-range-wrapper {
         position: relative;
         margin-top: 0rem;
         margin-left: 1rem;
-        visibility: visible;
+        display: block;
     }
+
     .college-wrapper input {
-        margin-top: 0rem;
         height: 30px;
-        width: 100px;
-        font-size: 14pt;
-    }
-    .filter-by p:last-of-type {
-        visibility: hidden;
-        position: absolute;
-        margin-top: -100px;
-        margin-left: -100px;
-        visibility: hidden;
+        width: 50%;
     }
 }
-
-
-/*
-@media (max-width: 962px) {
-	
-}*/
