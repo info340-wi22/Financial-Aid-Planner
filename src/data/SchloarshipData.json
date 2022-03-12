@@ -11,7 +11,13 @@
          "Accepted": [],
          "Rejected": [],
          "Pending": []
-      }
+      },
+      "Amount": {
+        "FreqYear": "3",
+        "AmountPerF": "3000"
+
+      },
+      "postNumber": "1"
    },
    {
       "SchloarshipName": "",
@@ -25,7 +31,12 @@
          "Accepted": [],
          "Rejected": [],
          "Pending": []
-      }
+      },
+      "Amount": {
+         "FreqYear": "3",
+         "AmountPerF": "3000"
+      },
+      "postNumber": "2"
    },
    {
       "SchloarshipName": "",
@@ -40,7 +51,12 @@
          "Accepted": [],
          "Rejected": [],
          "Pending": []
-      }
+      },
+      "Amount": {
+         "FreqYear": "3",
+         "AmountPerF": "3000"
+      },
+      "postNumber": "3"
    },
    {
       "SchloarshipName": "",
@@ -54,6 +70,11 @@
          "Accepted": [],
          "Rejected": [],
          "Pending": []
-      }
+      },
+      "Amount": {
+         "FreqYear": "3",
+         "AmountPerF": "3000"
+      },
+      "postNumber": "4"
    }
 ]

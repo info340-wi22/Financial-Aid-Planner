@@ -4,7 +4,6 @@ import {CardList} from './CardList';
 
 export function Main(props) {
   const data = props.data;
-  console.log(data);
   const [cardList, setCardList] = useState([]);
   const [curScholar, setScholar] = useState('');
   const [curLink, setLink] = useState('');
@@ -47,7 +46,7 @@ export function Main(props) {
         setPerYear={setPerYearCallBack}
         setAmount={setAmountCallBack}
       />
-      <CardList cardList={cardList} />
+      <CardList cardList={data} />
     </>
   );
 }

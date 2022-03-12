@@ -1,11 +1,10 @@
 import React from 'react';
 import Card from './Card';
 
-export function CardList({cardList}) {
-  const cards = cardList.map((card) => {
-    const key = 'card' + card.key;
-    return <Card key={key} name={card.name} status={card.cardStatus} toDo={card.toDo} amount={card.amount} link={card.link}/>;
-  });
+export function CardList(props) {
+  const cardsData = props.cardList;
+  console.log(cardsData);
+  const cards = cardsData.map((cards) => <Card schloarInfo={cards} key={cards.postNumber}/>)
   return (
     <div className='plan'>
       {cards}
