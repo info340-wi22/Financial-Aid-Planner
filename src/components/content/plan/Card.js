@@ -1,13 +1,14 @@
 import React from 'react';
 
 export default function Card(props) {
-  const {name, status, toDo, amount, link} = props;
+  // const {name, status, toDo, amount, link} = props;
+  const dataCard = props.schloarInfo;
   return (
     <div className='card'>
-      <Title title={name} link={link} />
-      <Status status={status} />
-      <ToDo toDo={toDo} />
-      <Amount amount={amount} />
+      <Title title={dataCard.SchloarshipName} link={dataCard.SchloarLink} />
+      <Status status={dataCard.SchloarStatus} />
+      <ToDo toDo={dataCard.SchloarshipReqs} />
+      <Amount amount={dataCard.Amount} />
     </div>
   );
 }
@@ -24,9 +25,19 @@ function Title(props) {
 
 function Status(props) {
   const status = props.status
+  let currentStatus= "";
+ if (status.Accepted.includes("currentUser")) {
+   currentStatus = "Accepted";
+ } else if (status.Rejected.includes("currentUser")) {
+   currentStatus = "Rejected";
+ } else if (status.Pending.includes("currentUser")) {
+   currentStatus = "Pending";
+ } else {
+currentStatus = "Planning";
+ }
   return (
-    <div className='status accepted'>
-      <p>Current Status: {status}</p>
+    <div className={"status " + currentStatus.toLowerCase()}>
+      <p>Current Status: {currentStatus}</p>
     </div>
   );
 }
@@ -56,11 +67,11 @@ function CheckBox(props) {
 }
 
 function Amount({amount}) {
-  const yearly = amount.freq * amount.per;
+  const yearly = amount.FreqYear * amount.AmountPerF;
   return (
     <div className='amount'>
-      <p>Frequency Per Year: {amount.freq}</p>
-      <p>Amount Paid Per Frequency: {amount.per}</p>
+      <p>Frequency Per Year: {amount.FreqYear}</p>
+      <p>Amount Paid Per Frequency: {amount.AmountPerF}</p>
       <p>Total Amount Per Year: {yearly}</p>
     </div>
   );

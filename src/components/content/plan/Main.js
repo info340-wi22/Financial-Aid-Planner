@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
-
 import UserInput from './UserInput';
 import {CardList} from './CardList';
 
-export function Main() {
+export function Main(props) {
+  const data = props.data;
   const [cardList, setCardList] = useState([]);
   const [curScholar, setScholar] = useState('');
   const [curLink, setLink] = useState('');
@@ -46,7 +46,7 @@ export function Main() {
         setPerYear={setPerYearCallBack}
         setAmount={setAmountCallBack}
       />
-      <CardList cardList={cardList} />
+      <CardList cardList={data} />
     </>
   );
 }

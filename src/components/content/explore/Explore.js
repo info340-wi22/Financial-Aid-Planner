@@ -1,8 +1,24 @@
 import React from 'react';
 
 import CardList from './ExploreCardList';
+import { getDatabase } from 'firebase/database';
+import { getAuth, onAuthStateChanged } from 'firebase/auth'
+
+const auth = getAuth();
+
+onAuthStateChanged(auth, (firebaseUser) => {
+    if(firebaseUser){ //firebaseUser defined: is logged in
+        console.log('logged in', firebaseUser.displayName);
+        //do something with firebaseUser (e.g. assign to a state variable)
+    }
+    else { //firebaseUser is undefined: is not logged in
+        console.log('logged out');
+    }
+});
 
 export default function Explore() {
+  // Get a reference to the database service
+  const db = getDatabase();
   return (
     <div className='explore-page'>
       <FilterBy/>

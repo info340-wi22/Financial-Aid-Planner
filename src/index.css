@@ -33,7 +33,7 @@ header {
     color: white;
     background-color: #B18CFF;
     padding: 0.5rem;
-    margin-bottom: 1rem;
+    margin-bottom: 1.0rem;
 }
 header h1 { /* controls visibility of tag line */
     display: none;
@@ -75,6 +75,30 @@ nav a:active {
     text-decoration-line: underline;
 }
 
+.profile-button {
+    box-shadow: none;
+    background-color: unset;
+    padding: unset;
+    margin-left: auto;
+}
+
+.Sign-In {
+    display: flex;
+    flex-flow: column;
+    position: absolute; 
+    width: 15rem;
+    height: fit-content;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+
+.Sign-In p {
+    color: black;
+}
 
 /* Current Plan Page CSS */
 
@@ -407,7 +431,6 @@ footer {
     .title {
         margin-right: auto;
     }
-    
     
     .to-do {
         width: 58%;
