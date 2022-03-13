@@ -82,6 +82,12 @@ nav a:active {
     margin-left: auto;
 }
 
+.logout {
+    position: absolute;
+    right: 60px;
+    top: 20px;
+}
+
 .Sign-In {
     display: flex;
     flex-flow: column;
