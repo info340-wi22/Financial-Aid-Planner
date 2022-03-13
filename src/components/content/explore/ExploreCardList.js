@@ -2,13 +2,11 @@ import React from 'react';
 
 import Card from './ExploreCard';
 
-export default function CardList() {
+export default function CardList(props) {
+  const cards = props.cardList.map((card, index) => <Card cardInfo={card} key={index}/>)
   return (
     <div className='plan-card'>
-      <Card/>
-      <Card/>
-      <Card/>
-      <Card/>
+	{cards}
     </div>
   );
 }

@@ -13,11 +13,7 @@ function App() {
       </header>
       <main>
         <Routes>
-<<<<<<< HEAD
-          <Route path='main' element={<Main />} />
-=======
           <Route path='main' element={<Main data={schloarData} />} />
->>>>>>> origin
           <Route path='explore' element={<Explore />} />
           <Route path='*' element={<Navigate to='/main' />} />
         </Routes>
