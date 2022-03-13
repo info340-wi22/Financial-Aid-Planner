@@ -3,7 +3,6 @@ import {getAuth, EmailAuthProvider, GoogleAuthProvider} from 'firebase/auth';
 import {StyledFirebaseAuth} from 'react-firebaseui';
 
 export function MySignInScreen(props) {
-  const {close} = props;
   const firebaseUIConfig = {
     signInOptions: [
       GoogleAuthProvider.PROVIDER_ID,
@@ -21,10 +20,10 @@ export function MySignInScreen(props) {
 
   const auth = getAuth();
   return (
-    <>
-      <p>Please sign-in:</p>
+    <div className='Sign-In'>
+      <h1>Welcome to Learn, Not Spend!</h1>
+      <p>Please login or sign-up:</p>
       <StyledFirebaseAuth uiConfig={firebaseUIConfig} firebaseAuth={auth}/>
-      <button title='login' className='close-login' onClick={close}>Close</button>
-    </>
+    </div>
   );
 }
