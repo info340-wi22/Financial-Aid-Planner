@@ -28,7 +28,7 @@
       ],
       "SchloarLink": "",
       "SchloarStatus": {
-         "Accepted": [],
+         "Accepted": ["currentUser"],
          "Rejected": [],
          "Pending": []
       },
@@ -49,7 +49,7 @@
       "SchloarLink": "",
       "SchloarStatus": {
          "Accepted": [],
-         "Rejected": [],
+         "Rejected": ["currentUser"],
          "Pending": []
       },
       "Amount": {
@@ -69,7 +69,7 @@
       "SchloarStatus": {
          "Accepted": [],
          "Rejected": [],
-         "Pending": []
+         "Pending": ["currentUser"]
       },
       "Amount": {
          "FreqYear": "3",
