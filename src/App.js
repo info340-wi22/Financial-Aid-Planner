@@ -15,7 +15,7 @@ function App() {
       <main>
         <Routes>
           <Route index element={<MySignInScreen/>}/>
-          <Route path='main' element={<Main />} />
+          <Route path='main' element={<Main data={schloarData} />} />
           <Route path='explore' element={<Explore />} />
           <Route path='*' element={<Navigate to='/main' />} />
         </Routes>
