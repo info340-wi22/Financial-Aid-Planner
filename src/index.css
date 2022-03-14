@@ -218,6 +218,15 @@ input:focus {
     margin-bottom: 0.5rem;
 }
 
+.todo-add-div {
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+}
+
+.todo-add-div input {
+    width: 80%;
+}
 .add-todo {
     width: 1.75rem;
 }

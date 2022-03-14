@@ -75,14 +75,16 @@ function ToDo(props) {
   return (
     <div className='to-do'>
       {item}
-      <button className='add-todo' onClick={handleClick}>&#43;</button>
-      {
+      <div className='todo-add-div'>
+        <button className='add-todo' onClick={handleClick}>&#43;</button>
+        {
         show ?
         <form>
           <label htmlFor='todo-item'></label>
           <input type="text" name="todo-item"/>
         </form> : null
-      }
+        }
+      </div>
     </div>
   );
 }
