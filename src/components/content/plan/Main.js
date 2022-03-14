@@ -5,7 +5,7 @@ import {getAuth, onAuthStateChanged} from 'firebase/auth';
 
 export function Main(props) {
   const data = props.data;
-  const [cardList, setCardList] = useState([]);
+  const [cardList, setCardList] = useState(data);
   const [curScholar, setScholar] = useState('');
   const [curLink, setLink] = useState('');
   const [curPerYear, setPerYear] = useState('');
@@ -46,7 +46,7 @@ export function Main(props) {
   };
 
   const addCard = () => {
-    setCardList([...cardList, {key: cardList.length, name: curScholar, cardStatus: 'Accepted', toDo: ['Get A Letter of Rec', 'Get A Letter of Rec', 'Get A Letter of Rec'], amount: {freq: curPerYear, per: curAmount}, link: curLink}]);
+    setCardList([...cardList, {key: cardList.length, ScholarShipName: curScholar, ScholarStatus: 'Accepted', ScholarShipReqs: ['Get A Letter of Rec', 'Get A Letter of Rec', 'Get A Letter of Rec'], Amount: {FreqYear: curPerYear, AmountPerF: curAmount}, link: curLink}]);
   };
   return (
     <>
