@@ -82,21 +82,32 @@ nav a:active {
     margin-left: auto;
 }
 
+.logout {
+    position: absolute;
+    right: 60px;
+    top: 20px;
+}
+
 .Sign-In {
     display: flex;
     flex-flow: column;
-    position: absolute; 
-    width: 15rem;
-    height: fit-content;
+    background-color: white;
+    position: absolute;
+    height: 100%; 
+    width: 100%;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
-    margin: auto;
 }
 
+.Sign-In h1 {
+    text-align: center;
+    margin-top: 10%;
+}
 
 .Sign-In p {
+    text-align: center;
     color: black;
 }
 

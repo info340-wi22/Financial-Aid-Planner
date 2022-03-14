@@ -2,7 +2,7 @@
   "hosting": {
     "public": "build",
     "rewrites": [{
-      "source": "/main",
+      "source": "**",
       "destination": "/index.html"
     }],
     "ignore": [

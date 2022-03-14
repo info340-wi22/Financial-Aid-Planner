@@ -24,19 +24,19 @@ function Title(props) {
 }
 
 function Status(props) {
-  const status = props.status
-  let currentStatus= "";
- if (status.Accepted.includes("currentUser")) {
-   currentStatus = "Accepted";
- } else if (status.Rejected.includes("currentUser")) {
-   currentStatus = "Rejected";
- } else if (status.Pending.includes("currentUser")) {
-   currentStatus = "Pending";
- } else {
-currentStatus = "Planning";
- }
+  const status = props.status;
+  let currentStatus= '';
+  if (status.Accepted.includes('currentUser')) {
+    currentStatus = 'Accepted';
+  } else if (status.Rejected.includes('currentUser')) {
+    currentStatus = 'Rejected';
+  } else if (status.Pending.includes('currentUser')) {
+    currentStatus = 'Pending';
+  } else {
+    currentStatus = 'Planning';
+  }
   return (
-    <div className={"status " + currentStatus.toLowerCase()}>
+    <div className={'status ' + currentStatus.toLowerCase()}>
       <p>Current Status: {currentStatus}</p>
     </div>
   );
