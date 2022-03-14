@@ -11,9 +11,9 @@ export default function Explore() {
   const [filteredCardList, setFilteredCardList] = useState([]);
 
   const filter = (uniName, min, max) => {
-    console.log('range: ' + min + '-' + max);
-    const filtered = cardList.filter((plan) => {
-      return plan.College.includes(uniName) && plan.PotentialAid >= min && plan.PotentialAid <= max;
+    console.log('range: '+min+'-'+max);
+    const filtered = cardList.filter((plan)=>{
+      return plan.College.includes(uniName) && plan.PotentialAid >= min&&plan.PotentialAid<=max;
     });
     setFilteredCardList(filtered);
   };
@@ -50,8 +50,8 @@ export default function Explore() {
   console.log(cardList);
   return (
     <div className='explore-page'>
-      <FilterBy filter={filter} />
-      <CardList cardList={filteredCardList} user={user} />
+      <FilterBy filter = {filter}/>
+      <CardList cardList={filteredCardList} user={user}/>
     </div>
   );
 }
@@ -82,13 +82,13 @@ function FilterBy(props) {
       <form>
         <div className='college-wrapper'>
           <label htmlFor="college" id="college-text">College:</label>
-          <input type="text" id="college" name="college" onChange={inputChange} />
+          <input type="text" id="college" name="college" onChange={inputChange}/>
         </div>
         <div className="aid-range-wrapper">
           <label htmlFor="aid-range">Aid Range:</label>
-          <input type="number" id="minRange" name="minRange" onChange={minRange} />
+          <input type="number" id="minRange" name="minRange" onChange={minRange}/>
           <p> - </p>
-          <input type="number" id="maxRange" name="maxRange" onChange={maxRange} />
+          <input type="number" id="maxRange" name="maxRange" onChange={maxRange}/>
         </div>
       </form>
       <button type="button" id="filter-submit" onClick={handleFilterClick}>Submit</button>
