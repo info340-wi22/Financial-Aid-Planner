@@ -4,8 +4,7 @@ import {CardList} from './CardList';
 import {getAuth, onAuthStateChanged} from 'firebase/auth';
 
 export function Main(props) {
-  const data = props.data;
-  const [cardList, setCardList] = useState(data);
+  const [cardList, setCardList] = useState(props.data);
   const [curScholar, setScholar] = useState('');
   const [curLink, setLink] = useState('');
   const [curPerYear, setPerYear] = useState('');
@@ -46,8 +45,9 @@ export function Main(props) {
   };
 
   const addCard = () => {
-    setCardList([...cardList, {key: cardList.length, ScholarShipName: curScholar, ScholarStatus: 'Accepted', ScholarShipReqs: ['Get A Letter of Rec', 'Get A Letter of Rec', 'Get A Letter of Rec'], Amount: {FreqYear: curPerYear, AmountPerF: curAmount}, link: curLink}]);
+    setCardList([...cardList, {ScholarShipName: curScholar, ScholarStatus: 'Accepted', ScholarShipReqs: ['Get A Letter of Rec', 'Get A Letter of Rec', 'Get A Letter of Rec'], Amount: {FreqYear: curPerYear, AmountPerF: curAmount}, ScholarLink: curLink}]);
   };
+  console.log(cardList);
   return (
     <>
       <UserInput onSubmit={addPost} addCard={addCard}
@@ -57,7 +57,7 @@ export function Main(props) {
         setPerYear={setPerYearCallBack}
         setAmount={setAmountCallBack}
       />
-      <CardList cardList={data} user={user} currentPlan={currentPlanName}/>
+      <CardList cardList={cardList} user={user} currentPlan={currentPlanName}/>
     </>
   );
 }

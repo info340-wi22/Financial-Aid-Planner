@@ -7,11 +7,7 @@
          "Get Letter of Recomendation"
       ],
       "SchloarLink": "",
-      "SchloarStatus": {
-         "Accepted": [],
-         "Rejected": [],
-         "Pending": []
-      },
+      "SchloarStatus": "",
       "Amount": {
         "FreqYear": "3",
         "AmountPerF": "3000"
@@ -27,11 +23,7 @@
          "Update Resume"
       ],
       "SchloarLink": "",
-      "SchloarStatus": {
-         "Accepted": [],
-         "Rejected": [],
-         "Pending": []
-      },
+      "SchloarStatus": "",
       "Amount": {
          "FreqYear": "3",
          "AmountPerF": "3000"
@@ -47,11 +39,7 @@
          "Have a 4.0"
       ],
       "SchloarLink": "",
-      "SchloarStatus": {
-         "Accepted": [],
-         "Rejected": [],
-         "Pending": []
-      },
+      "SchloarStatus": "",
       "Amount": {
          "FreqYear": "3",
          "AmountPerF": "3000"
@@ -66,11 +54,7 @@
          "Do Project"
       ],
       "SchloarLink": "",
-      "SchloarStatus": {
-         "Accepted": [],
-         "Rejected": [],
-         "Pending": []
-      },
+      "SchloarStatus": "",
       "Amount": {
          "FreqYear": "3",
          "AmountPerF": "3000"
