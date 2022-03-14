@@ -10,15 +10,17 @@ export function CardList(props) {
     const userRef = ref(db, props.user+'/Plans/' +props.plan + "/Cards");
     const off = onValue(userRef, (snapshot) => {
       const allPlansObject = snapshot.val(); // get the JSON from the reference
-      const planKeyArray = Object.keys(allPlansObject);
-      const allPlansArray = planKeyArray.map((keyString) => {
-        const whichObject = {...allPlansObject[keyString], firebaseKey: keyString};
-        return whichObject;
-      });
+	    if(allPlansObject !== null) {
+		  const planKeyArray = Object.keys(allPlansObject);
+		  const allPlansArray = planKeyArray.map((keyString) => {
+			const whichObject = {...allPlansObject[keyString], firebaseKey: keyString};
+			return whichObject;
+	      });
 
-	//usually save to state
-	setPlan(allPlansArray);
-    })
+		  //usually save to state
+		  setPlan(allPlansArray);
+		}
+	})
 	//cleanup function for when component is removed
 	function cleanup() {
 	  off(); //turn off all listeners
