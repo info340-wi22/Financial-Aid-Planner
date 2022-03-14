@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {PopUp} from './PopUp';
 
 function UserInput(props) {
-  const [amount, setAmount] = useState('');
+  const [amount, setAmount] = useState(0);
   const handleInputAmount = (event) => {
     setAmount(event.target.value);
   };
@@ -33,7 +33,7 @@ function UserInput(props) {
           <label htmlFor="cover">Amount You Can Cover:</label>
           <input type="text" id="cover" name="cover" value={cover} onChange={handleInputCover} />
         </form>
-        <p>Current Aid: 9000</p>
+        <p>Current Aid: {sum}</p>
         <p>Potential Aid: {sum}</p>
         <p>Amount Left: {leftOver}</p>
       </div>
