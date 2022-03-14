@@ -1,5 +1,4 @@
-import React from 'react';
-import {useState} from 'react';
+import React, {useState} from 'react';
 import {getDatabase, ref, set as firebaseSet} from 'firebase/database';
 
 export default function Card(props) {
