@@ -19,7 +19,7 @@ export default function Card(props) {
       <button className='delete-button' onClick={handleClick}>&#10005;</button>
       <Title title={dataCard.SchloarshipName} link={dataCard.SchloarLink} />
       <Status status={dataCard.SchloarStatus} />
-      <ToDo toDo={dataCard.SchloarshipReqs} user={props.user} id={id} currentPlan={props.currentPlan}/>
+      <ToDo toDo={dataCard.ScholarshipReqs} user={props.user} id={id} currentPlan={props.currentPlan}/>
       <Amount amount={dataCard.Amount} />
     </div>
   );

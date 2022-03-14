@@ -58,7 +58,7 @@ export function Main(props) {
         setPerYear={setPerYearCallBack}
         setAmount={setAmountCallBack}
       />
-      <CardList cardList={data} user={user} currentPlan={currentPlanName}/>
+      <CardList cardList={data} user={user} plan={currentPlanName}/>
     </>
   );
 }

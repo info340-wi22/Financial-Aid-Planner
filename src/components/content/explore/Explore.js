@@ -45,6 +45,7 @@ onAuthStateChanged(auth, (firebaseUser) => {
   }
   return cleanup; //effect hook callback returns the cleanup function
   }, [db])
+  
   return (
 	<div className='explore-page'>
 	  <FilterBy filter = {filter}/>
