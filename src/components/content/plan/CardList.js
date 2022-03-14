@@ -26,8 +26,8 @@ export function CardList(props) {
 	  off(); //turn off all listeners
 	}
 	return cleanup; //effect hook callback returns the cleanup function
-  }, [db,props.user])
-  const cards = plan.map((cards, index) => <Card id={index} schloarInfo={cards} key={index} user ={props.user} currentPlan={props.currentPlan}/>);
+  }, [db, props.user])
+  const cards = plan.map((cards, index) => <Card id={index} schloarInfo={cards} key={index} user ={props.user} currentPlan={props.plan}/>);
   return (
     <div className='plan'>
       {cards}

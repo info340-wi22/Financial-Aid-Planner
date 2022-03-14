@@ -77,6 +77,8 @@ function ToDo(props) {
 	setNewToDo(event.target.value);
   };
   const handleSubmit = (event) => {
+	    console.log(props.user);
+
      toDo.push(newToDo);
 	 firebaseSet(userRef, toDo)
      .then(() => console.log("card to do updated successfully!"))
