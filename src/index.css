@@ -431,6 +431,7 @@ footer {
 }
 
 
+
 @media (min-width: 500px) {
     header img {
         height: 3rem;
@@ -509,6 +510,18 @@ footer {
     .plan {
         flex-flow: row wrap;
         justify-content: center;
+    }
+
+    .plan_label {
+        font-size: 2rem;
+    }
+
+    .plan_page {
+        margin-top: 10%;
+        padding: 2%;
+        border-style: solid;
+        border-color: #7f7eff;
+        border-width: 3px;
     }
 
 
