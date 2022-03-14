@@ -228,7 +228,8 @@ input:focus {
     width: 80%;
 }
 .add-todo {
-    width: 1.75rem;
+    border-radius: 100%;
+    width: 1.6rem;
 }
 
 .checkbox-wrapper {
