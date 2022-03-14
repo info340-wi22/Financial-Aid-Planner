@@ -29,8 +29,6 @@ onAuthStateChanged(auth, (firebaseUser) => {
     const userRef = ref(db, 'Plans/');
     const off = onValue(userRef, (snapshot) => {
       const allPlansObject = snapshot.val(); // get the JSON from the reference
-	  if (snapshot.hasChild("Current Plan"))
-		setCurrentPlan(true);
       const planKeyArray = Object.keys(allPlansObject);
       const allPlansArray = planKeyArray.map((keyString) => {
         const whichObject = {...allPlansObject[keyString], firebaseKey: keyString};
