@@ -4,6 +4,7 @@ import {Route, Routes, Navigate} from 'react-router-dom';
 import NavBar from './components/nav/NavBar';
 import {Main} from './components/content/plan/Main';
 import Explore from './components/content/explore/Explore';
+import {MySignInScreen} from './components/nav/Login';
 import schloarData from './data/SchloarshipData.json';
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       </header>
       <main>
         <Routes>
+          <Route index element={<MySignInScreen/>}/>
           <Route path='main' element={<Main data={schloarData} />} />
           <Route path='explore' element={<Explore />} />
           <Route path='*' element={<Navigate to='/main' />} />
