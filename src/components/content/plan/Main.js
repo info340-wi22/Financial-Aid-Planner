@@ -47,7 +47,6 @@ export function Main(props) {
   const addCard = () => {
     setCardList([...cardList, {ScholarShipName: curScholar, ScholarStatus: 'Accepted', ScholarShipReqs: ['Get A Letter of Rec', 'Get A Letter of Rec', 'Get A Letter of Rec'], Amount: {FreqYear: curPerYear, AmountPerF: curAmount}, ScholarLink: curLink}]);
   };
-  console.log(cardList);
   return (
     <>
       <UserInput onSubmit={addPost} addCard={addCard}
