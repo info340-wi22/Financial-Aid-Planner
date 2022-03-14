@@ -156,6 +156,7 @@ input:focus {
 
 
 /* card css */
+
 .card {
     display: flex;
     flex-flow: column;
@@ -215,6 +216,20 @@ input:focus {
     padding: 1rem;
     width: 80%;
     margin-bottom: 0.5rem;
+}
+
+.todo-add-div {
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+}
+
+.todo-add-div input {
+    width: 80%;
+}
+.add-todo {
+    border-radius: 100%;
+    width: 1.6rem;
 }
 
 .checkbox-wrapper {
