@@ -1,11 +1,10 @@
-import React, {useState, useEffect } from 'react';
+import React, {useState, useEffect} from 'react';
 
 import CardList from './ExploreCardList';
-import { getDatabase, ref, onValue} from 'firebase/database';
-import { getAuth, onAuthStateChanged } from 'firebase/auth'
+import {getDatabase, ref, onValue} from 'firebase/database';
+import {getAuth, onAuthStateChanged} from 'firebase/auth';
 
 export default function Explore() {
- 
   const auth = getAuth();
   const [user, setUser] = useState(null);
   const [cardList, setCardList] = useState([]);
@@ -28,14 +27,14 @@ onAuthStateChanged(auth, (firebaseUser) => {
   });
   const db = getDatabase();
   useEffect(() => {
-  const userRef = ref(db, "Plans/");
-  const off = onValue(userRef, (snapshot) => {
-	const allPlansObject = snapshot.val(); //get the JSON from the reference
-	const planKeyArray = Object.keys(allPlansObject) 
-	const allPlansArray = planKeyArray.map((keyString) => {
-	const whichObject = {...allPlansObject[keyString], firebaseKey: keyString};
-	  return whichObject;
-	})
+    const userRef = ref(db, 'Plans/');
+    const off = onValue(userRef, (snapshot) => {
+      const allPlansObject = snapshot.val(); // get the JSON from the reference
+      const planKeyArray = Object.keys(allPlansObject);
+      const allPlansArray = planKeyArray.map((keyString) => {
+        const whichObject = {...allPlansObject[keyString], firebaseKey: keyString};
+        return whichObject;
+      });
 
 	//usually save to state
 	setCardList(allPlansArray);
