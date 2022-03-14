@@ -6,7 +6,7 @@ export default function Card(props) {
 
   const db = getDatabase();
   useEffect(() => {
-    const userRef = ref(db, props.user+"/Plans/Current Plan");
+    const userRef = ref(db, props.user+"/Current Plan");
     const off = onValue(userRef, (snapshot) => {
       const allPlansObject = snapshot.val(); // get the JSON from the reference
       if(allPlansObject === null)
@@ -21,7 +21,7 @@ export default function Card(props) {
         .then(() => console.log('added plan successfully'))
         .catch((err) => console.log(err)); // log any errors for debugging
 	if(!currentPlan) {
-	  const currentPlanRef = ref(db, props.user + '/Plans/Current Plan');
+	  const currentPlanRef = ref(db, props.user + '/Current Plan');
       firebaseSet(currentPlanRef, props.cardInfo.firebaseKey)
       .then(() => console.log('set current plan successfully!'))
       .catch((err) => console.log(err)); // log any errors for debugging
