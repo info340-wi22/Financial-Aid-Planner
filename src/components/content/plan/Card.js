@@ -4,10 +4,15 @@ import {useState} from 'react';
 export default function Card(props) {
   // const {name, status, toDo, amount, link} = props;
   const dataCard = props.schloarInfo;
+  const [remove, setRemove] = useState(false);
   const {id} = props;
   const handleClick = () => {
     // To Do: add Delete Need to remove card from DB and then force rerender
+    setRemove(true);
   };
+  if (remove) {
+    return null;
+  }
   return (
     <div className='card'>
       <button className='delete-button' onClick={handleClick}>&#10005;</button>
