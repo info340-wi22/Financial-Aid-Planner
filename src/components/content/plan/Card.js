@@ -1,10 +1,16 @@
 import React from 'react';
+import {useState} from 'react';
 
 export default function Card(props) {
   // const {name, status, toDo, amount, link} = props;
   const dataCard = props.schloarInfo;
+  const {id} = props;
+  const handleClick = () => {
+    // To Do: add Delete Need to remove card from DB and then force rerender
+  };
   return (
     <div className='card'>
+      <button className='delete-button' onClick={handleClick}>&#10005;</button>
       <Title title={dataCard.SchloarshipName} link={dataCard.SchloarLink} />
       <Status status={dataCard.SchloarStatus} />
       <ToDo toDo={dataCard.SchloarshipReqs} />
@@ -23,27 +29,38 @@ function Title(props) {
   );
 }
 
+const statuses = ['planning', 'accepted', 'rejected', 'pending'];
 function Status(props) {
-  const status = props.status;
-  let currentStatus= '';
-  if (status.Accepted.includes('currentUser')) {
-    currentStatus = 'Accepted';
-  } else if (status.Rejected.includes('currentUser')) {
-    currentStatus = 'Rejected';
-  } else if (status.Pending.includes('currentUser')) {
-    currentStatus = 'Pending';
-  } else {
-    currentStatus = 'Planning';
-  }
+  // This should eventually be changed to pulling status from DB and changing the DB entry
+  const [status, setStatus] = useState('planning');
+  const handleClick = () => {
+    const nextStatus = statuses.pop();
+    statuses.unshift(nextStatus);
+    setStatus(nextStatus);
+  };
+  // const status = props.status;
+  // let currentStatus= '';
+  // if (status.Accepted.includes('currentUser')) {
+  //   currentStatus = 'Accepted';
+  // } else if (status.Rejected.includes('currentUser')) {
+  //   currentStatus = 'Rejected';
+  // } else if (status.Pending.includes('currentUser')) {
+  //   currentStatus = 'Pending';
+  // } else {
+  //   currentStatus = 'Planning';
+  // }
   return (
-    <div className={'status ' + currentStatus.toLowerCase()}>
-      <p>Current Status: {currentStatus}</p>
+    <div className={'status ' + status} onClick={handleClick}>
+      <p>Current Status: {status}</p>
     </div>
   );
 }
 
 function ToDo(props) {
   const toDo = props.toDo;
+  const handleClick = () => {
+
+  };
   const item = toDo.map((card, index) => {
     return (
       <CheckBox text={card} key={index}/>
@@ -52,6 +69,7 @@ function ToDo(props) {
   return (
     <div className='to-do'>
       {item}
+      <button className='add-todo' onClick={handleClick}>&#43;</button>
     </div>
   );
 }
