@@ -18,12 +18,12 @@ export default function Explore() {
   }
 onAuthStateChanged(auth, (firebaseUser) => {
     if(firebaseUser){ //firebaseUser defined: is logged in
-        console.log('logged in', firebaseUser.uid);
-		setUser(firebaseUser.uid);
-        //do something with firebaseUser (e.g. assign to a state variable)
+	  console.log('logged in', firebaseUser.uid);
+	  setUser(firebaseUser.uid);
+	  //do something with firebaseUser (e.g. assign to a state variable)
     }
     else { //firebaseUser is undefined: is not logged in
-        console.log('logged out');
+	  console.log('logged out');
     }
   });
   const db = getDatabase();
@@ -63,16 +63,16 @@ function FilterBy(props) {
 	props.filter(filterName, minAmount, maxAmount);
   }
   const inputChange = (event) => {
-	  setFilterName(event.target.value);
+    setFilterName(event.target.value);
   }
   const minRange = (event) => {
-	  setMinAmount(event.target.value);
+	setMinAmount(event.target.value);
   }
   const maxRange = (event) => {
-	  if(event.target.value == "")
-		setMaxAmount(9999999);
-	  else
-	    setMaxAmount(event.target.value);
+	if(event.target.value == "")
+	  setMaxAmount(9999999);
+	else
+	  setMaxAmount(event.target.value);
   }
   return (
     <div className="filter-by">
