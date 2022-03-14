@@ -67,6 +67,10 @@ function ToDo(props) {
   const handleClick = () => {
     setShow(!show);
   };
+  const handleChange = (event) => {
+    // toDo.push(event.target.value);
+    console.log(event.target.value);
+  };
   const item = toDo.map((card, index) => {
     return (
       <CheckBox text={card} key={index}/>
@@ -81,7 +85,7 @@ function ToDo(props) {
         show ?
         <form>
           <label htmlFor='todo-item'></label>
-          <input type="text" name="todo-item"/>
+          <input type="text" name="todo-item" onSubmit={handleChange}/>
         </form> : null
         }
       </div>
