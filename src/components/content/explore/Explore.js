@@ -9,14 +9,21 @@ export default function Explore() {
   const auth = getAuth();
   const [user, setUser] = useState(null);
   const [cardList, setCardList] = useState([]);
+  const [filteredCardList, setFilteredCardList] = useState([]);
+
+  const filter = (uniName, min, max) => {
+	  console.log("range: "+min+"-"+max);
+	  const filtered = cardList.filter((plan)=>{return plan.College.includes(uniName) && plan.PotentialAid >= min&&plan.PotentialAid<=max})
+	  setFilteredCardList(filtered);
+  }
 onAuthStateChanged(auth, (firebaseUser) => {
     if(firebaseUser){ //firebaseUser defined: is logged in
-        console.log('logged in', firebaseUser.uid);
-		setUser(firebaseUser.uid);
-        //do something with firebaseUser (e.g. assign to a state variable)
+	  console.log('logged in', firebaseUser.uid);
+	  setUser(firebaseUser.uid);
+	  //do something with firebaseUser (e.g. assign to a state variable)
     }
     else { //firebaseUser is undefined: is not logged in
-        console.log('logged out');
+	  console.log('logged out');
     }
   });
   const db = getDatabase();
@@ -31,9 +38,9 @@ onAuthStateChanged(auth, (firebaseUser) => {
 	})
 
 	//usually save to state
-	setCardList(allPlansArray)
+	setCardList(allPlansArray);
+	setFilteredCardList(allPlansArray);
   })
-
   //cleanup function for when component is removed
   function cleanup() {
 	off(); //turn off all listeners
@@ -43,12 +50,30 @@ onAuthStateChanged(auth, (firebaseUser) => {
   console.log(cardList);
   return (
 	<div className='explore-page'>
-	  <FilterBy/>
-	  <CardList cardList={cardList} user={user}/>
+	  <FilterBy filter = {filter}/>
+	  <CardList cardList={filteredCardList} user={user}/>
 	</div>
   );
 }
-function FilterBy() {
+function FilterBy(props) {
+  const [filterName, setFilterName] = useState("");
+  const [minAmount, setMinAmount] = useState(0);
+  const [maxAmount, setMaxAmount] = useState(9999999);
+  const handleFilterClick = (event) => {
+	props.filter(filterName, minAmount, maxAmount);
+  }
+  const inputChange = (event) => {
+    setFilterName(event.target.value);
+  }
+  const minRange = (event) => {
+	setMinAmount(event.target.value);
+  }
+  const maxRange = (event) => {
+	if(event.target.value == "")
+	  setMaxAmount(9999999);
+	else
+	  setMaxAmount(event.target.value);
+  }
   return (
     <div className="filter-by">
       <p id="filter-text">Filter By</p>
@@ -56,13 +81,16 @@ function FilterBy() {
       <form>
         <div className='college-wrapper'>
           <label htmlFor="college" id="college-text">College:</label>
-          <input type="text" id="college" name="college"/>
+          <input type="text" id="college" name="college" onChange={inputChange}/>
         </div>
         <div className="aid-range-wrapper">
           <label htmlFor="aid-range">Aid Range:</label>
-          <input type="range" min="1" max="100" defaultValue="50" className="aid-range" id="aid-range"/>
+          <input type="number" id="minRange" name="minRange" onChange={minRange}/>
+		  <p> - </p>
+		  <input type="number" id="maxRange" name="maxRange" onChange={maxRange}/>
         </div>
       </form>
+	  <button type="button" id="filter-submit" onClick={handleFilterClick}>Submit</button>
     </div>
   );
 }
