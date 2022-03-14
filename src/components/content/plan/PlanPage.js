@@ -18,8 +18,9 @@ export function PlanPage() {
     }
   });
   const db = getDatabase();
+
   useEffect(() => {
-    const userRef = ref(db, 'Plans/');
+    const userRef = ref(db, user + '/Plans/');
     const off = onValue(userRef, (snapshot) => {
       const allPlansObject = snapshot.val(); // get the JSON from the reference
       const planKeyArray = Object.keys(allPlansObject);
@@ -37,7 +38,7 @@ export function PlanPage() {
       off(); // turn off all listeners
     }
     return cleanup; // effect hook callback returns the cleanup function
-  }, [db]);
+  }, [db, user]);
   return (
     <div>
       <label className="plan_label">Your current Plans are: </label>
