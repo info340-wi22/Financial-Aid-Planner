@@ -3,8 +3,8 @@ import Card from './Card';
 
 export function CardList(props) {
   const cardsData = props.cardList;
-  console.log(cardsData);
-  const cards = cardsData.map((cards) => <Card id={1} schloarInfo={cards} key={cards.postNumber}/>);
+  console.log(props.currentPlan);
+  const cards = cardsData.map((cards, index) => <Card id={index} schloarInfo={cards} key={cards.postNumber} user ={props.user} currentPlan={props.currentPlan}/>);
   return (
     <div className='plan'>
       {cards}

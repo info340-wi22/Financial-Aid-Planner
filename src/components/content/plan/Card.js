@@ -1,5 +1,6 @@
 import React from 'react';
 import {useState} from 'react';
+import { getDatabase, ref, set as firebaseSet } from 'firebase/database'
 
 export default function Card(props) {
   // const {name, status, toDo, amount, link} = props;
@@ -18,7 +19,7 @@ export default function Card(props) {
       <button className='delete-button' onClick={handleClick}>&#10005;</button>
       <Title title={dataCard.SchloarshipName} link={dataCard.SchloarLink} />
       <Status status={dataCard.SchloarStatus} />
-      <ToDo toDo={dataCard.SchloarshipReqs} />
+      <ToDo toDo={dataCard.SchloarshipReqs} user={props.user} id={id} currentPlan={props.currentPlan}/>
       <Amount amount={dataCard.Amount} />
     </div>
   );
@@ -62,14 +63,24 @@ function Status(props) {
 }
 
 function ToDo(props) {
+  const db = getDatabase();
+  const userRef = ref(db, props.user +"/Plans/"+props.currentPlan + "/Cards/Card " + (props.id+1)+"/ScholarshipReqs");
   const toDo = props.toDo;
   const [show, setShow] = useState(false);
+  const [newToDo, setNewToDo] = useState("");
+
   const handleClick = () => {
     setShow(!show);
   };
   const handleChange = (event) => {
     // toDo.push(event.target.value);
-    console.log(event.target.value);
+	setNewToDo(event.target.value);
+  };
+  const handleSubmit = (event) => {
+     toDo.push(newToDo);
+	 firebaseSet(userRef, toDo)
+		.then(() => console.log("data saved successfully!"))
+		.catch(err => console.log(err)); //log any errors for debugging
   };
   const item = toDo.map((card, index) => {
     return (
@@ -85,7 +96,8 @@ function ToDo(props) {
         show ?
         <form>
           <label htmlFor='todo-item'></label>
-          <input type="text" name="todo-item" onSubmit={handleChange}/>
+          <input type="text" name="todo-item" onChange={handleChange}/>
+		  <input type='submit' value='Click to submit'onClick={handleSubmit}/>
         </form> : null
         }
       </div>
