@@ -63,8 +63,9 @@ function Status(props) {
 
 function ToDo(props) {
   const toDo = props.toDo;
+  const [show, setShow] = useState(false);
   const handleClick = () => {
-
+    setShow(!show);
   };
   const item = toDo.map((card, index) => {
     return (
@@ -75,6 +76,13 @@ function ToDo(props) {
     <div className='to-do'>
       {item}
       <button className='add-todo' onClick={handleClick}>&#43;</button>
+      {
+        show ?
+        <form>
+          <label htmlFor='todo-item'></label>
+          <input type="text" name="todo-item"/>
+        </form> : null
+      }
     </div>
   );
 }
