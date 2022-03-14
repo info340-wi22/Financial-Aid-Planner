@@ -79,7 +79,7 @@ function ToDo(props) {
   const handleSubmit = (event) => {
      toDo.push(newToDo);
 	 firebaseSet(userRef, toDo)
-		.then(() => console.log("data saved successfully!"))
+     .then(() => console.log("card to do updated successfully!"))
 		.catch(err => console.log(err)); //log any errors for debugging
   };
   const item = toDo.map((card, index) => {
