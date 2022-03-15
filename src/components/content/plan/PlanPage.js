@@ -10,14 +10,14 @@ export function PlanPage() {
   const [popUpShow, setPopUpShow] = useState(false);
   const [cardList, setCardList] = useState([]);
   const [collegeName, setCollegeName] = useState('');
-  const [scholarshipName, setScholarshipName] = useState('');
+  const [planName, setplanName] = useState('');
 
   const handleCollege = (event) => {
     setCollegeName(event.target.value);
   };
 
-  const handleScholar = (event) => {
-    setScholarshipName(event.target.value);
+  const handlePlan = (event) => {
+    setplanName(event.target.value);
   };
 
   onAuthStateChanged(auth, (firebaseUser) => {
@@ -57,15 +57,15 @@ export function PlanPage() {
     // console.log('test the plan handler');
     setPopUpShow(!popUpShow);
     setCollegeName('');
-    setScholarshipName('');
+    setplanName('');
   };
 
   const submitHandler = () => {
     setPopUpShow(!popUpShow);
     setCollegeName('');
-    setScholarshipName('');
-    console.log('test scholar name: ' + scholarshipName);
-    const planRef = ref(db, user + '/Plans/' + scholarshipName);
+    setplanName('');
+    console.log('test scholar name: ' + planName);
+    const planRef = ref(db, user + '/Plans/' + planName);
     // const planRef = ref(db, user + '/Plans');
     const newPlan = {
       'Cover Amount': 1,
@@ -73,7 +73,7 @@ export function PlanPage() {
       'College': collegeName,
       'PotentialAid': 2,
       'TotalCostCollege': 3,
-      'firebaseKey': scholarshipName,
+      'firebaseKey': planName,
     };
     set(planRef, newPlan)
         .then(() => console.log('created the new Plan!'))
@@ -95,8 +95,8 @@ export function PlanPage() {
               </button>
             </div>
             <form className='pop-up-form'>
-              <label className="pop-up-label">Scholarship: </label>
-              <input className='pop-up-input' type="text" name="scholarship" value={scholarshipName} onChange={handleScholar}></input>
+              <label className="pop-up-label">Plan Name: </label>
+              <input className='pop-up-input' type="text" name="Plan" value={planName} onChange={handlePlan}></input>
               <label className="pop-up-label">College: </label>
               <input className='pop-up-input' type="text" name="college" value={collegeName} onChange={handleCollege}></input>
             </form>

@@ -5,16 +5,13 @@ export function PlanCard(props) {
   const db = getDatabase();
   const setCurrentPlan = () => {
     const userRef = ref(db, props.user + '/Current Plan');
-    console.log('current id: ' + props.id);
-    console.log('current cardInFo: ' + props.cardInfo);
-    console.log('current User: '+ props.user);
     firebaseSet(userRef, props.cardInfo.firebaseKey)
         .then(() => console.log('current plan set successfully!'))
         .catch((err) => console.log(err)); // log any errors for debugging
   };
   return (
     <div className="plan_page">
-      <p>SCHOLARSHIP: {props.cardInfo.firebaseKey}</p>
+      <p>Plan Name: {props.cardInfo.firebaseKey}</p>
       <p>TOTAL COST OF COLLEGE PER YEAR: {props.cardInfo.TotalCostCollege}</p>
       <p>AMOUNT WANT TO COVER: {props.cardInfo.AmountCover}</p>
       <p>POTENTIAL AID: {props.cardInfo.PotentialAid}</p>
