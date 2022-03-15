@@ -41,14 +41,14 @@ export function PopUp({toggle, setScholar, setLink, setPerYear, setAmount, addCa
           </button>
         </div>
         <form className='pop-up-form'>
-          <label htmlFor='scholarship'>Scholarship:</label>
-          <input type="text" name="scholarship" onChange={handleScholar}/>
-          <label htmlFor='link'>link:</label>
-          <input type="url" name="link" onChange={handleLink}/>
-          <label htmlFor='frequency'>Frequency Per Year:</label>
-          <input type="number" name="frequency" onChange={handlePerYear}/>
-          <label htmlFor='amount'>Amount Paid Per Frequency:</label>
-          <input type="number" name="amount" onChange={handleAmount}/>
+          <label className='pop-up-label' htmlFor='scholarship'>Scholarship:</label>
+          <input className='pop-up-input' type="text" name="scholarship" onChange={handleScholar}/>
+          <label className='pop-up-label' htmlFor='link'>link:</label>
+          <input className='pop-up-input' type="url" name="link" onChange={handleLink}/>
+          <label className='pop-up-label' htmlFor='frequency'>Frequency Per Year:</label>
+          <input className='pop-up-input' type="number" name="frequency" onChange={handlePerYear}/>
+          <label className='pop-up-label' htmlFor='amount'>Amount Paid Per Frequency:</label>
+          <input className='pop-up-input' type="number" name="amount" onChange={handleAmount}/>
         </form>
         <button type="submit" className='form_submit' onClick={handleSubmit}> Submit </button>
       </div>

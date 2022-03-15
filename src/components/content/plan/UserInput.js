@@ -20,7 +20,7 @@ function UserInput(props) {
   , 0);
   let potentialSum = sum;
   props.cards.forEach((card) => {
-    if (card.ScholarStatus) {
+    if (card.ScholarStatus === 'rejected' && card.Amount !== undefined) {
       potentialSum -= card.Amount.FreqYear * card.Amount.AmountPerF;
     }
   });

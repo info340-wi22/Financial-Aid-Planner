@@ -68,6 +68,7 @@ export function Main(props) {
         .then(() => console.log('added card successfully'))
         .catch((err) => console.log(err)); // log any errors for debugging
   };
+  console.log(props.user);
   return (
     <>
       <UserInput onSubmit={addPost} addCard={addCard}

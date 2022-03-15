@@ -288,6 +288,14 @@ input:focus {
 .pop-up-form {
     display: flex;
     flex-flow: column;
+    margin: 5%;
+}
+.pop-up-label {
+    margin-left: 0;
+}
+
+.pop-up-input {
+    width: 50%
 }
 
 .pop_content {
@@ -514,6 +522,7 @@ footer {
 
     .plan_label {
         font-size: 2rem;
+        width: 100%;
     }
 
     .plan_page {
