@@ -1,5 +1,6 @@
 import React from 'react';
 import {getDatabase, ref, set as firebaseSet} from 'firebase/database';
+import {Link} from 'react-router-dom';
 export function PlanCard(props) {
   const db = getDatabase();
   const setCurrentPlan = () => {
@@ -18,7 +19,7 @@ export function PlanCard(props) {
       <p>AMOUNT WANT TO COVER: {props.cardInfo.AmountCover}</p>
       <p>POTENTIAL AID: {props.cardInfo.PotentialAid}</p>
       <p>College: {props.cardInfo.College}</p>
-      <button type="button" id={'view' + props.pos} className="card-button" >View</button>
+      <Link className="btn btn-primary" to={'/main/' + props.cardInfo.firebaseKey}>Visit</Link>
       <button type='button' className='card-button' onClick={setCurrentPlan}>Set Current Plan</button>
     </div>
 
