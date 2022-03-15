@@ -76,10 +76,10 @@ function ToDo(props) {
     setNewToDo(event.target.value);
   };
   const handleSubmit = (event) => {
-    toDo.push(newToDo);
-    firebaseSet(userRef, toDo)
-        .then(() => console.log('card to do updated successfully!'))
-        .catch((err) => console.log(err)); // log any errors for debugging
+     toDo.push(newToDo);
+	 firebaseSet(userRef, toDo)
+     .then(() => console.log("card to do updated successfully!"))
+		.catch(err => console.log(err)); //log any errors for debugging
   };
   let item = null;
   if (toDo !== undefined) {
