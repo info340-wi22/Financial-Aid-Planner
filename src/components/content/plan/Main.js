@@ -7,6 +7,7 @@ import {getDatabase, ref, set as firebaseSet, onValue} from 'firebase/database';
 export function Main(props) {
   const urlParams = useParams();
   const planName = urlParams.planName;
+  const [cardList, setCardList] = useState(props.data);
   const [curScholar, setScholar] = useState('');
   const [curLink, setLink] = useState('');
   const [curPerYear, setPerYear] = useState('');
