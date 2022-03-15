@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
-import {Link} from 'react-router-dom';
-import {getDatabase, ref, set as firebaseSet} from 'firebase/database';
+import {getDatabase, ref, set as firebaseSet, onValue} from 'firebase/database';
 
 export default function Card(props) {
   // const {name, status, toDo, amount, link} = props;
@@ -18,7 +17,7 @@ export default function Card(props) {
     <div className='card'>
       <button className='delete-button' onClick={handleClick}>&#10005;</button>
       <Title title={dataCard.ScholarshipName} link={dataCard.ScholarshipLink} />
-      <Status status={dataCard.ScholarStatus} />
+      <Status status={dataCard.ScholarStatus} user={props.user} id={id} currentPlan={props.currentPlan}/>
       <ToDo toDo={dataCard.ScholarshipReqs} user={props.user} id={id} currentPlan={props.currentPlan}/>
       <Amount amount={dataCard.Amount} />
     </div>
@@ -37,12 +36,20 @@ function Title(props) {
 
 const statuses = ['planning', 'accepted', 'rejected', 'pending'];
 function Status(props) {
-  // This should eventually be changed to pulling status from DB and changing the DB entry
-  const [status, setStatus] = useState('planning');
+  let initialStatus = 'planning';
+  const db = getDatabase();
+  const userRef = ref(db, props.user +'/Plans/'+props.currentPlan + '/Cards/' + (props.id) + '/ScholarStatus');
+  onValue(userRef, (snapshot) => {
+    initialStatus = snapshot.val();
+  });
+  const [status, setStatus] = useState(initialStatus);
   const handleClick = () => {
     const nextStatus = statuses.pop();
     statuses.unshift(nextStatus);
     setStatus(nextStatus);
+    firebaseSet(userRef, nextStatus)
+        .then(() => console.log('added status successfully'))
+        .catch((err) => console.log(err));
   };
   // const status = props.status;
   // let currentStatus= '';
@@ -73,7 +80,6 @@ function ToDo(props) {
     setShow(!show);
   };
   const handleChange = (event) => {
-    // toDo.push(event.target.value);
     setNewToDo(event.target.value);
   };
   const handleSubmit = (event) => {
@@ -119,7 +125,10 @@ function CheckBox(props) {
 }
 
 function Amount({amount}) {
-  const yearly = amount.FreqYear * amount.AmountPerF;
+  let yearly = 0;
+  if (amount ==! undefined) {
+    yearly = amount.FreqYear * amount.AmountPerF;
+  }
   return (
     <div className='amount'>
       <p>Frequency Per Year: {amount.FreqYear}</p>
