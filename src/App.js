@@ -6,7 +6,7 @@ import {Main} from './components/content/plan/Main';
 import {PlanPage} from './components/content/plan/PlanPage';
 import Explore from './components/content/explore/Explore';
 import {MySignInScreen} from './components/nav/Login';
-import schloarData from './data/SchloarshipData.json';
+import ScholarrData from './data/ScholarshipData.json';
 function App() {
   return (
     <>
@@ -16,7 +16,7 @@ function App() {
       <main>
         <Routes>
           <Route index element={<MySignInScreen/>}/>
-          <Route path='main' element={<Main data={schloarData} />} />
+          <Route path='main' element={<Main data={ScholarrData} />} />
           <Route path='plan' element={<PlanPage />} />
           <Route path='explore' element={<Explore />} />
           <Route path='*' element={<Navigate to='/main' />} />

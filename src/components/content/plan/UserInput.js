@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {PopUp} from './PopUp';
 
 function UserInput(props) {
-  const [amount, setAmount] = useState('');
+  const [amount, setAmount] = useState(0);
   const handleInputAmount = (event) => {
     setAmount(event.target.value);
   };
@@ -13,7 +13,15 @@ function UserInput(props) {
   const handleSubmit = (event) => {
     props.onSubmit(amount, cover, 'currentAid', 'potentialAid', 'amountLeft');
   };
-  const sum = props.cards.reduce((prevSum, card) => prevSum + (card.amount.per * card.amount.freq), 0);
+  const sum = props.cards.reduce((prevSum, card) =>
+    prevSum + (card.Amount.AmountPerF * card.Amount.FreqYear)
+  , 0);
+  let potentialSum = sum;
+  props.cards.forEach((card) => {
+    if (card.ScholarStatus) {
+      potentialSum -= card.Amount.FreqYear * card.Amount.AmountPerF;
+    }
+  });
   const leftOver = (amount - cover - sum) < 0 ? 0 : (amount - cover - sum);
 
   const [seen, setSeen] = useState(false);
@@ -33,8 +41,8 @@ function UserInput(props) {
           <label htmlFor="cover">Amount You Can Cover:</label>
           <input type="text" id="cover" name="cover" value={cover} onChange={handleInputCover} />
         </form>
-        <p>Current Aid: 9000</p>
-        <p>Potential Aid: {sum}</p>
+        <p>Current Aid: {sum}</p>
+        <p>Potential Aid: {potentialSum}</p>
         <p>Amount Left: {leftOver}</p>
       </div>
       <div className="buttons">
