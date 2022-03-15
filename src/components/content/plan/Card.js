@@ -1,10 +1,14 @@
+<<<<<<< HEAD
 import React from 'react';
 import {useState} from 'react';
+=======
+import React, {useState} from 'react';
+>>>>>>> origin
 import {getDatabase, ref, set as firebaseSet} from 'firebase/database';
 
 export default function Card(props) {
   // const {name, status, toDo, amount, link} = props;
-  const dataCard = props.schloarInfo;
+  const dataCard = props.ScholarInfo;
   const [remove, setRemove] = useState(false);
   const {id} = props;
   const handleClick = () => {
@@ -17,9 +21,9 @@ export default function Card(props) {
   return (
     <div className='card'>
       <button className='delete-button' onClick={handleClick}>&#10005;</button>
-      <Title title={dataCard.SchloarshipName} link={dataCard.SchloarLink} />
-      <Status status={dataCard.SchloarStatus} />
-      <ToDo toDo={dataCard.SchloarshipReqs} user={props.user} id={id} currentPlan={props.currentPlan}/>
+      <Title title={dataCard.ScholarshipName} link={dataCard.ScholarLink} />
+      <Status status={dataCard.ScholarStatus} />
+      <ToDo toDo={dataCard.ScholarshipReqs} user={props.user} id={id} currentPlan={props.currentPlan}/>
       <Amount amount={dataCard.Amount} />
     </div>
   );
@@ -79,14 +83,21 @@ function ToDo(props) {
   const handleSubmit = (event) => {
     toDo.push(newToDo);
     firebaseSet(userRef, toDo)
+<<<<<<< HEAD
         .then(() => console.log('data saved successfully!'))
+=======
+        .then(() => console.log('card to do updated successfully!'))
+>>>>>>> origin
         .catch((err) => console.log(err)); // log any errors for debugging
   };
-  const item = toDo.map((card, index) => {
-    return (
-      <CheckBox text={card} key={index}/>
-    );
-  });
+  let item = null;
+  if (toDo !== undefined) {
+    item = toDo.map((card, index) => {
+      return (
+        <CheckBox text={card} key={index}/>
+      );
+    });
+  }
   return (
     <div className='to-do'>
       {item}

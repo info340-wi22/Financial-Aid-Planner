@@ -1,15 +1,21 @@
 import React, {useState} from 'react';
 import UserInput from './UserInput';
 import {CardList} from './CardList';
+<<<<<<< HEAD
 import {getAuth, onAuthStateChanged} from 'firebase/auth';
+=======
+import {useParams} from 'react-router-dom';
+>>>>>>> origin
 
 export function Main(props) {
-  const data = props.data;
-  const [cardList, setCardList] = useState([]);
+  const urlParams = useParams();
+  const planName = urlParams.planName;
+  const [cardList, setCardList] = useState(props.data);
   const [curScholar, setScholar] = useState('');
   const [curLink, setLink] = useState('');
   const [curPerYear, setPerYear] = useState('');
   const [curAmount, setAmount] = useState('');
+<<<<<<< HEAD
   const [currentPlanName, setCurrentPlanName] = useState('Plan 1');
   const auth = getAuth();
   const [user, setUser] = useState(null);
@@ -29,6 +35,16 @@ export function Main(props) {
       userPotential: potentialAid,
       userAmountNeed: amountLeft,
     };
+=======
+  const addPost = (costPerYear, amountCover, currentAid, potentialAid, amountLeft) => {
+    // const newPost = {
+    //   yearlyCost: costPerYear,
+    //   userCover: amountCover,
+    //   userAid: currentAid,
+    //   userPotential: potentialAid,
+    //   userAmountNeed: amountLeft,
+    // };
+>>>>>>> origin
   };
 
   const setScholarCallBack = (input) => {
@@ -43,10 +59,11 @@ export function Main(props) {
   const setAmountCallBack = (input) => {
     setAmount(input);
   };
-
+  const loc = planName === undefined ? props.user+'/Plans/' +props.plan : 'Plans/'+planName;
   const addCard = () => {
-    setCardList([...cardList, {key: cardList.length, name: curScholar, cardStatus: 'Accepted', toDo: ['Get A Letter of Rec', 'Get A Letter of Rec', 'Get A Letter of Rec'], amount: {freq: curPerYear, per: curAmount}, link: curLink}]);
+    setCardList([...cardList, {ScholarShipName: curScholar, ScholarStatus: 'Accepted', ScholarShipReqs: ['Get A Letter of Rec', 'Get A Letter of Rec', 'Get A Letter of Rec'], Amount: {FreqYear: curPerYear, AmountPerF: curAmount}, ScholarLink: curLink}]);
   };
+  console.log(props.user);
   return (
     <>
       <UserInput onSubmit={addPost} addCard={addCard}
@@ -56,7 +73,7 @@ export function Main(props) {
         setPerYear={setPerYearCallBack}
         setAmount={setAmountCallBack}
       />
-      <CardList cardList={data} user={user} currentPlan={currentPlanName}/>
+      <CardList cardList={cardList} user={props.user} plan={props.plan} loc={loc}/>
     </>
   );
 }
