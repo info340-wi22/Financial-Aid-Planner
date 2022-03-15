@@ -50,7 +50,6 @@ function App() {
           <Route index element={<MySignInScreen/>}/>
           <Route path='main' element={<Main data={ScholarrData} plan={currentPlan} user={user}/>}> 
 		    <Route path={':planName'} element={<Main data={ScholarrData} plan={currentPlan} user={""}/>}/>
-		  </Route>
           <Route path='plan' element={<PlanPage />} />
           <Route path='explore' element={<Explore />} />
           <Route path='*' element={<Navigate to='/main' />} />
