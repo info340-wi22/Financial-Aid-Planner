@@ -23,14 +23,16 @@ export function PlanPage() {
     const userRef = ref(db, user + '/Plans/');
     const off = onValue(userRef, (snapshot) => {
       const allPlansObject = snapshot.val(); // get the JSON from the reference
-      const planKeyArray = Object.keys(allPlansObject);
-      const allPlansArray = planKeyArray.map((keyString) => {
-        const whichObject = {...allPlansObject[keyString], firebaseKey: keyString};
-        return whichObject;
-      });
+      if (allPlansObject !== null && allPlansObject !== undefined) {
+        const planKeyArray = Object.keys(allPlansObject);
+        const allPlansArray = planKeyArray.map((keyString) => {
+          const whichObject = {...allPlansObject[keyString], firebaseKey: keyString};
+          return whichObject;
+        });
 
-      // usually save to state
-      setCardList(allPlansArray);
+        // usually save to state
+        setCardList(allPlansArray);
+      }
     });
 
     // cleanup function for when component is removed
