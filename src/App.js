@@ -8,7 +8,6 @@ import {PlanPage} from './components/content/plan/PlanPage';
 import Explore from './components/content/explore/Explore';
 import {MySignInScreen} from './components/nav/Login';
 import {getAuth, onAuthStateChanged} from 'firebase/auth';
-import ScholarrData from './data/ScholarshipData.json';
 function App() {
   const auth = getAuth();
   const [user, setUser] = useState(null);
@@ -45,8 +44,8 @@ function App() {
       <main>
         <Routes>
           <Route index element={<MySignInScreen/>}/>
-          <Route path='main' element={<Main data={ScholarrData} plan={currentPlan} user={user}/>}>
-            <Route path={':planName'} element={<Main data={ScholarrData} plan={currentPlan} user={''}/>}/>
+          <Route path='main' element={<Main plan={currentPlan} user={user}/>}>
+            <Route path={':planName'} element={<Main plan={currentPlan} user={''}/>}/>
           </Route>
           <Route path='plan' element={<PlanPage />} />
           <Route path='explore' element={<Explore />} />
