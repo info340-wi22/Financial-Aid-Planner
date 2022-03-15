@@ -5,9 +5,11 @@ import {getDatabase, ref, onValue} from 'firebase/database';
 export function CardList(props) {
   const db = getDatabase();
   const [plan, setPlan] = useState(props.cardList);
-  console.log(props.user+'/Plans/' +props.plan);
+  console.log(props.user);
   useEffect(() => {
-    const userRef = ref(db, props.user+'/Plans/' +props.plan + "/Cards");
+    const userRef = ref(db, props.loc +"/Cards");
+	  console.log("update");
+
     const off = onValue(userRef, (snapshot) => {
       const allPlansObject = snapshot.val(); // get the JSON from the reference
 	    if(allPlansObject !== null) {
@@ -26,7 +28,7 @@ export function CardList(props) {
 	  off(); //turn off all listeners
 	}
 	return cleanup; //effect hook callback returns the cleanup function
-  }, [db, props.user])
+  }, [db,props.loc])
   const cards = plan.map((cards, index) => <Card id={index} schloarInfo={cards} key={index} user ={props.user} currentPlan={props.plan}/>);
   return (
     <div className='plan'>

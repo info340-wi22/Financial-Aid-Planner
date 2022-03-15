@@ -33,7 +33,7 @@ export default function Card(props) {
       <p>AMOUNT WANT TO COVER: {props.cardInfo.AmountCover}</p>
       <p>POTENTIAL AID: {props.cardInfo.PotentialAid}</p>
       <p>College: {props.cardInfo.College}</p>
-      <button type="button" id={'view' + props.pos} className="card-button" >View</button>
+      <button type="button" id={'view' + props.pos} className="card-button" onClick={copyCard}>View</button>
       <button type="button" id={'copy' + props.pos} className="card-button" onClick={copyCard}>Copy</button>
     </div>
   );
