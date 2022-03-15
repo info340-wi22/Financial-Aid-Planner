@@ -11,17 +11,6 @@ export function Main(props) {
   const [curLink, setLink] = useState('');
   const [curPerYear, setPerYear] = useState('');
   const [curAmount, setAmount] = useState('');
-  const [currentPlanName, setCurrentPlanName] = useState('Plan 1');
-  const auth = getAuth();
-  const [user, setUser] = useState(null);
-  onAuthStateChanged(auth, (firebaseUser) => {
-    if (firebaseUser) { // firebaseUser defined: is logged in
-      console.log('logged in', firebaseUser.uid);
-      setUser(firebaseUser.uid); // do something with firebaseUser (e.g. assign to a state variable)
-    } else { // firebaseUser is undefined: is not logged in
-      console.log('logged out');
-    }
-  });
   const addPost = (costPerYear, amountCover, currentAid, potentialAid, amountLeft) => {
     // const newPost = {
     //   yearlyCost: costPerYear,
