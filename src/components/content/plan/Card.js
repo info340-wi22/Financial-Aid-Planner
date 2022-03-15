@@ -1,18 +1,47 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {getDatabase, ref, set as firebaseSet, onValue} from 'firebase/database';
 
 export default function Card(props) {
   // const {name, status, toDo, amount, link} = props;
   const dataCard = props.ScholarInfo;
-  const [remove, setRemove] = useState(false);
   const {id} = props;
+  const db = getDatabase();
+  const [plan, setPlan] = useState([]);
+  useEffect(() => {
+    const userRef = ref(db, props.user + '/Plans/'+props.currentPlan+'/Cards/');
+
+    const off = onValue(userRef, (snapshot) => {
+      const allPlansObject = snapshot.val(); // get the JSON from the reference
+      if (allPlansObject !== null) {
+        const planKeyArray = Object.keys(allPlansObject);
+        const allPlansArray = planKeyArray.map((keyString) => {
+          const whichObject = {...allPlansObject[keyString], firebaseKey: keyString};
+          return whichObject;
+        });
+        // usually save to state
+        setPlan(allPlansArray);
+      }
+    });
+    // cleanup function for when component is removed
+    function cleanup() {
+      off(); // turn off all listeners
+    }
+    return cleanup; // effect hook callback returns the cleanup function
+  }, [db]);
   const handleClick = () => {
+    const newCards = plan.filter((card, index) => {
+      if (index != props.id) {
+        return card;
+      }
+    });
+    console.log(newCards);
     // To Do: add Delete Need to remove card from DB and then force rerender
-    setRemove(true);
+    console.log(props.id);
+    const userRef = ref(db, props.user + '/Plans/'+props.currentPlan+'/Cards/');
+    firebaseSet(userRef, newCards)
+        .then(() => console.log('added card successfully'))
+        .catch((err) => console.log(err)); // log any errors for debugging
   };
-  if (remove) {
-    return null;
-  }
   return (
     <div className='card'>
       <button className='delete-button' onClick={handleClick}>&#10005;</button>
@@ -71,8 +100,8 @@ function Status(props) {
 
 function ToDo(props) {
   const db = getDatabase();
-  const userRef = ref(db, props.user +'/Plans/'+props.currentPlan + '/Cards/Card ' + (props.id+1) + '/ScholarshipReqs');
-  const toDo = props.toDo;
+  const userRef = ref(db, props.user +'/Plans/'+props.currentPlan + '/Cards/' + (props.id) + '/ScholarshipReqs');
+  const toDo = props.toDo !== undefined ? props.toDo : [];
   const [show, setShow] = useState(false);
   const [newToDo, setNewToDo] = useState('');
 
@@ -83,7 +112,11 @@ function ToDo(props) {
     setNewToDo(event.target.value);
   };
   const handleSubmit = (event) => {
-    toDo.push(newToDo);
+    if (toDo === undefined) {
+      toDo = [newToDo];
+    } else {
+      toDo.push(newToDo);
+    }
     firebaseSet(userRef, toDo)
         .then(() => console.log('card to do updated successfully!'))
         .catch((err) => console.log(err)); // log any errors for debugging
