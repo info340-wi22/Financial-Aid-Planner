@@ -11,17 +11,18 @@ export default function Explore() {
   const [filteredCardList, setFilteredCardList] = useState([]);
   const [currentPlan, setCurrentPlan] = useState(false);
   const filter = (uniName, min, max) => {
-	  const filtered = cardList.filter((plan)=>{return plan.College.includes(uniName) && plan.PotentialAid >= min&&plan.PotentialAid<=max})
-	  setFilteredCardList(filtered);
-  }
-onAuthStateChanged(auth, (firebaseUser) => {
-    if(firebaseUser){ //firebaseUser defined: is logged in
-	  console.log('logged in', firebaseUser.uid);
-	  setUser(firebaseUser.uid);
-	  //do something with firebaseUser (e.g. assign to a state variable)
-    }
-    else { //firebaseUser is undefined: is not logged in
-	  console.log('logged out');
+    const filtered = cardList.filter((plan)=>{
+      return plan.College.includes(uniName) && plan.PotentialAid >= min&&plan.PotentialAid<=max;
+    });
+    setFilteredCardList(filtered);
+  };
+  onAuthStateChanged(auth, (firebaseUser) => {
+    if (firebaseUser) { // firebaseUser defined: is logged in
+      console.log('logged in', firebaseUser.uid);
+      setUser(firebaseUser.uid);
+    // do something with firebaseUser (e.g. assign to a state variable)
+    } else { // firebaseUser is undefined: is not logged in
+      console.log('logged out');
     }
   });
   const db = getDatabase();
@@ -29,8 +30,9 @@ onAuthStateChanged(auth, (firebaseUser) => {
     const userRef = ref(db, 'Plans/');
     const off = onValue(userRef, (snapshot) => {
       const allPlansObject = snapshot.val(); // get the JSON from the reference
-	  if (snapshot.hasChild("Current Plan"))
-		setCurrentPlan(true);
+      if (snapshot.hasChild('Current Plan')) {
+        setCurrentPlan(true);
+      }
       const planKeyArray = Object.keys(allPlansObject);
       const allPlansArray = planKeyArray.map((keyString) => {
         const whichObject = {...allPlansObject[keyString], firebaseKey: keyString};

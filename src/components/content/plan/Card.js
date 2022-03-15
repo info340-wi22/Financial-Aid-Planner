@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import {Link} from 'react-router-dom';
 import {getDatabase, ref, set as firebaseSet} from 'firebase/database';
 
 export default function Card(props) {
@@ -16,7 +17,7 @@ export default function Card(props) {
   return (
     <div className='card'>
       <button className='delete-button' onClick={handleClick}>&#10005;</button>
-      <Title title={dataCard.ScholarshipName} link={dataCard.ScholarLink} />
+      <Title title={dataCard.ScholarshipName} link={dataCard.ScholarshipLink} />
       <Status status={dataCard.ScholarStatus} />
       <ToDo toDo={dataCard.ScholarshipReqs} user={props.user} id={id} currentPlan={props.currentPlan}/>
       <Amount amount={dataCard.Amount} />

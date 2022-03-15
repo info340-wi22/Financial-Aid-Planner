@@ -1,7 +1,8 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import UserInput from './UserInput';
 import {CardList} from './CardList';
 import {useParams} from 'react-router-dom';
+import {getDatabase, ref, set as firebaseSet, onValue} from 'firebase/database';
 
 export function Main(props) {
   const urlParams = useParams();
@@ -34,20 +35,49 @@ export function Main(props) {
     setAmount(input);
   };
   const loc = planName === undefined ? props.user+'/Plans/' +props.plan : 'Plans/'+planName;
+  const db = getDatabase();
+  const [plan, setPlan] = useState([]);
+  useEffect(() => {
+    const userRef = ref(db, loc +'/Cards');
+
+    const off = onValue(userRef, (snapshot) => {
+      const allPlansObject = snapshot.val(); // get the JSON from the reference
+      if (allPlansObject !== null) {
+        const planKeyArray = Object.keys(allPlansObject);
+        const allPlansArray = planKeyArray.map((keyString) => {
+          const whichObject = {...allPlansObject[keyString], firebaseKey: keyString};
+          return whichObject;
+        });
+        // usually save to state
+        setPlan(allPlansArray);
+      }
+    });
+    // cleanup function for when component is removed
+    function cleanup() {
+      off(); // turn off all listeners
+    }
+    return cleanup; // effect hook callback returns the cleanup function
+  }, [db, loc]);
+
   const addCard = () => {
-    setCardList([...cardList, {ScholarShipName: curScholar, ScholarStatus: 'Accepted', ScholarShipReqs: ['Get A Letter of Rec', 'Get A Letter of Rec', 'Get A Letter of Rec'], Amount: {FreqYear: curPerYear, AmountPerF: curAmount}, ScholarLink: curLink}]);
+    console.log(plan);
+    plan.push({ScholarshipName: curScholar, ScholarStatus: 'planning', ScholarshipReqs: [], Amount: {FreqYear: curPerYear, AmountPerF: curAmount}, ScholarshipLink: curLink});
+    console.log(plan);
+    const userRef = ref(db, loc + '/Cards');
+    firebaseSet(userRef, plan)
+        .then(() => console.log('added card successfully'))
+        .catch((err) => console.log(err)); // log any errors for debugging
   };
-  console.log(props.user);
   return (
     <>
       <UserInput onSubmit={addPost} addCard={addCard}
-        cards={cardList}
+        cards={plan}
         setScholar={setScholarCallBack}
         setLink={setLinkCallBack}
         setPerYear={setPerYearCallBack}
         setAmount={setAmountCallBack}
       />
-      <CardList cardList={cardList} user={props.user} plan={props.plan} loc={loc}/>
+      <CardList user={props.user} cards={plan} plan={props.plan} />
     </>
   );
 }
