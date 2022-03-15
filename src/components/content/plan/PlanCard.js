@@ -3,7 +3,7 @@ import {getDatabase, ref, set as firebaseSet} from 'firebase/database';
 export function PlanCard(props) {
   const db = getDatabase();
   const setCurrentPlan = () => {
-    const userRef = ref(db, props.user + '/Plans/Current Plan');
+    const userRef = ref(db, props.user + '/Current Plan');
     console.log('current id: ' + props.id);
     console.log('current cardInFo: ' + props.cardInfo);
     console.log('current User: '+ props.user);
@@ -13,6 +13,7 @@ export function PlanCard(props) {
   };
   return (
     <div className="plan_page">
+      <p>SCHOLARSHIP: {props.cardInfo.firebaseKey}</p>
       <p>TOTAL COST OF COLLEGE PER YEAR: {props.cardInfo.TotalCostCollege}</p>
       <p>AMOUNT WANT TO COVER: {props.cardInfo.AmountCover}</p>
       <p>POTENTIAL AID: {props.cardInfo.PotentialAid}</p>
