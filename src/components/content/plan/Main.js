@@ -13,13 +13,13 @@ export function Main(props) {
   const [curPerYear, setPerYear] = useState('');
   const [curAmount, setAmount] = useState('');
   const addPost = (costPerYear, amountCover, currentAid, potentialAid, amountLeft) => {
-    const newPost = {
-      yearlyCost: costPerYear,
-      userCover: amountCover,
-      userAid: currentAid,
-      userPotential: potentialAid,
-      userAmountNeed: amountLeft,
-    };
+    // const newPost = {
+    //   yearlyCost: costPerYear,
+    //   userCover: amountCover,
+    //   userAid: currentAid,
+    //   userPotential: potentialAid,
+    //   userAmountNeed: amountLeft,
+    // };
   };
 
   const setScholarCallBack = (input) => {
@@ -58,6 +58,7 @@ export function Main(props) {
     }
     return cleanup; // effect hook callback returns the cleanup function
   }, [db, loc]);
+
   const addCard = () => {
     console.log(plan);
     plan.push({ScholarshipName: curScholar, ScholarStatus: 'planning', ScholarshipReqs: [], Amount: {FreqYear: curPerYear, AmountPerF: curAmount}, ScholarshipLink: curLink});

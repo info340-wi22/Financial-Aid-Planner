@@ -8,6 +8,7 @@ import {PlanPage} from './components/content/plan/PlanPage';
 import Explore from './components/content/explore/Explore';
 import {MySignInScreen} from './components/nav/Login';
 import {getAuth, onAuthStateChanged} from 'firebase/auth';
+
 function App() {
   const auth = getAuth();
   const [user, setUser] = useState(null);
