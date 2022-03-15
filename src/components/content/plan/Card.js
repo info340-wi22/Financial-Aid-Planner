@@ -112,14 +112,13 @@ function ToDo(props) {
     setNewToDo(event.target.value);
   };
   const handleSubmit = (event) => {
-    if (toDo === undefined) {
-      toDo = [newToDo];
-    } else {
-      toDo.push(newToDo);
-    }
+   const confirm = confirmSubmit();
+   if (confirm) {
+    toDo.push(newToDo);
     firebaseSet(userRef, toDo)
         .then(() => console.log('card to do updated successfully!'))
         .catch((err) => console.log(err)); // log any errors for debugging
+   } 
   };
   let item = null;
   if (toDo !== undefined) {
@@ -169,4 +168,15 @@ function Amount({amount}) {
       <p>Total Amount Per Year: {yearly}</p>
     </div>
   );
+}
+
+function confirmSubmit() {
+
+  const result = confirm("Do you want to submit?");
+
+  if(result)  {
+     return true;
+  } else {
+      return false;
+  }
 }

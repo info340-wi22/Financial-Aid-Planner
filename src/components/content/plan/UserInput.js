@@ -1,5 +1,7 @@
 import React, {useState} from 'react';
 import {PopUp} from './PopUp';
+import {Card} from '../explore/ExploreCard';
+import {getDatabase, ref, set as firebaseSet} from 'firebase/database';
 
 function UserInput(props) {
   const [amount, setAmount] = useState(0);
@@ -22,6 +24,18 @@ function UserInput(props) {
       potentialSum -= card.Amount.FreqYear * card.Amount.AmountPerF;
     }
   });
+  const db = getDatabase();
+  const handleUpload = () => {
+    const plan = [];
+    console.log(plan);
+    plan.push({College: 'Udub', PotentialAid: 1000, TotalCostCollege: 10000});
+    console.log(plan);
+    const userRef = ref(db, '/Plans/');
+    firebaseSet(userRef, plan)
+        .then(() => console.log('added card successfully'))
+        .catch((err) => console.log(err)); // log any errors for debugging
+  };
+
   const leftOver = (amount - cover - sum) < 0 ? 0 : (amount - cover - sum);
 
   const [seen, setSeen] = useState(false);
@@ -57,7 +71,7 @@ function UserInput(props) {
             /> :
             null}
         </>
-        <button type="submit" className="card-button" onClick={handleSubmit}>Upload Template</button>
+        <button type="submit" className="card-button" onClick={handleUpload}>Upload Template</button>
       </div>
       <button type="button" id="arrow-button-r" className="arrow-button">
         Page 3<span className="arrow right"></span></button>
