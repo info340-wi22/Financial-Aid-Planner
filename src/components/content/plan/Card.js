@@ -1,9 +1,4 @@
-<<<<<<< HEAD
-import React from 'react';
-import {useState} from 'react';
-=======
 import React, {useState} from 'react';
->>>>>>> origin
 import {getDatabase, ref, set as firebaseSet} from 'firebase/database';
 
 export default function Card(props) {
@@ -83,11 +78,7 @@ function ToDo(props) {
   const handleSubmit = (event) => {
     toDo.push(newToDo);
     firebaseSet(userRef, toDo)
-<<<<<<< HEAD
-        .then(() => console.log('data saved successfully!'))
-=======
         .then(() => console.log('card to do updated successfully!'))
->>>>>>> origin
         .catch((err) => console.log(err)); // log any errors for debugging
   };
   let item = null;
