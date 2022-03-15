@@ -36,43 +36,44 @@ onAuthStateChanged(auth, (firebaseUser) => {
         const whichObject = {...allPlansObject[keyString], firebaseKey: keyString};
         return whichObject;
       });
-
-	//usually save to state
-	setCardList(allPlansArray);
-	setFilteredCardList(allPlansArray);
-  })
-  //cleanup function for when component is removed
-  function cleanup() {
-	off(); //turn off all listeners
-  }
-  return cleanup; //effect hook callback returns the cleanup function
-  }, [db])
+      // usually save to state
+      setCardList(allPlansArray);
+      setFilteredCardList(allPlansArray);
+    });
+    // cleanup function for when component is removed
+    function cleanup() {
+      off(); // turn off all listeners
+    }
+    return cleanup; // effect hook callback returns the cleanup function
+  }, [db]);
+  console.log(cardList);
   return (
-	<div className='explore-page'>
-	  <FilterBy filter = {filter}/>
-	  <CardList cardList={filteredCardList} user={user} currentPlan={currentPlan}/>
-	</div>
+    <div className='explore-page'>
+      <FilterBy filter = {filter}/>
+      <CardList cardList={filteredCardList} user={user} currentPlan={currentPlan}/>
+    </div>
   );
 }
 function FilterBy(props) {
-  const [filterName, setFilterName] = useState("");
+  const [filterName, setFilterName] = useState('');
   const [minAmount, setMinAmount] = useState(0);
   const [maxAmount, setMaxAmount] = useState(9999999);
   const handleFilterClick = (event) => {
-	props.filter(filterName, minAmount, maxAmount);
-  }
+    props.filter(filterName, minAmount, maxAmount);
+  };
   const inputChange = (event) => {
     setFilterName(event.target.value);
-  }
+  };
   const minRange = (event) => {
-	setMinAmount(event.target.value);
-  }
+    setMinAmount(event.target.value);
+  };
   const maxRange = (event) => {
-	if(event.target.value == "")
-	  setMaxAmount(9999999);
-	else
-	  setMaxAmount(event.target.value);
-  }
+    if (event.target.value == '') {
+      setMaxAmount(9999999);
+    } else {
+      setMaxAmount(event.target.value);
+    }
+  };
   return (
     <div className="filter-by">
       <p id="filter-text">Filter By</p>
@@ -85,11 +86,11 @@ function FilterBy(props) {
         <div className="aid-range-wrapper">
           <label htmlFor="aid-range">Aid Range:</label>
           <input type="number" id="minRange" name="minRange" onChange={minRange}/>
-		  <p> - </p>
-		  <input type="number" id="maxRange" name="maxRange" onChange={maxRange}/>
+          <p> - </p>
+          <input type="number" id="maxRange" name="maxRange" onChange={maxRange}/>
         </div>
       </form>
-	  <button type="button" id="filter-submit" onClick={handleFilterClick}>Submit</button>
+      <button type="button" id="filter-submit" onClick={handleFilterClick}>Submit</button>
     </div>
   );
 }

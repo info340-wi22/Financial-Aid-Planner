@@ -63,7 +63,7 @@ function Status(props) {
 
 function ToDo(props) {
   const db = getDatabase();
-  const userRef = ref(db, props.user +'/Plans/'+props.currentPlan + '/Cards/Card ' + (props.id+1)+'/ScholarshipReqs');
+  const userRef = ref(db, props.user +'/Plans/'+props.currentPlan + '/Cards/Card ' + (props.id+1) + '/ScholarshipReqs');
   const toDo = props.toDo;
   const [show, setShow] = useState(false);
   const [newToDo, setNewToDo] = useState('');
