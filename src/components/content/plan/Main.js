@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import UserInput from './UserInput';
 import {CardList} from './CardList';
-import { useParams } from 'react-router-dom';
+import {useParams} from 'react-router-dom';
 
 export function Main(props) {
   const urlParams = useParams();
@@ -34,8 +34,8 @@ export function Main(props) {
   const setAmountCallBack = (input) => {
     setAmount(input);
   };
-  const loc = planName === undefined ? props.user+'/Plans/' +props.plan : "Plans/"+planName;
-	  
+  const loc = planName === undefined ? props.user+'/Plans/' +props.plan : 'Plans/'+planName;
+
   const addCard = () => {
     setCardList([...cardList, {ScholarShipName: curScholar, ScholarStatus: 'Accepted', ScholarShipReqs: ['Get A Letter of Rec', 'Get A Letter of Rec', 'Get A Letter of Rec'], Amount: {FreqYear: curPerYear, AmountPerF: curAmount}, ScholarLink: curLink}]);
   };
