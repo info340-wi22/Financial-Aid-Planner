@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import {getDatabase, ref, set as firebaseSet, onValue} from 'firebase/database';
+import {Link, Route, Routes, Navigate} from 'react-router-dom';
 
 export default function Card(props) {
   const [currentPlan, setCurrentPlan] = useState(true);
@@ -33,7 +34,7 @@ export default function Card(props) {
       <p>AMOUNT WANT TO COVER: {props.cardInfo.AmountCover}</p>
       <p>POTENTIAL AID: {props.cardInfo.PotentialAid}</p>
       <p>College: {props.cardInfo.College}</p>
-      <button type="button" id={'view' + props.pos} className="card-button" onClick={copyCard}>View</button>
+      <Link className="btn btn-primary" to={'/main/'+props.cardInfo.firebaseKey}>Visit</Link>
       <button type="button" id={'copy' + props.pos} className="card-button" onClick={copyCard}>Copy</button>
     </div>
   );
