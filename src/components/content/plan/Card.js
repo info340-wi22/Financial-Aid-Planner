@@ -82,9 +82,7 @@ function ToDo(props) {
     firebaseSet(userRef, toDo)
         .then(() => console.log('card to do updated successfully!'))
         .catch((err) => console.log(err)); // log any errors for debugging
-   } else {
-     alert("Submission Not Saved!")
-   }
+   } 
   };
   let item = null;
   if (toDo !== undefined) {
