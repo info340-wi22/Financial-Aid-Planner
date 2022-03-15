@@ -11,8 +11,6 @@ export function Main(props) {
   const [curLink, setLink] = useState('');
   const [curPerYear, setPerYear] = useState('');
   const [curAmount, setAmount] = useState('');
-<<<<<<< HEAD
-=======
   const [currentPlanName, setCurrentPlanName] = useState('Plan 1');
   const auth = getAuth();
   const [user, setUser] = useState(null);
@@ -24,7 +22,6 @@ export function Main(props) {
       console.log('logged out');
     }
   });
->>>>>>> bf5e725aced01c5d35c81f1feae2e1cc85781125
   const addPost = (costPerYear, amountCover, currentAid, potentialAid, amountLeft) => {
     // const newPost = {
     //   yearlyCost: costPerYear,
