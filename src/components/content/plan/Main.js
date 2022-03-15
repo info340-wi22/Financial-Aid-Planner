@@ -15,8 +15,7 @@ export function Main(props) {
   onAuthStateChanged(auth, (firebaseUser) => {
     if (firebaseUser) { // firebaseUser defined: is logged in
       console.log('logged in', firebaseUser.uid);
-      setUser(firebaseUser.uid);
-    // do something with firebaseUser (e.g. assign to a state variable)
+      setUser(firebaseUser.uid); // do something with firebaseUser (e.g. assign to a state variable)
     } else { // firebaseUser is undefined: is not logged in
       console.log('logged out');
     }
