@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import UserInput from './UserInput';
 import {CardList} from './CardList';
 import {useParams} from 'react-router-dom';
-import {getDatabase, ref, onValue} from 'firebase/database';
+import {getDatabase, ref, set as firebaseSet, onValue} from 'firebase/database';
 
 export function Main(props) {
   const urlParams = useParams();
@@ -42,14 +42,12 @@ export function Main(props) {
 
     const off = onValue(userRef, (snapshot) => {
       const allPlansObject = snapshot.val(); // get the JSON from the reference
-      console.log(snapshot.val());
       if (allPlansObject !== null) {
         const planKeyArray = Object.keys(allPlansObject);
         const allPlansArray = planKeyArray.map((keyString) => {
           const whichObject = {...allPlansObject[keyString], firebaseKey: keyString};
           return whichObject;
         });
-        console.log(allPlansArray);
         // usually save to state
         setPlan(allPlansArray);
       }
@@ -61,10 +59,14 @@ export function Main(props) {
     return cleanup; // effect hook callback returns the cleanup function
   }, [db, loc]);
   const addCard = () => {
-    // Update this to add the card to the database
-    setCardList([...cardList, {ScholarShipName: curScholar, ScholarStatus: 'Accepted', ScholarShipReqs: ['Get A Letter of Rec', 'Get A Letter of Rec', 'Get A Letter of Rec'], Amount: {FreqYear: curPerYear, AmountPerF: curAmount}, ScholarLink: curLink}]);
+    console.log(plan);
+    plan.push({ScholarshipName: curScholar, ScholarStatus: 'planning', ScholarshipReqs: [], Amount: {FreqYear: curPerYear, AmountPerF: curAmount}, ScholarshipLink: curLink});
+    console.log(plan);
+    const userRef = ref(db, loc + '/Cards');
+    firebaseSet(userRef, plan)
+        .then(() => console.log('added card successfully'))
+        .catch((err) => console.log(err)); // log any errors for debugging
   };
-  console.log(props.user);
   return (
     <>
       <UserInput onSubmit={addPost} addCard={addCard}
