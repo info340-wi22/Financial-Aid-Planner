@@ -20,7 +20,7 @@ export default function Explore() {
     if (firebaseUser) { // firebaseUser defined: is logged in
       console.log('logged in', firebaseUser.uid);
       setUser(firebaseUser.uid);
-      // do something with firebaseUser (e.g. assign to a state variable)
+    // do something with firebaseUser (e.g. assign to a state variable)
     } else { // firebaseUser is undefined: is not logged in
       console.log('logged out');
     }
@@ -30,8 +30,9 @@ export default function Explore() {
     const userRef = ref(db, 'Plans/');
     const off = onValue(userRef, (snapshot) => {
       const allPlansObject = snapshot.val(); // get the JSON from the reference
-      if (snapshot.hasChild('Current Plan'));
-      setCurrentPlan(true);
+      if (snapshot.hasChild('Current Plan')) {
+        setCurrentPlan(true);
+      }
       const planKeyArray = Object.keys(allPlansObject);
       const allPlansArray = planKeyArray.map((keyString) => {
         const whichObject = {...allPlansObject[keyString], firebaseKey: keyString};
